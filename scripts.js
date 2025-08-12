@@ -1,21 +1,25 @@
-// Mobile navigation toggle
-const toggle = document.querySelector('.nav-toggle');
+// Navigation toggle
+const navToggle = document.querySelector('.nav-toggle');
 const navList = document.getElementById('nav-list');
-if (toggle && navList) {
-  toggle.addEventListener('click', () => {
+
+if (navToggle && navList) {
+  navToggle.addEventListener('click', () => {
     const open = navList.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.textContent = open ? '✕' : '☰';
   });
-  // Close menu when a link is clicked (mobile usability)
-  navList.addEventListener('click', e => {
+
+  // Close menu when a link is clicked (mobile)
+  navList.addEventListener('click', (e) => {
     if (e.target.tagName === 'A' && navList.classList.contains('open')) {
       navList.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.textContent = '☰';
     }
   });
 }
 
-// Dynamic footer year
+// Current year
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -23,62 +27,65 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 (function initSlider(){
   const slider = document.querySelector('.testimonial-slider');
   if (!slider) return;
-  const slides = [...slider.querySelectorAll('.slide')];
+  const slides = Array.from(slider.querySelectorAll('.slide'));
   const prevBtn = slider.querySelector('.prev');
   const nextBtn = slider.querySelector('.next');
   const dotsWrap = slider.querySelector('.slider-dots');
-  if (!slides.length) return;
-
   let index = 0;
-  let autoTimer;
+  let interval;
 
-  function buildDots(){
-    slides.forEach((_s,i) => {
+  function renderDots(){
+    slides.forEach((_, i) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.setAttribute('aria-label',`Go to testimonial ${i+1}`);
-      b.addEventListener('click', () => goTo(i,true));
+      b.setAttribute('aria-label', `Show testimonial ${i+1}`);
+      b.setAttribute('role','tab');
+      if (i === index) b.setAttribute('aria-selected','true');
       dotsWrap.appendChild(b);
     });
   }
 
   function update(){
-    slides.forEach((s,i)=> {
+    slides.forEach((s,i)=>{
       s.classList.toggle('active', i===index);
-      s.setAttribute('aria-hidden', i===index ? 'false':'true');
     });
-    dotsWrap.querySelectorAll('button').forEach((b,i)=>{
-      b.setAttribute('aria-selected', i===index ? 'true':'false');
+    dotsWrap.querySelectorAll('button').forEach((d,i)=>{
+      if (i===index) d.setAttribute('aria-selected','true'); else d.removeAttribute('aria-selected');
     });
   }
 
-  function goTo(i,user=false){
-    index = (i + slides.length) % slides.length;
+  function go(dir){
+    index = (index + dir + slides.length) % slides.length;
     update();
-    if (user) restart();
   }
 
-  function next(){ goTo(index+1); }
-  function prev(){ goTo(index-1); }
+  function goTo(i){
+    index = i;
+    update();
+  }
 
-  function start(){ autoTimer = setInterval(next, 6500); }
-  function restart(){ clearInterval(autoTimer); start(); }
+  function startAuto(){
+    interval = setInterval(()=>go(1), 9000);
+  }
+  function stopAuto(){
+    clearInterval(interval);
+  }
 
-  buildDots();
+  renderDots();
   update();
-  start();
-  if (nextBtn) nextBtn.addEventListener('click', () => { next(); restart(); });
-  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); restart(); });
-})();
+  startAuto();
 
-// FAQ: only one open at a time
-(function initFAQ(){
-  const faq = document.querySelector('.faq');
-  if (!faq) return;
-  faq.addEventListener('toggle', e => {
-    if (e.target.tagName !== 'DETAILS' || !e.target.open) return;
-    [...faq.querySelectorAll('details')].forEach(d=>{
-      if (d!==e.target) d.open = false;
-    });
+  prevBtn.addEventListener('click', ()=>{ stopAuto(); go(-1); startAuto(); });
+  nextBtn.addEventListener('click', ()=>{ stopAuto(); go(1); startAuto(); });
+  dotsWrap.addEventListener('click', (e)=>{
+    if (e.target.tagName==='BUTTON'){
+      stopAuto();
+      const buttons = Array.from(dotsWrap.children);
+      goTo(buttons.indexOf(e.target));
+      startAuto();
+    }
   });
+
+  slider.addEventListener('pointerenter', stopAuto);
+  slider.addEventListener('pointerleave', startAuto);
 })();
