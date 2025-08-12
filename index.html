@@ -1,12 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>My Site</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8" />
+<title>COMPANY_NAME Bookkeeping | TAGLINE_PLACEHOLDER</title>
+<meta name="description" content="Professional bookkeeping, cleanup, and clear monthly financial reporting for small businesses in CITY_REGION." />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="canonical" href="https://www.elgconsulting.works/" />
+<meta property="og:title" content="COMPANY_NAME Bookkeeping" />
+<meta property="og:description" content="TAGLINE_PLACEHOLDER" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.elgconsulting.works/" />
+<meta property="og:image" content="https://www.elgconsulting.works/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="COMPANY_NAME Bookkeeping" />
+<meta name="twitter:description" content="TAGLINE_PLACEHOLDER" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Hello from elgconsulting.works</h1>
-  <p>This is my first deployed page. I will replace this content later.</p>
+<header class="site-header">
+  <div class="container flex-between">
+    <div class="logo">COMPANY_NAME</div>
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <ul id="nav-list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="btn small">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>Accurate, On‑Time Bookkeeping for <span class="accent">Small Businesses</span></h1>
+    <p class="lead">TAGLINE_PLACEHOLDER – clean books, reconciled accounts, and meaningful monthly reports.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn primary">Free Consultation</a>
+      <a href="#services" class="btn ghost">See Services</a>
+    </div>
+    <p class="trust-note">Serving CITY_REGION • INDUSTRY_FOCUS (change or remove this line)</p>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Monthly Bookkeeping</h3>
+        <p>Categorization, reconciliations, adjustments, monthly financial statements.</p>
+      </article>
+      <article class="card">
+        <h3>Catch‑Up & Cleanup</h3>
+        <p>Bring past months current. Fix misclassifications and unreconciled accounts.</p>
+      </article>
+      <article class="card">
+        <h3>Management Reports</h3>
+        <p>Clear P&L, balance sheet, and custom KPIs so you know what to act on.</p>
+      </article>
+      <article class="card">
+        <h3>Add‑Ons</h3>
+        <p>Workflow setup, light advisory, receipt processes, basic AR/AP organization.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section alt">
+  <div class="container">
+    <h2>How It Works</h2>
+    <ol class="process">
+      <li><strong>Intro Call</strong> Understand your business & systems.</li>
+      <li><strong>File Review</strong> Assess current books / needed cleanup.</li>
+      <li><strong>Onboarding</strong> Secure access + monthly close checklist.</li>
+      <li><strong>Monthly Close</strong> Reconcile, adjust, quality review.</li>
+      <li><strong>Delivery</strong> Statements + optional walkthrough call.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2>About COMPANY_NAME</h2>
+    <p>SHORT_BIO_PLACEHOLDER (credentials, years of experience, focus niche).</p>
+    <ul class="bullets">
+      <li>Software: TOOLS_PLACEHOLDER (e.g., QuickBooks Online, Xero)</li>
+      <li>Turnaround: Reports within X days of month end</li>
+      <li>Security: Encrypted sharing & least‑privilege access</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="container">
+    <h2>Request a Free Consultation</h2>
+    <p>Email <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a> or use the form below.</p>
+    <form action="mailto:CONTACT_EMAIL" method="post" enctype="text/plain" class="contact-form">
+      <label>Name <input type="text" name="name" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Business Name <input type="text" name="business"></label>
+      <label>Message <textarea name="message" rows="4" required></textarea></label>
+      <button type="submit" class="btn primary">Send</button>
+    </form>
+    <p class="small">Prefer direct email? Write to <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a> or call PHONE_NUMBER_PLACEHOLDER.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>&copy; <span id="year"></span> COMPANY_NAME. All rights reserved.</div>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="scripts.js" defer></script>
 </body>
 </html>
