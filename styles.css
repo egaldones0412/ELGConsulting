@@ -1,5 +1,6 @@
 :root {
-  --accent:#2563eb;
+  --accent:#1e3a8a; /* Navy Blue primary */
+  --highlight:#fbbf24; /* Gold highlight */
   --bg:#ffffff;
   --bg-alt:#f5f7fb;
   --text:#1d2430;
@@ -30,7 +31,7 @@ a:hover { text-decoration:underline; }
 .hero-inner { text-align:center; }
 .hero h1 { font-size:clamp(2rem,5vw,3rem); }
 .lead { font-size:1.1rem; max-width:680px; margin:0 auto 1.6rem; }
-.accent { color:var(--accent); }
+.accent { color:var(--highlight); }
 .hero-cta { display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; margin-bottom:1rem; }
 .trust-note { font-size:.85rem; color:#555; }
 
@@ -49,7 +50,7 @@ a:hover { text-decoration:underline; }
 .contact-form input, .contact-form textarea {
   padding:.65rem .7rem; border:1px solid var(--border); border-radius:6px; font:inherit;
 }
-.contact-form input:focus, .contact-form textarea:focus { outline:2px solid var(--accent); outline-offset:1px; }
+.contact-form input:focus, .contact-form textarea:focus { outline:2px solid var(--highlight); outline-offset:1px; }
 
 .btn { display:inline-block; padding:.7rem 1.05rem; font-size:.9rem; font-weight:600; border-radius:6px; border:1px solid var(--accent); }
 .btn.primary { background:var(--accent); color:#fff; }
