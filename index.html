@@ -33,7 +33,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=37" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=38" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -45,18 +46,18 @@
         <span class="logo-text">ELG Consulting</span>
       </a>
 
-      <!-- EXACT REPLICA TOGGLE -->
+      <!-- Theme Toggle (replica sun/moon switch, adjustable via CSS vars) -->
       <button id="themeToggle"
-              class="theme-toggle-replica"
+              class="theme-toggle-replica toggle-sm"
               aria-label="Activate dark mode"
               aria-pressed="false"
               type="button">
         <span class="visually-hidden">Toggle dark mode</span>
         <span class="toggle-env">
           <span class="layer sky"></span>
-          <span class="layer clouds clouds-a"></span>
-          <span class="layer clouds clouds-b"></span>
-          <span class="layer stars"></span>
+            <span class="layer clouds clouds-a"></span>
+            <span class="layer clouds clouds-b"></span>
+            <span class="layer stars"></span>
           <span class="toggle-knob"></span>
         </span>
       </button>
@@ -78,33 +79,124 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
-    <section class="hero enhanced">
-      <div class="background-shapes">
-        <img src="img/shape-grid.svg" alt="" class="shape grid" />
-      </div>
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow">Bookkeeping & Reporting Partner</p>
-          <h1>Your Books, Done Right — and <span class="accent">On Time</span></h1>
-          <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
-          <div class="hero-cta">
-            <a href="#contact" class="btn primary lg">Free Consultation</a>
-            <a href="#services" class="btn primary lg">See How We Can Help</a>
-          </div>
-          <ul class="hero-points checks">
-            <li>Catch‑Up & Cleanup</li>
-            <li>Structured Month‑End Close</li>
-            <li>KPIs & Variance Insight</li>
+    <!-- HERO CAROUSEL (replaces previous hero section) -->
+    <section id="hero" class="hero-carousel" aria-roledescription="carousel" aria-label="Featured highlights">
+      <div class="hc-inner">
+        <div class="hc-viewport" tabindex="0">
+          <ul class="hc-track" role="list">
+            <!-- Slide 1 -->
+            <li class="hc-slide is-active"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="1 of 3">
+              <div class="hc-media" style="--slide-bg:url('img/hero/slide1.jpg');"></div>
+              <div class="hc-overlay">
+                <div class="hc-diagonals">
+                  <span class="diag diag-main"></span>
+                  <span class="diag diag-accent"></span>
+                </div>
+                <div class="hc-content">
+                  <h1 class="hc-heading">Get Cash‑Like Clarity From Your Books</h1>
+                  <p class="hc-sub">Accurate, current financials delivered fast—so decisions move forward with confidence.</p>
+                  <div class="hc-cta-row">
+                    <a href="#contact" class="btn primary lg">Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- Slide 2 -->
+            <li class="hc-slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="2 of 3">
+              <div class="hc-media" style="--slide-bg:url('img/hero/slide2.jpg');"></div>
+              <div class="hc-overlay">
+                <div class="hc-diagonals">
+                  <span class="diag diag-main"></span>
+                  <span class="diag diag-accent"></span>
+                </div>
+                <div class="hc-content">
+                  <h2 class="hc-heading">Close Within 5 Business Days</h2>
+                  <p class="hc-sub">Disciplined month‑end process and layered review eliminate delays & guesswork.</p>
+                  <div class="hc-cta-row">
+                    <a href="#services" class="btn primary lg">Our Services</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- Slide 3 -->
+            <li class="hc-slide"
+                role="group"
+                aria-roledescription="slide"
+                aria-label="3 of 3">
+              <div class="hc-media" style="--slide-bg:url('img/hero/slide3.jpg');"></div>
+              <div class="hc-overlay">
+                <div class="hc-diagonals">
+                  <span class="diag diag-main"></span>
+                  <span class="diag diag-accent"></span>
+                </div>
+                <div class="hc-content">
+                  <h2 class="hc-heading">KPIs & Variance Insight Built In</h2>
+                  <p class="hc-sub">Turn static statements into forward‑looking visibility with curated metrics.</p>
+                  <div class="hc-cta-row">
+                    <a href="#contact" class="btn primary lg">Free Consultation</a>
+                  </div>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
-        <div class="hero-visual">
-          <img src="img/hero-illustration.svg" alt="Abstract financial dashboard illustration" loading="lazy">
+
+        <button class="hc-arrow prev" aria-label="Previous slide" type="button">‹</button>
+        <button class="hc-arrow next" aria-label="Next slide" type="button">›</button>
+
+        <div class="hc-dots" role="tablist" aria-label="Select slide"></div>
+        <div class="hc-status visually-hidden" aria-live="polite" aria-atomic="true"></div>
+      </div>
+
+      <!-- Overlapping feature cards -->
+      <div class="hero-feature-cards">
+        <div class="hfc-track">
+          <a href="#value" class="hfc-card">
+            <div class="hfc-icon">⏱️</div>
+            <div class="hfc-text">
+              <h3>On‑Time Close</h3>
+              <p>Statements in 5 days.</p>
+            </div>
+          </a>
+          <a href="#services" class="hfc-card">
+            <div class="hfc-icon">🧹</div>
+            <div class="hfc-text">
+              <h3>Cleanup</h3>
+              <p>Fix backlog fast.</p>
+            </div>
+          </a>
+          <a href="#services" class="hfc-card">
+            <div class="hfc-icon">📊</div>
+            <div class="hfc-text">
+              <h3>KPIs</h3>
+              <p>Actionable metrics.</p>
+            </div>
+          </a>
+          <a href="#process" class="hfc-card">
+            <div class="hfc-icon">⚙️</div>
+            <div class="hfc-text">
+              <h3>Process</h3>
+              <p>Structured flow.</p>
+            </div>
+          </a>
+          <a href="#contact" class="hfc-card">
+            <div class="hfc-icon">🤝</div>
+            <div class="hfc-text">
+              <h3>Support</h3>
+              <p>Responsive help.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- (Remaining sections unchanged from previous version) -->
+    <!-- PLATFORMS -->
     <section class="platforms-section" id="platforms">
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
@@ -124,19 +216,37 @@
       </div>
     </section>
 
+    <!-- VALUE -->
     <section id="value" class="section tight">
       <div class="container">
         <h2 class="center">Eliminate Operational Finance Friction</h2>
         <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
         <div class="value-grid">
-          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
-          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi" loading="lazy"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
-          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
-          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
+          <div class="value-item">
+            <img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy">
+            <h3>Backlog / Messy Books</h3>
+            <p>Historical cleanup & error correction restore a solid financial baseline.</p>
+          </div>
+          <div class="value-item">
+            <img src="img/icon-speed.svg" alt="" class="vi" loading="lazy">
+            <h3>Slow Close Cycle</h3>
+            <p>Disciplined workflows deliver statements within 5 business days.</p>
+          </div>
+          <div class="value-item">
+            <img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy">
+            <h3>Weak Visibility</h3>
+            <p>Custom KPIs and variance notes turn static reports into clarity.</p>
+          </div>
+          <div class="value-item">
+            <img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy">
+            <h3>Manual Inefficiency</h3>
+            <p>Tools and process refinement reduce rework and risk.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services" class="section alt">
       <div class="container">
         <div class="section-head">
@@ -144,26 +254,72 @@
           <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
         </div>
         <div class="cards services-grid">
-          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
-          <article class="card service"><h3>Catch‑Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
-          <article class="card service"><h3>Management Reporting</h3><p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
-          <article class="card service"><h3>Workflow & Advisory</h3><p>Light advisory on process, tech stack, and data hygiene.</p><ul class="mini-list"><li>Tool alignment</li><li>Receipt capture</li><li>AR/AP structuring</li></ul></article>
+          <article class="card service">
+            <h3>Monthly Bookkeeping</h3>
+            <p>Categorization, reconciliations, adjusting entries, financial statements.</p>
+            <ul class="mini-list">
+              <li>Cash or accrual</li>
+              <li>Bank & card tie‑outs</li>
+              <li>Close checklist</li>
+            </ul>
+          </article>
+          <article class="card service">
+            <h3>Catch‑Up & Cleanup</h3>
+            <p>Backlog completion & historical correction to reestablish accuracy.</p>
+            <ul class="mini-list">
+              <li>Error tracing</li>
+              <li>Balance validation</li>
+              <li>Documentation set</li>
+            </ul>
+          </article>
+          <article class="card service">
+            <h3>Management Reporting</h3>
+            <p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p>
+            <ul class="mini-list">
+              <li>Custom KPI set</li>
+              <li>Variance insight</li>
+              <li>Review session</li>
+            </ul>
+          </article>
+          <article class="card service">
+            <h3>Workflow & Advisory</h3>
+            <p>Light advisory on process, tech stack, and data hygiene.</p>
+            <ul class="mini-list">
+              <li>Tool alignment</li>
+              <li>Receipt capture</li>
+              <li>AR/AP structuring</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- WHY US -->
     <section id="why" class="section">
       <div class="container">
         <h2 class="center">Why ELG Consulting</h2>
         <div class="why-grid">
-          <div class="why-item"><h3>Reliable Turnaround</h3><p>Consistent delivery inside 5 business days after month end.</p></div>
-          <div class="why-item"><h3>Broad Tool Coverage</h3><p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p></div>
-          <div class="why-item"><h3>Accuracy Discipline</h3><p>Layered review approach lowers error propagation.</p></div>
-          <div class="why-item"><h3>Security Mindset</h3><p>Least‑privilege access and structured data handling.</p></div>
+          <div class="why-item">
+            <h3>Reliable Turnaround</h3>
+            <p>Consistent delivery inside 5 business days after month end.</p>
+          </div>
+          <div class="why-item">
+            <h3>Broad Tool Coverage</h3>
+            <p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p>
+          </div>
+          <div class="why-item">
+            <h3>Accuracy Discipline</h3>
+            <p>Layered review approach lowers error propagation.</p>
+          </div>
+          <div class="why-item">
+            <h3>Security Mindset</h3>
+            <p>Least‑privilege access and structured data handling.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section id="process" class="section alt">
       <div class="container">
         <h2>Our Process</h2>
@@ -177,6 +333,7 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
       <div class="container">
         <h2 class="center">Client Feedback</h2>
@@ -204,6 +361,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="section alt">
       <div class="container">
         <h2>FAQ</h2>
@@ -216,6 +374,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section contact-band">
       <div class="container contact-layout">
         <div class="contact-copy">
@@ -251,7 +410,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile nav
+    /* Mobile nav */
     const navToggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
     if (navToggle) {
@@ -261,20 +420,18 @@
       });
     }
 
-    // Theme toggle logic (replica)
+    /* Theme toggle logic */
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
-
-    const stored = localStorage.getItem('theme');
-    if (stored){
-      root.setAttribute('data-theme', stored);
-      syncToggle(stored);
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      root.setAttribute('data-theme', storedTheme);
+      syncToggle(storedTheme);
     } else {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       root.setAttribute('data-theme', prefersDark ? 'dark':'light');
       syncToggle(prefersDark ? 'dark':'light');
     }
-
     toggleBtn.addEventListener('click', () => {
       const current = root.getAttribute('data-theme');
       const next = current === 'dark' ? 'light' : 'dark';
@@ -282,19 +439,20 @@
       localStorage.setItem('theme', next);
       syncToggle(next);
     });
-
     function syncToggle(mode){
       const dark = mode === 'dark';
       toggleBtn.setAttribute('aria-pressed', dark ? 'true':'false');
       toggleBtn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
     }
 
-    // Simple testimonial slider (unchanged)
+    /* Testimonial slider */
     (function(){
-      const slides = document.querySelectorAll('.testimonial-slider .slide');
-      const prev = document.querySelector('.testimonial-slider .prev');
-      const next = document.querySelector('.testimonial-slider .next');
-      const dotsWrap = document.querySelector('.testimonial-slider .slider-dots');
+      const slider = document.querySelector('.testimonial-slider');
+      if(!slider) return;
+      const slides = slider.querySelectorAll('.slide');
+      const prev = slider.querySelector('.prev');
+      const next = slider.querySelector('.next');
+      const dotsWrap = slider.querySelector('.slider-dots');
       if(!slides.length || !dotsWrap) return;
       let idx = 0;
       slides.forEach((_, i) => {
@@ -311,8 +469,122 @@
         slides[idx].classList.add('active');
         dotsWrap.children[idx].setAttribute('aria-selected','true');
       }
-      if (prev) prev.addEventListener('click', () => go((idx - 1 + slides.length) % slides.length));
-      if (next) next.addEventListener('click', () => go((idx + 1) % slides.length));
+      if (prev) prev.addEventListener('click', () => go( (idx - 1 + slides.length) % slides.length ));
+      if (next) next.addEventListener('click', () => go( (idx + 1) % slides.length ));
+    })();
+
+    /* Hero carousel */
+    (function(){
+      const carousel = document.querySelector('.hero-carousel');
+      if(!carousel) return;
+
+      const track = carousel.querySelector('.hc-track');
+      const slides = Array.from(track.children);
+      const prevBtn = carousel.querySelector('.hc-arrow.prev');
+      const nextBtn = carousel.querySelector('.hc-arrow.next');
+      const dotsWrap = carousel.querySelector('.hc-dots');
+      const status = carousel.querySelector('.hc-status');
+      const viewport = carousel.querySelector('.hc-viewport');
+
+      let index = 0;
+      let timer = null;
+      const interval = 6000;
+      const autoplay = true;
+      const loop = true;
+      const pauseOnHover = true;
+
+      slides.forEach((_,i)=>{
+        const b = document.createElement('button');
+        b.type='button';
+        b.setAttribute('role','tab');
+        b.setAttribute('aria-label','Go to slide ' + (i+1));
+        b.setAttribute('aria-selected', i===0?'true':'false');
+        b.addEventListener('click', ()=>goTo(i,true));
+        dotsWrap.appendChild(b);
+      });
+
+      function updateStatus(){
+        if(status) status.textContent = 'Slide ' + (index+1) + ' of ' + slides.length;
+        slides.forEach((s,i)=> s.setAttribute('aria-label',(i+1)+' of '+slides.length));
+      }
+      function setActive(){
+        slides.forEach(s=>s.classList.remove('is-active'));
+        slides[index].classList.add('is-active');
+        Array.from(dotsWrap.children).forEach((d,i)=>{
+          d.setAttribute('aria-selected', i===index?'true':'false');
+        });
+        updateStatus();
+      }
+      function goTo(i,user){
+        if(i<0) i = loop ? slides.length-1 : 0;
+        if(i>=slides.length) i = loop ? 0 : slides.length-1;
+        index = i;
+        track.style.transform = 'translateX(' + (-index*100) + '%)';
+        setActive();
+        if(user) resetAutoplay();
+      }
+      function next(){ goTo(index+1); }
+      function prev(){ goTo(index-1); }
+
+      if(nextBtn) nextBtn.addEventListener('click', ()=> next());
+      if(prevBtn) prevBtn.addEventListener('click', ()=> prev());
+
+      viewport.addEventListener('keydown', e=>{
+        if(e.key === 'ArrowRight'){ e.preventDefault(); next(); }
+        else if(e.key === 'ArrowLeft'){ e.preventDefault(); prev(); }
+      });
+
+      /* Swipe / drag */
+      let startX=0, dragging=false;
+      viewport.addEventListener('pointerdown', e=>{
+        dragging=true;
+        startX=e.clientX;
+        viewport.setPointerCapture(e.pointerId);
+        track.style.transition='none';
+      });
+      viewport.addEventListener('pointermove', e=>{
+        if(!dragging) return;
+        const dx = e.clientX - startX;
+        const pct = dx / viewport.clientWidth * 100;
+        track.style.transform = 'translateX(' + (-index*100 + pct) + '%)';
+      });
+      function endDrag(e){
+        if(!dragging) return;
+        dragging=false;
+        track.style.transition='';
+        const dx = e.clientX - startX;
+        if(Math.abs(dx) > viewport.clientWidth * 0.18){
+          dx < 0 ? next() : prev();
+        } else {
+          goTo(index);
+        }
+      }
+      viewport.addEventListener('pointerup', endDrag);
+      viewport.addEventListener('pointercancel', endDrag);
+      viewport.addEventListener('pointerleave', endDrag);
+
+      function startAutoplay(){
+        if(!autoplay) return;
+        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        stopAutoplay();
+        timer = setInterval(()=> next(), interval);
+      }
+      function stopAutoplay(){
+        if(timer){ clearInterval(timer); timer=null; }
+      }
+      function resetAutoplay(){
+        stopAutoplay();
+        startAutoplay();
+      }
+      if(pauseOnHover){
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+        carousel.addEventListener('focusin', stopAutoplay);
+        carousel.addEventListener('focusout', startAutoplay);
+      }
+
+      setActive();
+      startAutoplay();
     })();
   </script>
 </body>
