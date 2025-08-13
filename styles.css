@@ -27,7 +27,7 @@
   --font-display:'Montserrat','Inter',system-ui,sans-serif;
 
   --font-base:16px;
-  --font-display-1:clamp(2rem,4.2vw,2.1875rem);
+  --font-display-1:clamp(2rem,4.2vw,2.1875rem); /* global default */
   --font-title:clamp(1.75rem,3vw,2.1rem);
   --font-subtitle:clamp(1.15rem,2vw,1.4rem);
   --font-body:1rem;
@@ -117,7 +117,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
    HEADER / NAV
    ========================================================================== */
 .site-header {
-  background:#fbbf24;
+  background:#fff;
   border-bottom:1px solid var(--color-border);
   position:sticky;
   top:0;
@@ -125,15 +125,24 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   backdrop-filter:saturate(160%) blur(6px);
 }
 .flex-between { display:flex; align-items:center; justify-content:space-between; }
+
 .logo {
-  font-family:var(--font-display);
-  font-weight:600;
-  font-size:2.0rem;
-  color:#020101;
-  letter-spacing:.01em;
+  display:inline-flex;
+  align-items:center;
   padding:var(--space-4) 0;
   text-decoration:none;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.05rem;
+  letter-spacing:.01em;
+  color:var(--color-primary);
 }
+.logo img {
+  height:40px; /* Adjust 34–48px as desired */
+  width:auto;
+  display:block;
+}
+
 .main-nav ul {
   list-style:none;
   display:flex;
@@ -181,6 +190,8 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:var(--lh-hero);
   margin-bottom:var(--space-4);
   font-weight:700;
+  font-size:clamp(2.5rem,6vw,3.5rem); /* Larger hero heading */
+  letter-spacing:-.015em;
 }
 .hero-cta {
   display:flex;
@@ -210,11 +221,8 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   border-radius:50%;
   background:var(--color-accent);
 }
-
-/* Hero points: check variant */
-.hero-points.checks li {
-  padding-left:1.2rem;
-}
+/* Checkmark variant */
+.hero-points.checks li { padding-left:1.2rem; }
 .hero-points.checks li:before {
   content:"✔";
   background:none;
@@ -227,7 +235,6 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:1;
   transform:translateY(2px);
 }
-
 .hero-visual img {
   max-width:520px;
   margin:0 auto;
