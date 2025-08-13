@@ -1,149 +1,293 @@
 /**
- * Base JS (v37 baseline extracted)
- * From index (2).html inline script.
- * Functionality:
- *  - Dynamic year
- *  - Mobile nav toggle
- *  - Theme (light/dark) replica toggle with persistence + prefers-color-scheme fallback
- *  - Simple testimonial slider (dots + prev/next)
- *
- * This file is designed as a clean foundation for future enhancements.
- * All features are modularized so you can remove or extend easily.
- *
- * Usage:
- *  1. Remove the inline <script> block from your HTML.
- *  2. Add: <script src="scripts.js" defer></script> before </body>.
+ * scripts.js v40
+ * (Base: navigation, theme toggle, testimonial slider)
+ * Added: Dynamic pricing loader (annual vs monthly), add-ons rendering, popular plan animation control.
  */
 
-/* -------------------------------
- * Boot
- * ----------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
   initYear();
   initNavToggle();
   initThemeToggle();
   initTestimonialSlider();
+  initDynamicPricing(); // NEW
 });
 
-/* -------------------------------
- * Dynamic Year
- * ----------------------------- */
-function initYear() {
-  const yearEl = document.getElementById('year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+/* Year */
+function initYear(){
+  const el = document.getElementById('year');
+  if(el) el.textContent = new Date().getFullYear();
 }
 
-/* -------------------------------
- * Mobile Navigation Toggle
- * ----------------------------- */
-function initNavToggle() {
+/* Mobile nav */
+function initNavToggle(){
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.getElementById('nav-list');
-  if (!navToggle || !navList) return;
-
+  if(!navToggle || !navList) return;
   navToggle.addEventListener('click', () => {
     const open = navList.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.setAttribute('aria-expanded', open ? 'true':'false');
   });
-
-  // Optional: close menu after clicking a link (uncomment if desired)
-  // navList.querySelectorAll('a').forEach(link =>
-  //   link.addEventListener('click', () => {
-  //     if (navList.classList.contains('open')) {
-  //       navList.classList.remove('open');
-  //       navToggle.setAttribute('aria-expanded', 'false');
-  //     }
-  //   })
-  // );
 }
 
-/* -------------------------------
- * Theme Toggle (Replica Sun/Moon)
- * ----------------------------- */
-function initThemeToggle() {
+/* Theme toggle */
+function initThemeToggle(){
   const root = document.documentElement;
-  const toggleBtn = document.getElementById('themeToggle');
-  if (!toggleBtn) return;
-
+  const btn = document.getElementById('themeToggle');
+  if(!btn) return;
   const stored = localStorage.getItem('theme');
-  if (stored) {
-    root.setAttribute('data-theme', stored);
-    syncToggle(stored);
-  } else {
+  if(stored){ root.setAttribute('data-theme', stored); sync(stored); }
+  else {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const mode = prefersDark ? 'dark' : 'light';
+    const mode = prefersDark ? 'dark':'light';
     root.setAttribute('data-theme', mode);
-    syncToggle(mode);
+    sync(mode);
   }
-
-  toggleBtn.addEventListener('click', () => {
+  btn.addEventListener('click', () => {
     const current = root.getAttribute('data-theme') || 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
+    const next = current === 'dark' ? 'light':'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-    syncToggle(next);
+    sync(next);
   });
-
-  function syncToggle(mode) {
+  function sync(mode){
     const dark = mode === 'dark';
-    toggleBtn.setAttribute('aria-pressed', dark ? 'true' : 'false');
-    toggleBtn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
+    btn.setAttribute('aria-pressed', dark ? 'true':'false');
+    btn.setAttribute('aria-label', dark ? 'Activate light mode':'Activate dark mode');
   }
 }
 
-/* -------------------------------
- * Testimonial Slider
- * ----------------------------- */
-function initTestimonialSlider() {
+/* Testimonial slider */
+function initTestimonialSlider(){
   const slider = document.querySelector('.testimonial-slider');
-  if (!slider) return;
-
+  if(!slider) return;
   const slides = slider.querySelectorAll('.slide');
-  const prevBtn = slider.querySelector('.prev');
-  const nextBtn = slider.querySelector('.next');
+  const prev = slider.querySelector('.prev');
+  const next = slider.querySelector('.next');
   const dotsWrap = slider.querySelector('.slider-dots');
-  if (!slides.length || !dotsWrap) return;
+  if(!slides.length || !dotsWrap) return;
+  let idx = 0;
 
-  let index = 0;
-
-  // Build dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.setAttribute('role', 'tab');
-    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
+  slides.forEach((_,i)=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-selected', i===0?'true':'false');
+    b.addEventListener('click', ()=>go(i));
+    dotsWrap.appendChild(b);
   });
 
-  function goTo(i) {
-    slides[index].classList.remove('active');
-    dotsWrap.children[index].setAttribute('aria-selected', 'false');
-    index = i;
-    slides[index].classList.add('active');
-    dotsWrap.children[index].setAttribute('aria-selected', 'true');
+  function go(i){
+    slides[idx].classList.remove('active');
+    dotsWrap.children[idx].setAttribute('aria-selected','false');
+    idx=i;
+    slides[idx].classList.add('active');
+    dotsWrap.children[idx].setAttribute('aria-selected','true');
   }
-
-  prevBtn?.addEventListener('click', () => {
-    goTo((index - 1 + slides.length) % slides.length);
-  });
-  nextBtn?.addEventListener('click', () => {
-    goTo((index + 1) % slides.length);
-  });
-
-  // Optional: expose API globally for future enhancements
-  window.__testimonialSlider = { goTo, next: () => goTo((index + 1) % slides.length), prev: () => goTo((index - 1 + slides.length) % slides.length) };
+  prev?.addEventListener('click', ()=>go((idx-1+slides.length)%slides.length));
+  next?.addEventListener('click', ()=>go((idx+1)%slides.length));
+  window.__testimonials={go,next:()=>go((idx+1)%slides.length),prev:()=>go((idx-1+slides.length)%slides.length)};
 }
 
-/* -------------------------------
- * (Future Expansion Hooks)
- * ----------------------------- */
-/**
- * You can add new initializers here:
- *  - initAnalytics()
- *  - initFormValidation()
- *  - initIntersectionAnimations()
- * Keep each isolated and then call inside DOMContentLoaded.
- */
+/* =========================
+   Dynamic Pricing
+   ========================= */
+function initDynamicPricing(){
+  const plansMount = document.getElementById('plansMount');
+  const addOnsMount = document.getElementById('addOnsMount');
+  const toggleWrap = document.querySelector('.billing-toggle-wrap');
+  const toggleButtons = document.querySelectorAll('.billing-toggle');
+  const noteEl = document.getElementById('billing-note');
+  if(!plansMount || !toggleWrap) return;
+
+  let config = null;
+  let currentCycle = 'monthly';
+
+  // Attempt to fetch external JSON; fallback to embedded
+  fetch('pricing-config.json', { cache:'no-store' })
+    .then(r => {
+      if(!r.ok) throw new Error('Config fetch failed');
+      return r.json();
+    })
+    .then(json => {
+      config = json;
+      setup();
+    })
+    .catch(() => {
+      try {
+        const fallbackRaw = document.getElementById('pricing-config-fallback')?.textContent || '{}';
+        config = JSON.parse(fallbackRaw);
+      } catch {
+        config = buildEmergencyFallback();
+      }
+      setup();
+    });
+
+  function setup(){
+    currentCycle = config.defaultCycle || 'monthly';
+    toggleWrap.dataset.cycle = currentCycle;
+    updateToggleAria();
+    renderAll();
+    bindToggle();
+  }
+
+  function bindToggle(){
+    toggleButtons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const cycle = btn.dataset.cycle;
+        if(cycle === currentCycle) return;
+        currentCycle = cycle;
+        toggleWrap.dataset.cycle = cycle;
+        updateToggleAria();
+        announceCycle();
+        renderPlans(); // re-render amounts only
+      });
+      // Keyboard support (radio group semantics already via role)
+      btn.addEventListener('keydown', e=>{
+        if(!['ArrowLeft','ArrowRight'].includes(e.key)) return;
+        e.preventDefault();
+        const arr = Array.from(toggleButtons);
+        let idx = arr.indexOf(btn);
+        if(e.key === 'ArrowRight') idx = (idx+1)%arr.length;
+        else idx = (idx-1+arr.length)%arr.length;
+        arr[idx].focus();
+        arr[idx].click();
+      });
+    });
+  }
+
+  function announceCycle(){
+    if(!noteEl) return;
+    const annualInfo = currentCycle === 'annual'
+      ? `Annual billing selected. Equivalent to ${(config.annualMultiplier||10)} months paid for 12 months of service.`
+      : 'Monthly billing selected.';
+    noteEl.textContent = annualInfo;
+  }
+
+  function updateToggleAria(){
+    toggleButtons.forEach(b=>{
+      const active = b.dataset.cycle === currentCycle;
+      b.setAttribute('aria-pressed', active ? 'true':'false');
+      b.setAttribute('aria-checked', active ? 'true':'false');
+    });
+  }
+
+  function computePrice(plan){
+    if(plan.custom) return plan.customLabel || 'Custom';
+    if(currentCycle === 'monthly'){
+      return {
+        amount: plan.monthly,
+        per: '/mo',
+        savings:false
+      };
+    }
+    // annual
+    const mult = config.annualMultiplier || 10;
+    const annualTotal = plan.monthly * mult;
+    return {
+      amount: annualTotal,
+      per: '/yr',
+      savings:true
+    };
+  }
+
+  function formatCurrency(n){
+    const sym = config.currencySymbol || '$';
+    if(typeof n !== 'number') return n;
+    return sym + n.toLocaleString();
+  }
+
+  function renderPlans(){
+    if(!config?.plans?.length){
+      plansMount.innerHTML = '<p class="tiny">No plans configured.</p>';
+      return;
+    }
+    plansMount.setAttribute('aria-busy','true');
+    const frag = document.createDocumentFragment();
+    config.plans.forEach(plan=>{
+      const { amount, per, savings } = computePrice(plan);
+      const card = document.createElement('article');
+      card.className = 'plan-card' + (plan.popular ? ' popular' : '');
+      card.setAttribute('data-plan', plan.id);
+      card.innerHTML = `
+        ${ plan.badge && plan.popular ? `<div class="plan-badge">${escapeHTML(plan.badge)}</div>`:''}
+        <div class="plan-head">
+          <h3>${escapeHTML(plan.name)}</h3>
+          <p class="plan-price-line">
+            <span class="amt">${escapeHTML(formatCurrency(amount))}</span>
+            <span class="per">${escapeHTML(per)}</span>
+            ${ plan.custom ? '' : (currentCycle==='annual' && savings ? '<span class="savings">Save 2 Months</span>' : '')}
+            ${ plan.custom ? '' : (currentCycle==='annual' && config.annualLabelAddon ? `<span class="savings alt">${escapeHTML(config.annualLabelAddon)}</span>`:'')}
+          </p>
+        </div>
+        <ul class="plan-features">
+          ${ (plan.features||[]).map(f=>`<li>${escapeHTML(f)}</li>`).join('') }
+        </ul>
+        <div class="plan-cta">
+          <a href="${escapeAttr(plan.ctaHref||'#contact')}" class="btn ${plan.ctaVariant==='ghost'?'ghost':'primary'} small full">${escapeHTML(plan.ctaLabel||'Select')}</a>
+        </div>
+      `;
+      frag.appendChild(card);
+    });
+    plansMount.innerHTML = '';
+    plansMount.appendChild(frag);
+    plansMount.setAttribute('aria-busy','false');
+  }
+
+  function renderAddOns(){
+    if(!addOnsMount) return;
+    addOnsMount.setAttribute('aria-busy','true');
+    if(!config?.addOns?.length){
+      addOnsMount.innerHTML = '<p class="tiny center muted">No add‑ons listed.</p>';
+      addOnsMount.setAttribute('aria-busy','false');
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    config.addOns.forEach(a=>{
+      const card = document.createElement('div');
+      card.className='addon-card';
+      card.innerHTML = `
+        <div class="addon-head">
+          <h4 class="addon-name">${escapeHTML(a.name)}</h4>
+          <span class="addon-price">${escapeHTML(a.pricing||'Quoted')}</span>
+        </div>
+        <p class="addon-desc">${escapeHTML(a.description||'')}</p>
+      `;
+      frag.appendChild(card);
+    });
+    addOnsMount.innerHTML='';
+    addOnsMount.appendChild(frag);
+    addOnsMount.setAttribute('aria-busy','false');
+  }
+
+  function renderAll(){
+    renderPlans();
+    renderAddOns();
+    announceCycle();
+  }
+
+  function buildEmergencyFallback(){
+    return {
+      currencySymbol:'$',
+      annualMultiplier:10,
+      defaultCycle:'monthly',
+      plans:[{id:'fallback',name:'Fallback',monthly:500,features:['Feature A','Feature B'],ctaLabel:'Contact',ctaHref:'#contact'}],
+      addOns:[]
+    };
+  }
+
+  function escapeHTML(str){
+    return (str||'').replace(/[&<>"']/g, c=>(
+      { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]
+    ));
+  }
+  function escapeAttr(str){ return escapeHTML(str); }
+
+  // Expose for debugging
+  window.__pricing = {
+    getConfig:()=>config,
+    setCycle:(c)=>{ if(['monthly','annual'].includes(c)){ currentCycle=c; toggleWrap.dataset.cycle=c; updateToggleAria(); renderPlans(); announceCycle(); }},
+    rerender:renderAll
+  };
+}
+
+/* End scripts.js v40 */
