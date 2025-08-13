@@ -144,8 +144,7 @@
         <h2 class="center">Pricing</h2>
         <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in. Switch billing cycle below.</p>
 
-        <!-- Billing Cycle Toggle -->
-        <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle">
+        <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle" data-cycle="monthly">
           <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
           <button class="billing-toggle" data-cycle="annual" aria-pressed="false" role="radio" aria-checked="false">
             Annual <span class="save-pill" aria-hidden="true">Save 2 Months</span>
@@ -154,13 +153,11 @@
         </div>
         <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
 
-        <!-- Plans container (populated by JS) -->
         <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
           <div class="loading-spinner" aria-hidden="true"></div>
           <p class="tiny loading-text">Loading plans…</p>
         </div>
 
-        <!-- Add-Ons -->
         <div id="addOnsSection" class="addons-section">
           <h3 class="addons-heading center">Add‑Ons (Optional)</h3>
           <div id="addOnsMount" class="addons-grid" aria-live="polite" aria-busy="true">
@@ -173,7 +170,7 @@
         </p>
       </div>
 
-      <!-- Embedded fallback config (used only if pricing-config.json not found) -->
+      <!-- Fallback JSON (if external file fails) -->
       <script id="pricing-config-fallback" type="application/json">
       {
         "currencySymbol":"$",
@@ -210,7 +207,7 @@
             "ctaLabel":"Choose Growth",
             "ctaHref":"#contact"
           },
-            {
+          {
             "id":"scale",
             "name":"Scale",
             "popular":false,
@@ -228,30 +225,10 @@
           }
         ],
         "addOns":[
-          {
-            "id":"cleanup",
-            "name":"Historical Cleanup",
-            "pricing":"Quoted",
-            "description":"One-time project to correct legacy bookkeeping issues."
-          },
-          {
-            "id":"backmonths",
-            "name":"Catch-Up Back Months",
-            "pricing":"$ Scoped",
-            "description":"Bring prior months current ahead of monthly cadence."
-          },
-          {
-            "id":"payroll",
-            "name":"Payroll Support",
-            "pricing":"+ $ Monthly",
-            "description":"Light payroll journal guidance & reconciliation."
-          },
-          {
-            "id":"kpi-custom",
-            "name":"Custom KPI Build",
-            "pricing":"One-Time",
-            "description":"Design & integrate specialized performance metrics."
-          }
+          { "id":"cleanup", "name":"Historical Cleanup", "pricing":"Quoted", "description":"One-time project to correct legacy bookkeeping issues." },
+          { "id":"backmonths", "name":"Catch-Up Back Months", "pricing":"$ Scoped", "description":"Bring prior months current ahead of monthly cadence." },
+          { "id":"payroll", "name":"Payroll Support", "pricing":"+ $ Monthly", "description":"Light payroll journal guidance & reconciliation." },
+          { "id":"kpi-custom", "name":"Custom KPI Build", "pricing":"One-Time", "description":"Design & integrate specialized performance metrics." }
         ]
       }
       </script>
@@ -307,7 +284,7 @@
             <button class="prev" aria-label="Previous testimonial">&larr;</button>
             <button class="next" aria-label="Next testimonial">&rarr;</button>
           </div>
-          <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
+            <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
         </div>
       </div>
     </section>
