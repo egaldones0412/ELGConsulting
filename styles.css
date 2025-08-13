@@ -293,7 +293,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 }
 .logo-strip.platforms img {
   display:block;
-  height:26px; /* Adjust 24–30px if needed */
+  height:24px; /* Adjust 24–30px if needed */
   width:auto;
   filter:brightness(0) invert(1) contrast(110%);
   opacity:.85;
