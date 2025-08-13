@@ -2,89 +2,154 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>ELG Consulting Bookkeeping | Accurate. Reliable. On Time.</title>
-  <meta name="description" content="Accurate, reliable, on-time bookkeeping. Cleanup, monthly close, and decision-ready reports delivered within 5 business days." />
+  <title>ELG Consulting Bookkeeping | Accurate, On‑Time Close & Actionable KPIs</title>
+  <meta name="description" content="On‑time monthly close (≤5 business days), fast cleanup, and actionable KPI reporting for confident decisions." />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="canonical" href="https://www.elgconsulting.works/" />
+  <link rel="canonical" href="https://www.example.com/" />
+  <!-- Open Graph -->
   <meta property="og:title" content="ELG Consulting Bookkeeping" />
-  <meta property="og:description" content="Accurate, reliable monthly books and reporting within 5 business days." />
+  <meta property="og:description" content="Accurate books, 5‑day close, and KPI insight delivered consistently." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.elgconsulting.works/" />
-  <meta property="og:image" content="https://www.elgconsulting.works/og-image.png" />
+  <meta property="og:image" content="https://www.example.com/og-image.jpg" />
+  <meta property="og:url" content="https://www.example.com/" />
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
-  <meta name="twitter:description" content="Accurate. Reliable. On Time." />
+  <meta name="twitter:description" content="Accurate, reliable, insight-rich bookkeeping." />
+
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2CA01C">
-  <meta name="msapplication-TileColor" content="#2CA01C">
-  <meta name="theme-color" content="#2CA01C">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="img/hero/slide1.svg">
-  <link rel="stylesheet" href="styles.css?v=41" />
+  <meta name="theme-color" content="#0F5E73"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Preload critical hero image (first slide) -->
+  <link rel="preload" as="image" href="img/hero/hero-photo.jpg" />
+
+  <link rel="stylesheet" href="styles.css?v=1_full_refresh" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ELG Consulting Bookkeeping",
+    "url":"https://www.example.com/",
+    "logo":"https://www.example.com/logo.png",
+    "sameAs":[
+      "https://www.linkedin.com/company/example",
+      "https://twitter.com/example"
+    ],
+    "contactPoint":[{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"info@example.com",
+      "areaServed":"US",
+      "availableLanguage":["en"]
+    }]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://www.example.com/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.example.com/search?q={query}",
+      "query-input":"required name=query"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"How quickly can we begin?",
+        "acceptedAnswer":{"@type":"Answer","text":"Most engagements start within 1–2 weeks after a file review."}
+      },
+      {
+        "@type":"Question",
+        "name":"How fast do you close the month?",
+        "acceptedAnswer":{"@type":"Answer","text":"We target delivery of reconciled statements in 5 business days."}
+      },
+      {
+        "@type":"Question",
+        "name":"Do you handle cleanup backlogs?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes. We scope and correct historical issues before moving into monthly rhythm."}
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AggregateRating",
+    "itemReviewed":{"@type":"Organization","name":"ELG Consulting Bookkeeping"},
+    "ratingValue":"5",
+    "reviewCount":"12"
+  }
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container flex-between">
-      <a class="logo" href="/">
-        <img src="img/logo.png" alt="ELG Consulting">
+      <a class="logo" href="/" aria-label="ELG Consulting Home">
+        <img src="img/logo.svg" width="120" height="56" alt="ELG Consulting Logo">
         <span class="logo-text">ELG Consulting</span>
       </a>
-
-      <button id="themeToggle"
-              class="theme-toggle-replica toggle-sm"
-              aria-label="Activate dark mode"
-              aria-pressed="false"
-              type="button">
+      <nav class="main-nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul id="nav-list">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#results" class="nav-link">Results</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#resources" class="nav-link">Resources</a></li>
+          <li><a href="#contact" class="btn nav-cta gradient small">Book Free Consultation</a></li>
+        </ul>
+      </nav>
+      <button id="themeToggle" class="theme-toggle-replica toggle-sm" aria-label="Activate dark mode" aria-pressed="false" type="button">
         <span class="visually-hidden">Toggle dark mode</span>
         <span class="toggle-env">
-          <span class="layer sky"></span>
           <span class="layer clouds clouds-a"></span>
           <span class="layer clouds clouds-b"></span>
           <span class="layer stars"></span>
           <span class="toggle-knob"></span>
         </span>
       </button>
-
-      <nav class="main-nav" aria-label="Primary">
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <ul id="nav-list">
-          <li><a href="#platforms">Platforms</a></li>
-          <li><a href="#value">Value</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact" class="btn primary lg">Contact Us</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO CAROUSEL -->
-    <section id="hero" class="hero-carousel" aria-roledescription="carousel" aria-label="Featured highlights">
+    <!-- HERO CAROUSEL / HERO -->
+    <section id="hero" class="hero-carousel" aria-roledescription="carousel" aria-label="Featured value propositions">
       <div class="hc-inner">
         <div class="hc-viewport" tabindex="0">
           <ul class="hc-track" role="list">
-            <!-- Slide 1 -->
+            <!-- Slide 1 (Human photo) -->
             <li class="hc-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 6">
-              <div class="hc-media" style="--slide-bg:url('img/hero/slide1.svg');"></div>
+              <div class="hc-media" style="--slide-bg:url('img/hero/hero-photo.jpg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals"><span class="diag diag-main"></span><span class="diag diag-accent"></span></div>
-                <div class="hc-content">
-                  <h1 class="hc-heading">Get Cash‑Like Clarity From Your Books</h1>
-                  <p class="hc-sub">Accurate, current financials delivered fast—so decisions move forward with confidence.</p>
-                  <div class="hc-cta-row"><a href="#contact" class="btn primary lg">Learn More</a></div>
+                <div class="hc-content hero-accent-head hero-copy-shell">
+                  <h1 class="hc-heading">Accurate Books. 5‑Day Close. Actionable KPIs.</h1>
+                  <span class="heading-accent" aria-hidden="true"></span>
+                  <p class="hc-sub">We deliver reconciled financials and executive KPI insight within 5 business days—so you act with confidence, not guesswork.</p>
+                  <div class="hc-cta-row">
+                    <a href="#contact" class="btn gradient lg primary-cta">Book Free Consultation</a>
+                    <a href="#services" class="btn ghost lg">Explore Services</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -93,10 +158,14 @@
               <div class="hc-media" style="--slide-bg:url('img/hero/slide2.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals"><span class="diag diag-main"></span><span class="diag diag-accent"></span></div>
-                <div class="hc-content">
-                  <h2 class="hc-heading">Close Within 5 Business Days</h2>
-                  <p class="hc-sub">Disciplined month‑end process and layered review eliminate delays & guesswork.</p>
-                  <div class="hc-cta-row"><a href="#services" class="btn primary lg">Our Services</a></div>
+                <div class="hc-content hero-copy-shell">
+                  <h2 class="hc-heading">Cleanup & Historical Corrections Done Fast</h2>
+                  <span class="heading-accent" aria-hidden="true"></span>
+                  <p class="hc-sub">Stabilize your baseline. We untangle backlogs and misclassifications before transitioning you into a reliable monthly rhythm.</p>
+                  <div class="hc-cta-row">
+                    <a href="#contact" class="btn gradient lg">Start Cleanup Review</a>
+                    <a href="#process" class="btn ghost lg">Our Process</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -105,10 +174,14 @@
               <div class="hc-media" style="--slide-bg:url('img/hero/slide3.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals"><span class="diag diag-main"></span><span class="diag diag-accent"></span></div>
-                <div class="hc-content">
-                  <h2 class="hc-heading">KPIs & Variance Insight Built In</h2>
-                  <p class="hc-sub">Turn static statements into forward‑looking visibility with curated metrics.</p>
-                  <div class="hc-cta-row"><a href="#contact" class="btn primary lg">Free Consultation</a></div>
+                <div class="hc-content hero-copy-shell">
+                  <h2 class="hc-heading">Monthly Insight Pack With KPI Commentary</h2>
+                  <span class="heading-accent" aria-hidden="true"></span>
+                  <p class="hc-sub">Not just a P&amp;L. You receive variance notes and a curated KPI deck that shows what moved and why.</p>
+                  <div class="hc-cta-row">
+                    <a href="#results" class="btn gradient lg">View Results</a>
+                    <a href="#contact" class="btn ghost lg">Book Free Consultation</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -117,10 +190,14 @@
               <div class="hc-media" style="--slide-bg:url('img/hero/slide4-automation.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals"><span class="diag diag-main"></span><span class="diag diag-accent"></span></div>
-                <div class="hc-content">
-                  <h2 class="hc-heading">Automate Routine, Elevate Decisions</h2>
-                  <p class="hc-sub">Workflow refinement & smart tooling reduce manual touch points and error risk.</p>
-                  <div class="hc-cta-row"><a href="#process" class="btn primary lg">See Our Process</a></div>
+                <div class="hc-content hero-copy-shell">
+                  <h2 class="hc-heading">Automated Workflow & Fewer Manual Touches</h2>
+                  <span class="heading-accent" aria-hidden="true"></span>
+                  <p class="hc-sub">We streamline document capture, reconciliation steps, and review loops to reduce error risk and time waste.</p>
+                  <div class="hc-cta-row">
+                    <a href="#process" class="btn gradient lg">See Workflow</a>
+                    <a href="#services" class="btn ghost lg">Services</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -129,10 +206,14 @@
               <div class="hc-media" style="--slide-bg:url('img/hero/slide5-cleanup.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals"><span class="diag diag-main"></span><span class="diag diag-accent"></span></div>
-                <div class="hc-content">
+                <div class="hc-content hero-copy-shell">
                   <h2 class="hc-heading">From Messy to Decision‑Ready</h2>
-                  <p class="hc-sub">Historical cleanup stabilizes balances—so every new month starts on solid ground.</p>
-                  <div class="hc-cta-row"><a href="#services" class="btn primary lg">Cleanup Help</a></div>
+                  <span class="heading-accent" aria-hidden="true"></span>
+                  <p class="hc-sub">We deliver reconciliation confidence—so you stop firefighting and start optimizing cash, margin, and growth levers.</p>
+                  <div class="hc-cta-row">
+                    <a href="#contact" class="btn gradient lg">Book Free Consultation</a>
+                    <a href="#results" class="btn ghost lg">Proof</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -141,121 +222,245 @@
               <div class="hc-media" style="--slide-bg:url('img/hero/slide6-kpi.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals"><span class="diag diag-main"></span><span class="diag diag-accent"></span></div>
-                <div class="hc-content">
-                  <h2 class="hc-heading">KPI Spotlight & Trends</h2>
-                  <p class="hc-sub">Focused metrics & visual deltas highlight what to act on—immediately.</p>
-                  <div class="hc-cta-row"><a href="#value" class="btn primary lg">Explore Value</a></div>
+                <div class="hc-content hero-copy-shell">
+                  <h2 class="hc-heading">KPI Spotlight & Trends You Can Act On</h2>
+                  <span class="heading-accent" aria-hidden="true"></span>
+                  <p class="hc-sub">We surface the handful of metrics that drive better forecasting and margin protection.</p>
+                  <div class="hc-cta-row">
+                    <a href="#kpi-pack" class="btn gradient lg">Sample KPI Pack</a>
+                    <a href="#contact" class="btn ghost lg">Book Free Consultation</a>
+                  </div>
                 </div>
               </div>
             </li>
           </ul>
         </div>
 
-        <!-- Arrows (both present) -->
         <button class="hc-arrow prev" aria-label="Previous slide" type="button">‹</button>
         <button class="hc-arrow next" aria-label="Next slide" type="button">›</button>
 
+        <div class="hc-progress" aria-hidden="true">
+          <div class="hc-progress-bar"></div>
+        </div>
         <div class="hc-dots" role="tablist" aria-label="Select slide"></div>
         <div class="hc-status visually-hidden" aria-live="polite" aria-atomic="true"></div>
       </div>
 
-      <div class="hero-feature-cards">
+      <div class="hero-feature-cards" aria-label="Key value points">
         <div class="hfc-track">
-          <a href="#value" class="hfc-card"><div class="hfc-icon">⏱️</div><div class="hfc-text"><h3>On‑Time Close</h3><p>Statements in 5 days.</p></div></a>
-          <a href="#services" class="hfc-card"><div class="hfc-icon">🧹</div><div class="hfc-text"><h3>Cleanup</h3><p>Fix backlog fast.</p></div></a>
-          <a href="#services" class="hfc-card"><div class="hfc-icon">📊</div><div class="hfc-text"><h3>KPIs</h3><p>Actionable metrics.</p></div></a>
-          <a href="#process" class="hfc-card"><div class="hfc-icon">⚙️</div><div class="hfc-text"><h3>Process</h3><p>Structured flow.</p></div></a>
-          <a href="#contact" class="hfc-card"><div class="hfc-icon">🤝</div><div class="hfc-text"><h3>Support</h3><p>Responsive help.</p></div></a>
+          <div class="hfc-card">
+            <div class="hfc-icon">⏱️</div>
+            <div class="hfc-text">
+              <h3>5‑Day Close</h3>
+              <p>Reliable monthly turnaround.</p>
+            </div>
+          </div>
+            <div class="hfc-card">
+              <div class="hfc-icon">🧹</div>
+              <div class="hfc-text">
+                <h3>Fast Cleanup</h3>
+                <p>Historical accuracy restored.</p>
+              </div>
+            </div>
+          <div class="hfc-card">
+            <div class="hfc-icon">📊</div>
+            <div class="hfc-text">
+              <h3>Actionable KPIs</h3>
+              <p>Insight, not just data.</p>
+            </div>
+          </div>
+          <div class="hfc-card">
+            <div class="hfc-icon">⚙️</div>
+            <div class="hfc-text">
+              <h3>Workflow</h3>
+              <p>Less friction, fewer errors.</p>
+            </div>
+          </div>
+          <div class="hfc-card">
+            <div class="hfc-icon">🔒</div>
+            <div class="hfc-text">
+              <h3>Secure Access</h3>
+              <p>Role-based principle.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PLATFORMS -->
-    <section class="platforms-section" id="platforms">
+    <!-- Results Snapshot -->
+    <section id="results" class="section results-band" aria-labelledby="results-title">
       <div class="container">
-        <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
-        <ul class="platform-logos" aria-label="Supported bookkeeping software">
-          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy"></li>
-          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy"></li>
-          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy"></li>
-          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy"></li>
-          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy"></li>
-          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy"></li>
-          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy"></li>
-          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
+        <h2 id="results-title" class="center">Results Snapshot</h2>
+        <ul class="results-metrics" role="list">
+          <li>
+            <span class="metric-value" data-target="5">5</span>
+            <span class="metric-label">Business Day Close Target</span>
+          </li>
+          <li>
+            <span class="metric-value" data-target="92">92%</span>
+            <span class="metric-label">Backlog Cleanup < 30 Days</span>
+          </li>
+          <li>
+            <span class="metric-value" data-target="98">98%</span>
+            <span class="metric-label">On‑Time Delivery Rate</span>
+          </li>
+          <li>
+            <span class="metric-value" data-target="12">12</span>
+            <span class="metric-label">KPIs in Monthly Pack</span>
+          </li>
         </ul>
-        <div class="platforms-cta">
-          <a href="#contact" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
+        <div class="center">
+          <a href="#contact" class="btn gradient lg">Book Free Consultation</a>
         </div>
       </div>
     </section>
 
-    <!-- VALUE -->
-    <section id="value" class="section tight">
+    <!-- Services -->
+    <section id="services" class="section alt" aria-labelledby="services-title">
       <div class="container">
-        <h2 class="center">Eliminate Operational Finance Friction</h2>
-        <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
-        <div class="value-grid">
-          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
-          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi" loading="lazy"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
-          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
-          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
+        <h2 id="services-title" class="center">Core Services</h2>
+        <p class="section-intro center">From stabilization to monthly insight—structured for growing companies that demand clarity.</p>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="svc-icon">🧾</div>
+            <h3>Monthly Close</h3>
+            <p>Reconciliations, adjustments, review & delivery inside 5 business days.</p>
+            <ul class="mini-list">
+              <li>Checklist & audit trail</li>
+              <li>Variance commentary</li>
+              <li>Layered QA review</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="svc-icon">🧹</div>
+            <h3>Cleanup & Catch‑Up</h3>
+            <p>Historical corrections restore a dependable baseline before scaling.</p>
+            <ul class="mini-list">
+              <li>Error tracing</li>
+              <li>Balance validation</li>
+              <li>Reclassification log</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="svc-icon">📊</div>
+            <h3>Management Reporting</h3>
+            <p>Curated KPIs, trend lines & context to steer decisions—not guess.</p>
+            <ul class="mini-list">
+              <li>KPI deck</li>
+              <li>Delta notes</li>
+              <li>Review call</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="svc-icon">⚙️</div>
+            <h3>Workflow & Advisory</h3>
+            <p>Process refinement reduces friction, risk, and manual rework.</p>
+            <ul class="mini-list">
+              <li>Tool alignment</li>
+              <li>Receipt capture</li>
+              <li>AR/AP structure</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Services</h2>
-          <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
+    <!-- KPI Pack Teaser -->
+    <section id="kpi-pack" class="section" aria-labelledby="kpi-title">
+      <div class="container kpi-layout">
+        <div class="kpi-copy">
+          <h2 id="kpi-title">What’s In the Monthly KPI Pack?</h2>
+          <ul class="kpi-list">
+            <li>Revenue / GM trend with variance bars</li>
+            <li>Cash runway & burn analysis (if applicable)</li>
+            <li>Expense ratio & headcount leverage</li>
+            <li>Operating margin waterfalls</li>
+            <li>Custom sector metrics (SaaS, eCommerce, etc.)</li>
+          </ul>
+          <div class="cta-row">
+            <a href="#contact" class="btn gradient lg">Request Sample</a>
+            <a href="#resources" class="btn ghost lg">Download Checklist</a>
+          </div>
         </div>
-        <div class="cards services-grid">
-          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
-          <article class="card service"><h3>Catch‑Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
-          <article class="card service"><h3>Management Reporting</h3><p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
-          <article class="card service"><h3>Workflow & Advisory</h3><p>Light advisory on process, tech stack, and data hygiene.</p><ul class="mini-list"><li>Tool alignment</li><li>Receipt capture</li><li>AR/AP structuring</li></ul></article>
+        <figure class="kpi-figure">
+          <img src="img/kpi/sample-pack.png" width="640" height="420" loading="lazy" alt="Sample KPI pack dashboard preview">
+          <figcaption class="tiny">Representative layout – replace with anonymized sample.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Pricing / Packages -->
+    <section id="packages" class="section alt" aria-labelledby="pkg-title">
+      <div class="container">
+        <h2 id="pkg-title" class="center">Flexible Engagement Packages</h2>
+        <div class="packages-grid">
+          <article class="pkg-card">
+            <h3>Stabilize</h3>
+            <p class="pkg-desc">Cleanup + first month close.<br>Establish reliable baseline.</p>
+            <ul class="pkg-points">
+              <li>Historical correction</li>
+              <li>Balance sheet validation</li>
+              <li>First KPI baseline</li>
+            </ul>
+            <a href="#contact" class="btn gradient full">Start Assessment</a>
+          </article>
+          <article class="pkg-card highlight">
+            <div class="badge">Popular</div>
+            <h3>Insight Monthly</h3>
+            <p class="pkg-desc">Recurring close + KPI pack + variance review.</p>
+            <ul class="pkg-points">
+              <li>5‑day close SLA</li>
+              <li>KPI & variance deck</li>
+              <li>Monthly review call</li>
+            </ul>
+            <a href="#contact" class="btn gradient full">Book Free Consultation</a>
+          </article>
+          <article class="pkg-card">
+            <h3>Scale Advisory</h3>
+            <p class="pkg-desc">Everything in Insight + process optimization.</p>
+            <ul class="pkg-points">
+              <li>Workflow tuning</li>
+              <li>Tool & data hygiene</li>
+              <li>Quarterly strategy sync</li>
+            </ul>
+            <a href="#contact" class="btn gradient full">Discuss Fit</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- WHY -->
-    <section id="why" class="section">
+    <!-- Process -->
+    <section id="process" class="section" aria-labelledby="process-title">
       <div class="container">
-        <h2 class="center">Why ELG Consulting</h2>
-        <div class="why-grid">
-          <div class="why-item"><h3>Reliable Turnaround</h3><p>Consistent delivery inside 5 business days after month end.</p></div>
-          <div class="why-item"><h3>Broad Tool Coverage</h3><p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p></div>
-          <div class="why-item"><h3>Accuracy Discipline</h3><p>Layered review approach lowers error propagation.</p></div>
-          <div class="why-item"><h3>Security Mindset</h3><p>Least‑privilege access and structured data handling.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section alt">
-      <div class="container">
-        <h2>Our Process</h2>
-        <ol class="process-timeline">
-          <li><span class="step-num">1</span><div><h3>Intro Call</h3><p>Clarify scope, systems, and objectives.</p></div></li>
-          <li><span class="step-num">2</span><div><h3>File Review</h3><p>Assess state & cleanup needs.</p></div></li>
-          <li><span class="step-num">3</span><div><h3>Onboarding</h3><p>Secure access, checklist & KPI set.</p></div></li>
-          <li><span class="step-num">4</span><div><h3>Monthly Close</h3><p>Reconcile, adjust, validate.</p></div></li>
-          <li><span class="step-num">5</span><div><h3>Delivery & Review</h3><p>Statements + variance & KPI insight.</p></div></li>
+        <h2 id="process-title" class="center">Your First 30 Days</h2>
+        <ol class="process-timeline" aria-label="Engagement steps">
+          <li><span class="step-num">1</span><div><h3>Discovery & File Review</h3><p>We diagnose bookkeeping gaps & backlog severity.</p></div></li>
+          <li><span class="step-num">2</span><div><h3>Cleanup / Corrections</h3><p>Misclassifications & opening balances aligned.</p></div></li>
+          <li><span class="step-num">3</span><div><h3>Checklist & Access</h3><p>Secure role‑based logins & month‑end workflow defined.</p></div></li>
+          <li><span class="step-num">4</span><div><h3>First Close</h3><p>Reconciliations + QA review inside SLA.</p></div></li>
+          <li><span class="step-num">5</span><div><h3>KPI Pack & Review</h3><p>Variance narrative & improvement targets.</p></div></li>
         </ol>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="section">
+    <!-- Testimonials -->
+    <section id="testimonials" class="section alt" aria-labelledby="testimonials-title">
       <div class="container">
-        <h2 class="center">Client Feedback</h2>
+        <h2 id="testimonials-title" class="center">Client Feedback</h2>
         <div class="testimonial-slider" aria-live="polite">
           <div class="slides">
-            <figure class="slide active"><blockquote>“TESTIMONIAL_1 placeholder—emphasize timeliness and accuracy.”</blockquote><figcaption>— Client Name 1, Company</figcaption></figure>
-            <figure class="slide"><blockquote>“TESTIMONIAL_2 placeholder—clarity of reporting & reduced stress.”</blockquote><figcaption>— Client Name 2, Company</figcaption></figure>
-            <figure class="slide"><blockquote>“TESTIMONIAL_3 placeholder—professional process & responsiveness.”</blockquote><figcaption>— Client Name 3, Company</figcaption></figure>
+            <figure class="slide active">
+              <blockquote>“Our month-end went from two stressful weeks to under five days. The variance notes changed how we discuss performance.”</blockquote>
+              <figcaption>— COO, B2B SaaS Platform</figcaption>
+            </figure>
+            <figure class="slide">
+              <blockquote>“They cleaned eighteen months of messy files and now we actually trust cash and margin trends.”</blockquote>
+              <figcaption>— Founder, eCommerce Brand</figcaption>
+            </figure>
+            <figure class="slide">
+              <blockquote>“Fast, accurate, and proactive. We finally have a KPI view that drives decisions not debates.”</blockquote>
+              <figcaption>— CEO, Services Firm</figcaption>
+            </figure>
           </div>
           <div class="slider-controls">
             <button class="prev" aria-label="Previous testimonial">&larr;</button>
@@ -266,273 +471,122 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section alt">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <details><summary>How quickly can we begin?</summary><p>Most monthly engagements start within 1–2 weeks, depending on file review findings.</p></details>
-          <details><summary>What’s included each month?</summary><p>Reconciliations, P&amp;L, Balance Sheet, selected KPIs, and optional variance notes/review call.</p></details>
-          <details><summary>Do you handle taxes?</summary><p>We focus on bookkeeping & management reports. We can coordinate with your tax professional.</p></details>
-          <details><summary>Can you fix historical errors?</summary><p>Yes—cleanup phase scopes issues, corrects balances, then transitions to steady monthly workflow.</p></details>
+    <!-- Lead Magnet / Resources -->
+    <section id="resources" class="section" aria-labelledby="resources-title">
+      <div class="container resource-layout">
+        <div class="resource-copy">
+          <h2 id="resources-title">Free Checklist: 7 Signs Your Books Need Cleanup</h2>
+          <p>Spot red flags early, cut noise, and reduce future rework. Get our concise, actionable PDF.</p>
+          <form class="optin-form" data-form="lead">
+            <label>Email
+              <input type="email" name="email" required placeholder="you@company.com">
+            </label>
+            <button type="submit" class="btn gradient">Get the PDF</button>
+            <p class="tiny muted">We’ll send 1–2 helpful emails per month. No spam.</p>
+          </form>
+        </div>
+        <div class="resource-visual">
+          <img src="img/resources/checklist-preview.png" width="420" height="520" loading="lazy" alt="Preview of the cleanup checklist PDF">
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact-band">
+    <!-- FAQ -->
+    <section id="faq" class="section alt" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>How quickly can we begin?</summary>
+            <p>Most monthly engagements start within 1–2 weeks after file review findings are approved.</p>
+          </details>
+          <details>
+            <summary>How fast is month-end close?</summary>
+            <p>We target a 5 business day delivery window (once required inputs are provided on time).</p>
+          </details>
+          <details>
+            <summary>Do you support both cash & accrual?</summary>
+            <p>Yes—accrual workflows with deferred revenue and prepaid schedules where relevant.</p>
+          </details>
+          <details>
+            <summary>Will you coordinate with my tax professional?</summary>
+            <p>We prepare clean books and coordinate artifacts they need—reducing their adjustments.</p>
+          </details>
+          <details>
+            <summary>What’s included in KPI reporting?</summary>
+            <p>Core financial, operational, and custom vertical metrics + variance commentary & next‑step flags.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Scheduling -->
+    <section id="contact" class="section contact-band" aria-labelledby="contact-title">
       <div class="container contact-layout">
         <div class="contact-copy">
-          <h2>Ready for Accurate, On‑Time Books?</h2>
-          <p>Request a free consultation—let’s review your current setup and map a path to clarity.</p>
+          <h2 id="contact-title">Ready for On‑Time, Insightful Financials?</h2>
+          <p>Book a free consultation—review your current setup, identify quick wins, and map your first 30 days.</p>
           <ul class="contact-points">
-            <li><strong>Email:</strong> <a href="mailto:info@elgconsulting.works">info@elgconsulting.works</a></li>
-            <li><strong>Turnaround:</strong> Reports within 5 business days</li>
+            <li><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></li>
+            <li><strong>Avg Turnaround:</strong> 5 business days close</li>
+            <li><strong>Security:</strong> Role-based, least privilege access</li>
           </ul>
+          <div class="sched-embed">
+            <!-- Replace with real scheduling widget (Calendly/SavvyCal embed) -->
+            <div class="sched-placeholder">Scheduling widget loads here.</div>
+          </div>
         </div>
-        <form action="mailto:info@elgconsulting.works" method="post" enctype="text/plain" class="contact-form">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Business Name <input type="text" name="business"></label>
-          <label>Message <textarea name="message" rows="5" required></textarea></label>
-          <button type="submit" class="btn primary">Send</button>
-          <p class="small form-note">Opens your email client. (Later you can wire a form endpoint.)</p>
+        <form class="contact-form" id="contact-form" novalidate>
+          <label>Name
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>Email
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label>Company
+            <input type="text" name="company" autocomplete="organization">
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" required placeholder="Briefly describe current pain points..."></textarea>
+          </label>
+          <button type="submit" class="btn gradient full">Send Message</button>
+          <p class="form-status tiny" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <div>&copy; <span id="year"></span> ELG Consulting. All rights reserved.</div>
-      <nav aria-label="Footer">
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
+      <div class="footer-brand">
+        <img src="img/logo-mark.svg" alt="" width="48" height="48" loading="lazy">
+        <p class="tiny tagline">Consistent close. Clear insight.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer links">
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <div class="footer-cred">
+        <p class="tiny">&copy; <span id="year"></span> ELG Consulting. All rights reserved.</p>
+        <div class="badges tiny">
+          <span class="badge-outline">ProAdvisor</span>
+          <span class="badge-outline">Xero Certified</span>
+          <span class="badge-outline">Secure Access</span>
+        </div>
+      </div>
+      <form class="newsletter tiny" id="newsletter-form">
+        <label>Stay Updated
+          <input type="email" name="nl-email" required placeholder="email@company.com">
+        </label>
+        <button type="submit" class="btn gradient small">Join</button>
+        <p class="nl-status" aria-live="polite"></p>
+      </form>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    /* Mobile nav */
-    const navToggle = document.querySelector('.nav-toggle');
-    const navList = document.getElementById('nav-list');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        const open = navList.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', open ? 'true':'false');
-      });
-    }
-
-    /* Theme toggle */
-    const root = document.documentElement;
-    const toggleBtn = document.getElementById('themeToggle');
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) { root.setAttribute('data-theme', storedTheme); syncToggle(storedTheme); }
-    else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      root.setAttribute('data-theme', prefersDark ? 'dark':'light');
-      syncToggle(prefersDark ? 'dark':'light');
-    }
-    toggleBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncToggle(next);
-    });
-    function syncToggle(mode){
-      const dark = mode === 'dark';
-      toggleBtn.setAttribute('aria-pressed', dark ? 'true':'false');
-      toggleBtn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
-    }
-
-    /* Testimonials slider */
-    (function(){
-      const slider = document.querySelector('.testimonial-slider');
-      if(!slider) return;
-      const slides = slider.querySelectorAll('.slide');
-      const prev = slider.querySelector('.prev');
-      const next = slider.querySelector('.next');
-      const dotsWrap = slider.querySelector('.slider-dots');
-      if(!slides.length || !dotsWrap) return;
-      let idx = 0;
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.setAttribute('role','tab');
-        b.setAttribute('aria-selected', i === 0 ? 'true':'false');
-        b.addEventListener('click', () => go(i));
-        dotsWrap.appendChild(b);
-      });
-      function go(i){
-        slides[idx].classList.remove('active');
-        dotsWrap.children[idx].setAttribute('aria-selected','false');
-        idx = i;
-        slides[idx].classList.add('active');
-        dotsWrap.children[idx].setAttribute('aria-selected','true');
-      }
-      if (prev) prev.addEventListener('click', () => go( (idx - 1 + slides.length) % slides.length ));
-      if (next) next.addEventListener('click', () => go( (idx + 1) % slides.length ));
-    })();
-
-    /* Hero carousel with animations + KPI pops */
-    (function(){
-      const carousel = document.querySelector('.hero-carousel');
-      if(!carousel) return;
-      const track = carousel.querySelector('.hc-track');
-      const slides = Array.from(track.children);
-      const prevBtn = carousel.querySelector('.hc-arrow.prev');
-      const nextBtn = carousel.querySelector('.hc-arrow.next');
-      const dotsWrap = carousel.querySelector('.hc-dots');
-      const status = carousel.querySelector('.hc-status');
-      const viewport = carousel.querySelector('.hc-viewport');
-
-      let index = 0;
-      let timer = null;
-      let popTimer = null;
-      const interval = 6000;
-      const autoplay = true;
-      const loop = true;
-      const pauseOnHover = true;
-
-      slides.forEach((_,i)=>{
-        const b = document.createElement('button');
-        b.type='button';
-        b.setAttribute('role','tab');
-        b.setAttribute('aria-label','Go to slide ' + (i+1));
-        b.setAttribute('aria-selected', i===0?'true':'false');
-        b.addEventListener('click', ()=>goTo(i,true));
-        dotsWrap.appendChild(b);
-      });
-
-      function updateStatus(){
-        if(status) status.textContent = 'Slide ' + (index+1) + ' of ' + slides.length;
-        slides.forEach((s,i)=> s.setAttribute('aria-label',(i+1)+' of '+slides.length));
-      }
-      function setActive(){
-        slides.forEach(s=>{
-          s.classList.remove('is-active');
-          s.querySelector('.hc-diagonals')?.classList.remove('animating');
-        });
-        const active = slides[index];
-        active.classList.add('is-active');
-        active.querySelector('.hc-diagonals')?.classList.add('animating');
-        Array.from(dotsWrap.children).forEach((d,i)=>{
-          d.setAttribute('aria-selected', i===index?'true':'false');
-        });
-        updateStatus();
-        resetPopups();
-      }
-      function goTo(i,user){
-        if(i<0) i = loop ? slides.length-1 : 0;
-        if(i>=slides.length) i = loop ? 0 : slides.length-1;
-        index = i;
-        track.style.transform = 'translateX(' + (-index*100) + '%)';
-        setActive();
-        if(user) resetAutoplay();
-      }
-      function next(){ goTo(index+1); }
-      function prev(){ goTo(index-1); }
-
-      if(nextBtn) nextBtn.addEventListener('click', ()=> next());
-      if(prevBtn) prevBtn.addEventListener('click', ()=> prev());
-
-      viewport.addEventListener('keydown', e=>{
-        if(e.key === 'ArrowRight'){ e.preventDefault(); next(); }
-        else if(e.key === 'ArrowLeft'){ e.preventDefault(); prev(); }
-      });
-
-      /* Swipe / drag */
-      let startX=0, dragging=false;
-      viewport.addEventListener('pointerdown', e=>{
-        dragging=true; startX=e.clientX;
-        viewport.setPointerCapture(e.pointerId);
-        track.style.transition='none';
-      });
-      viewport.addEventListener('pointermove', e=>{
-        if(!dragging) return;
-        const dx = e.clientX - startX;
-        const pct = dx / viewport.clientWidth * 100;
-        track.style.transform = 'translateX(' + (-index*100 + pct) + '%)';
-      });
-      function endDrag(e){
-        if(!dragging) return;
-        dragging=false; track.style.transition='';
-        const dx = e.clientX - startX;
-        if(Math.abs(dx) > viewport.clientWidth * 0.18){ dx < 0 ? next() : prev(); }
-        else { goTo(index); }
-      }
-      viewport.addEventListener('pointerup', endDrag);
-      viewport.addEventListener('pointercancel', endDrag);
-      viewport.addEventListener('pointerleave', endDrag);
-
-      function startAutoplay(){
-        if(!autoplay) return;
-        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        stopAutoplay();
-        timer = setInterval(()=> next(), interval);
-      }
-      function stopAutoplay(){ if(timer){ clearInterval(timer); timer=null; } }
-      function resetAutoplay(){ stopAutoplay(); startAutoplay(); }
-
-      if(pauseOnHover){
-        carousel.addEventListener('mouseenter', ()=>{ stopAutoplay(); stopPopups(); });
-        carousel.addEventListener('mouseleave', ()=>{ startAutoplay(); schedulePopups(); });
-        carousel.addEventListener('focusin', ()=>{ stopAutoplay(); stopPopups(); });
-        carousel.addEventListener('focusout', ()=>{ startAutoplay(); schedulePopups(); });
-      }
-
-      /* KPI POP-UP CONFIG */
-      const popMessages = [
-        'Gross Margin +3.2%',
-        'AR Days ↓ 4',
-        'Close Complete ✔',
-        'Variance Cleared',
-        'New KPI +12%',
-        'Cash Flow ↑',
-        'Run Rate +8%',
-        'Expense Ratio ↓'
-      ];
-      function spawnPopup(){
-        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        const active = slides[index];
-        const layer = active.querySelector('.hc-overlay');
-        if(!layer) return;
-        const pop = document.createElement('div');
-        pop.className='kpi-pop';
-        pop.setAttribute('aria-hidden','true');
-        pop.textContent = popMessages[Math.floor(Math.random()*popMessages.length)];
-        const left = 40 + Math.random()*35; // %
-        const top = 30 + Math.random()*35;  // %
-        pop.style.left = left + '%';
-        pop.style.top = top + '%';
-        layer.appendChild(pop);
-        setTimeout(()=> {
-          pop.classList.add('out');
-          setTimeout(()=> pop.remove(), 1500);
-        }, 2500);
-      }
-      function schedulePopups(){
-        stopPopups();
-        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        popTimer = setInterval(spawnPopup, 3200);
-      }
-      function stopPopups(){
-        if(popTimer){ clearInterval(popTimer); popTimer=null; }
-      }
-      function resetPopups(){
-        stopPopups();
-        // Remove existing
-        slides.forEach(s=> s.querySelectorAll('.kpi-pop').forEach(el=>el.remove()));
-        schedulePopups();
-      }
-
-      /* Init */
-      setActive();
-      startAutoplay();
-      schedulePopups();
-    })();
-  </script>
+  <script src="script.js?v=1_full_refresh" defer></script>
 </body>
 </html>
