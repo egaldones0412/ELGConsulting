@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TOKENS
+   DESIGN TOKENS
    ========================================================================== */
 :root {
   --color-primary:#1e3a8a;
@@ -12,36 +12,44 @@
   --color-border-soft:#e4e9f1;
   --color-text:#020101;
   --color-muted:#556070;
+
   --shadow-xs:0 1px 3px rgba(0,0,0,.08);
   --shadow-sm:0 2px 6px -1px rgba(0,0,0,.09);
   --shadow:0 6px 18px -4px rgba(0,0,0,.12);
+
   --radius-lg:18px;
   --radius:14px;
   --radius-sm:8px;
+
   --max-width:1180px;
+
   --font-sans:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   --font-display:'Montserrat','Inter',system-ui,sans-serif;
+
   --font-base:16px;
-  --font-display-1:clamp(2rem, 4.2vw, 2.1875rem);
-  --font-title:clamp(1.75rem, 3vw, 2.1rem);
-  --font-subtitle:clamp(1.15rem, 2vw, 1.4rem);
+  --font-display-1:clamp(2rem,4.2vw,2.1875rem);
+  --font-title:clamp(1.75rem,3vw,2.1rem);
+  --font-subtitle:clamp(1.15rem,2vw,1.4rem);
   --font-body:1rem;
   --font-body-lg:1.125rem;
   --font-small:.82rem;
   --font-tiny:.68rem;
+
   --lh-hero:1.29;
   --lh-tight:1.18;
   --lh-snug:1.28;
   --lh-normal:1.5;
+
   --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem;
   --space-5:1.25rem; --space-6:1.5rem; --space-7:1.75rem; --space-8:2rem;
   --space-10:2.5rem; --space-12:3rem; --space-14:3.5rem; --space-16:4rem;
   --space-20:5rem;
+
   --transition:150ms cubic-bezier(.4,0,.2,1);
 }
 
 /* ==========================================================================
-   BASE
+   BASE / RESETS
    ========================================================================== */
 html { font-size:var(--font-base); scroll-behavior:smooth; }
 *,*::before,*::after { box-sizing:border-box; }
@@ -55,6 +63,7 @@ body {
   -webkit-font-smoothing:antialiased;
 }
 img { display:block; max-width:100%; height:auto; }
+picture { display:block; }
 p { margin:0 0 var(--space-5); }
 a { color:var(--color-primary); text-decoration:none; transition:color var(--transition); }
 a:hover { text-decoration:underline; }
@@ -86,6 +95,20 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   font-weight:600;
 }
 
+.skip-link {
+  position:absolute;
+  top:-40px;
+  left:0;
+  background:#000;
+  color:#fff;
+  padding:.75rem 1rem;
+  z-index:100;
+  text-decoration:none;
+  font-size:.9rem;
+  transition:top .2s;
+}
+.skip-link:focus { top:0; }
+
 .container { max-width:var(--max-width); margin:0 auto; padding:0 var(--space-6); }
 .center { text-align:center; }
 .accent { color:var(--color-accent); }
@@ -115,7 +138,8 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   list-style:none;
   display:flex;
   gap:var(--space-6);
-  margin:0; padding:0;
+  margin:0;
+  padding:0;
   align-items:center;
 }
 .nav-toggle {
@@ -179,11 +203,31 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 .hero-points li:before {
   content:"";
   position:absolute;
-  left:0; top:.55em;
-  width:.45rem; height:.45rem;
+  left:0;
+  top:.55em;
+  width:.45rem;
+  height:.45rem;
   border-radius:50%;
   background:var(--color-accent);
 }
+
+/* Hero points: check variant */
+.hero-points.checks li {
+  padding-left:1.2rem;
+}
+.hero-points.checks li:before {
+  content:"✔";
+  background:none;
+  color:var(--color-accent);
+  width:auto;
+  height:auto;
+  top:0;
+  left:0;
+  font-size:.78rem;
+  line-height:1;
+  transform:translateY(2px);
+}
+
 .hero-visual img {
   max-width:520px;
   margin:0 auto;
@@ -199,7 +243,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 }
 
 /* ==========================================================================
-   PLATFORMS (logo grid)
+   PLATFORMS (Logo Grid)
    ========================================================================== */
 .platforms-section {
   background:#f5f5f5;
@@ -237,38 +281,12 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   height:auto;
   object-fit:contain;
   image-rendering:-webkit-optimize-contrast;
+  border:0;
 }
 .platforms-cta { text-align:center; }
-.btn.cta-secondary {
-  --btn-bg:#ff6b64;
-  --btn-border:#ff6b64;
-  --btn-color:#fff;
-  background:var(--btn-bg);
-  border:1px solid var(--btn-border);
-  color:var(--btn-color);
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  font-size:.7rem;
-  padding:1rem 2.2rem;
-  font-weight:600;
-}
-.btn.cta-secondary:hover {
-  background:#ff5149;
-  border-color:#ff5149;
-  text-decoration:none;
-}
-@media (max-width:900px){
-  .platform-logos { gap:2.5rem 3rem; }
-  .platform-logos img { max-height:70px; }
-}
-@media (max-width:600px){
-  .platforms-section { padding:3.5rem 0 3rem; }
-  .platform-logos { gap:2.1rem 2.4rem; }
-  .platform-logos img { max-height:60px; }
-}
 
 /* ==========================================================================
-   SECTIONS
+   GENERIC SECTIONS
    ========================================================================== */
 .section { padding:var(--space-16) 0 var(--space-14); }
 .section.tight { padding:var(--space-12) 0 var(--space-10); }
@@ -381,7 +399,8 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 .step-num {
   background:var(--color-primary);
   color:#fff;
-  width:44px; height:44px;
+  width:44px;
+  height:44px;
   border-radius:50%;
   font-size:.78rem;
   font-weight:600;
@@ -417,7 +436,14 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   margin:var(--space-12) auto 0;
 }
 .slides { position:relative; min-height:180px; }
-.slide { opacity:0; position:absolute; top:0; left:0; width:100%; transition:opacity .45s; }
+.slide {
+  opacity:0;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  transition:opacity .45s;
+}
 .slide.active { opacity:1; position:relative; }
 blockquote {
   margin:0 0 var(--space-5);
@@ -457,7 +483,8 @@ figcaption {
   gap:var(--space-3);
 }
 .slider-dots button {
-  width:10px; height:10px;
+  width:10px;
+  height:10px;
   border-radius:50%;
   border:0;
   background:#cfd5dd;
@@ -581,9 +608,9 @@ figcaption {
   text-decoration:none;
   line-height:1.1;
   cursor:pointer;
+  font-family:var(--font-display);
   transition:background var(--transition), color var(--transition),
              box-shadow var(--transition), transform var(--transition);
-  font-family:var(--font-display);
 }
 .btn.primary { --btn-bg:var(--color-primary); --btn-color:#fff; }
 .btn.ghost { --btn-bg:#fff; --btn-color:var(--color-primary); }
@@ -592,9 +619,25 @@ figcaption {
   transform:translateY(-2px);
   text-decoration:none;
 }
-.btn:active { transform:translateY(0); box-shadow:0 2px 6px -1px rgba(0,0,0,.2); }
+.btn:active {
+  transform:translateY(0);
+  box-shadow:0 2px 6px -1px rgba(0,0,0,.2);
+}
 .btn.small { font-size:.66rem; padding:.55rem .9rem; border-radius:10px; }
 .btn.lg { padding:.95rem 1.55rem; font-size:.9rem; }
+.btn.cta-secondary {
+  --btn-bg:#ff6b64;
+  --btn-border:#ff6b64;
+  --btn-color:#fff;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.7rem;
+  padding:1rem 2.2rem;
+}
+.btn.cta-secondary:hover {
+  background:#ff5149;
+  border-color:#ff5149;
+}
 
 /* ==========================================================================
    FOOTER
@@ -623,16 +666,18 @@ figcaption {
 .site-footer a:hover { text-decoration:underline; }
 
 /* ==========================================================================
-   RESPONSIVE NAV
+   RESPONSIVE NAV + BREAKPOINTS
    ========================================================================== */
 @media (max-width:820px) {
   .hero.enhanced { padding:var(--space-16) 0 var(--space-14); }
   .background-shapes .shape.grid { width:320px; top:-30px; right:-30px; }
 }
+
 @media (max-width:760px) {
   .main-nav ul {
     position:absolute;
-    top:60px; right:1rem;
+    top:60px;
+    right:1rem;
     flex-direction:column;
     background:#fff;
     padding:var(--space-6);
@@ -646,6 +691,18 @@ figcaption {
   .nav-toggle { display:block; }
   .hero-layout { gap:var(--space-10); }
 }
+
+@media (max-width:900px) {
+  .platform-logos { gap:2.5rem 3rem; }
+  .platform-logos img { max-height:70px; }
+}
+
+@media (max-width:600px) {
+  .platforms-section { padding:3.5rem 0 3rem; }
+  .platform-logos { gap:2.1rem 2.4rem; }
+  .platform-logos img { max-height:60px; }
+}
+
 @media (max-width:460px) {
   .container { padding:0 var(--space-4); }
   .hero.enhanced { padding:var(--space-14) 0 var(--space-12); }
