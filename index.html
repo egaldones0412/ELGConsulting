@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=14" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,20 +33,18 @@
     <div class="container flex-between">
       <!-- Change logo.svg to logo.png if your file is PNG -->
       <a class="logo" href="/">
-        <img src="img/logo.png" alt="ELG Consulting">
+        <img src="img/logo.svg" alt="ELG Consulting">
         <span class="logo-text">ELG Consulting</span>
       </a>
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
-          <li><a href="#platforms">Platforms</a></li>
-          <li><a href="#value">Value</a></li>
+          <!-- Removed Platforms, Value, Process -->
           <li><a href="#services">Services</a></li>
           <li><a href="#why">Why Us</a></li>
-          <li><a href="#process">Process</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact" class="btn small">Contact</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#contact" class="btn primary nav-contact-us">Contact Us</a></li>
         </ul>
       </nav>
     </div>
@@ -75,56 +73,6 @@
         </div>
         <div class="hero-visual">
           <img src="img/hero-illustration.svg" alt="Abstract financial dashboard illustration" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <!-- PLATFORMS -->
-    <section class="platforms-section" id="platforms">
-      <div class="container">
-        <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
-        <ul class="platform-logos" aria-label="Supported bookkeeping software">
-          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy"></li>
-          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy"></li>
-          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy"></li>
-          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy"></li>
-          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy"></li>
-          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy"></li>
-          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy"></li>
-          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
-        </ul>
-        <div class="platforms-cta">
-          <a href="#contact" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALUE -->
-    <section id="value" class="section tight">
-      <div class="container">
-        <h2 class="center">Eliminate Operational Finance Friction</h2>
-        <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
-        <div class="value-grid">
-          <div class="value-item">
-            <img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy">
-            <h3>Backlog / Messy Books</h3>
-            <p>Historical cleanup & error correction restore a solid financial baseline.</p>
-          </div>
-          <div class="value-item">
-            <img src="img/icon-speed.svg" alt="" class="vi" loading="lazy">
-            <h3>Slow Close Cycle</h3>
-            <p>Disciplined workflows deliver statements within 5 business days.</p>
-          </div>
-            <div class="value-item">
-            <img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy">
-            <h3>Weak Visibility</h3>
-            <p>Custom KPIs and variance notes turn static reports into clarity.</p>
-          </div>
-          <div class="value-item">
-            <img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy">
-            <h3>Manual Inefficiency</h3>
-            <p>Tools and process refinement reduce rework and risk.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -202,20 +150,6 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section id="process" class="section alt">
-      <div class="container">
-        <h2>Our Process</h2>
-        <ol class="process-timeline">
-          <li><span class="step-num">1</span><div><h3>Intro Call</h3><p>Clarify scope, systems, and objectives.</p></div></li>
-          <li><span class="step-num">2</span><div><h3>File Review</h3><p>Assess state & cleanup needs.</p></div></li>
-          <li><span class="step-num">3</span><div><h3>Onboarding</h3><p>Secure access, checklist & KPI set.</p></div></li>
-          <li><span class="step-num">4</span><div><h3>Monthly Close</h3><p>Reconcile, adjust, validate.</p></div></li>
-          <li><span class="step-num">5</span><div><h3>Delivery & Review</h3><p>Statements + variance & KPI insight.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
     <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
       <div class="container">
@@ -244,10 +178,10 @@
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQs -->
     <section id="faq" class="section alt">
       <div class="container">
-        <h2>FAQ</h2>
+        <h2>FAQs</h2>
         <div class="faq">
           <details><summary>How quickly can we begin?</summary><p>Most monthly engagements start within 1–2 weeks, depending on file review findings.</p></details>
           <details><summary>What’s included each month?</summary><p>Reconciliations, P&amp;L, Balance Sheet, selected KPIs, and optional variance notes/review call.</p></details>
