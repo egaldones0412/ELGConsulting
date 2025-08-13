@@ -1,30 +1,41 @@
-/* styles.css (based on styles_Version23.css; ONLY change: .logo-text now uses Open Sans) */
+/* styles.css - Green Accounting Palette Version */
 
 /* ==========================================================================
-   DESIGN TOKENS
+   DESIGN TOKENS (Green / Accounting Theme)
    ========================================================================== */
 :root {
-  --color-primary:#1e3a8a;
-  --color-accent:#fbbf24;
-  --color-accent-alt:#14b8a6;
-  --color-bg:#ffffff;
-  --color-bg-alt:#f5f7fb;
-  --color-bg-soft:#eef2f8;
-  --color-border:#d8dee7;
-  --color-border-soft:#e4e9f1;
-  --color-text:#020101;
-  --color-muted:#556070;
+  /* Brand Core */
+  --color-primary:#0F3F2F;
+  --color-primary-alt:#0C3426;
+  --color-accent:#1E8F4D;
+  --color-accent-alt:#2FB768;
+  --color-accent-alt-soft:#B9F4D3;
+  --color-info:#0B7F70;
 
-  --shadow-xs:0 1px 3px rgba(0,0,0,.08);
-  --shadow-sm:0 2px 6px -1px rgba(0,0,0,.09);
-  --shadow:0 6px 18px -4px rgba(0,0,0,.12);
+  /* Backgrounds & Neutrals */
+  --color-bg:#FFFFFF;
+  --color-bg-alt:#F5F9F7;
+  --color-bg-soft:#ECF4F1;
+  --color-border:#C9D9D4;
+  --color-border-soft:#D9E5E1;
 
+  /* Typography */
+  --color-text:#122721;
+  --color-muted:#5A6B66;
+
+  /* Elevation */
+  --shadow-xs:0 1px 3px rgba(9,41,29,.10);
+  --shadow-sm:0 2px 6px -1px rgba(9,41,29,.12);
+  --shadow:0 6px 18px -4px rgba(9,41,29,.18);
+
+  /* Radii */
   --radius-lg:18px;
   --radius:14px;
   --radius-sm:8px;
 
   --max-width:1180px;
 
+  /* Typography scales (unchanged) */
   --font-sans:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
   --font-display:'Montserrat','Inter',system-ui,sans-serif;
 
@@ -42,6 +53,7 @@
   --lh-snug:1.28;
   --lh-normal:1.5;
 
+  /* Spacing scale */
   --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem;
   --space-5:1.25rem; --space-6:1.5rem; --space-7:1.75rem; --space-8:2rem;
   --space-10:2.5rem; --space-12:3rem; --space-14:3.5rem; --space-16:4rem;
@@ -142,11 +154,10 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:1;
 }
 .logo img {
-  height:56px; /* Adjust this value to change image size */
+  height:56px;
   width:auto;
   display:block;
 }
-/* CHANGED: Open Sans only for wordmark */
 .logo-text {
   font-family:'Open Sans','Montserrat','Inter',system-ui,sans-serif;
   font-weight:700;
@@ -183,7 +194,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 .hero.enhanced {
   position:relative;
   padding:var(--space-20) 0 var(--space-16);
-  background:linear-gradient(135deg,#eef4ff 0%,#ffffff 65%);
+  background:linear-gradient(135deg,#ECF6F1 0%,#FFFFFF 70%);
   overflow:hidden;
 }
 .hero-layout {
@@ -251,14 +262,14 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 .hero-visual img {
   max-width:520px;
   margin:0 auto;
-  filter:drop-shadow(0 6px 16px rgba(30,58,138,.20));
+  filter:drop-shadow(0 6px 16px rgba(15,63,47,.25));
 }
 .background-shapes .shape.grid {
   position:absolute;
   top:-50px;
   right:-50px;
   width:400px;
-  opacity:.32;
+  opacity:.30;
   pointer-events:none;
 }
 
@@ -510,6 +521,7 @@ figcaption {
   background:#cfd5dd;
   cursor:pointer;
   transition:background var(--transition), transform var(--transition);
+  padding:0;
 }
 .slider-dots button[aria-selected="true"] {
   background:var(--color-primary);
@@ -551,7 +563,7 @@ figcaption {
 /* ==========================================================================
    CONTACT
    ========================================================================== */
-.contact-band { background:linear-gradient(135deg,#ffffff,#f2f6fb); }
+.contact-band { background:linear-gradient(135deg,#FFFFFF,#EFF6F3); }
 .contact-layout {
   display:grid;
   gap:var(--space-12);
@@ -605,7 +617,7 @@ figcaption {
 .contact-form textarea:focus {
   outline:none;
   border-color:var(--color-primary);
-  box-shadow:0 0 0 3px rgba(30,58,138,.18);
+  box-shadow:0 0 0 3px rgba(15,63,47,.22);
 }
 .form-note { margin:0; color:var(--color-muted); font-size:var(--font-tiny); }
 
@@ -632,21 +644,25 @@ figcaption {
              box-shadow var(--transition), transform var(--transition);
 }
 .btn.primary { --btn-bg:var(--color-primary); --btn-color:#fff; }
+.btn.primary:hover {
+  background:var(--color-primary-alt);
+  border-color:var(--color-primary-alt);
+}
 .btn.ghost { --btn-bg:#fff; --btn-color:var(--color-primary); }
 .btn:hover {
-  box-shadow:0 4px 12px -2px rgba(0,0,0,.16);
+  box-shadow:0 4px 12px -2px rgba(0,0,0,.18);
   transform:translateY(-2px);
   text-decoration:none;
 }
 .btn:active {
   transform:translateY(0);
-  box-shadow:0 2px 6px -1px rgba(0,0,0,.2);
+  box-shadow:0 2px 6px -1px rgba(0,0,0,.22);
 }
 .btn.small { font-size:.66rem; padding:.55rem .9rem; border-radius:10px; }
 .btn.lg { padding:.95rem 1.55rem; font-size:.9rem; }
 .btn.cta-secondary {
-  --btn-bg:#ff6b64;
-  --btn-border:#ff6b64;
+  --btn-bg:var(--color-accent);
+  --btn-border:var(--color-accent);
   --btn-color:#fff;
   text-transform:uppercase;
   letter-spacing:.14em;
@@ -654,15 +670,28 @@ figcaption {
   padding:1rem 2.2rem;
 }
 .btn.cta-secondary:hover {
-  background:#ff5149;
-  border-color:#ff5149;
+  background:var(--color-accent-alt);
+  border-color:var(--color-accent-alt);
+}
+
+/* Optional subtle “success badge” utility (new) */
+.badge-success {
+  display:inline-block;
+  background:var(--color-accent-alt-soft);
+  color:var(--color-primary);
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.08em;
+  padding:.35rem .55rem;
+  border-radius:999px;
+  text-transform:uppercase;
 }
 
 /* ==========================================================================
    FOOTER
    ========================================================================== */
 .site-footer {
-  background:#0f172a;
+  background:#0f172a; /* keep a neutral dark navy for contrast */
   color:#cfd6e3;
   padding:var(--space-12) 0;
   font-size:var(--font-tiny);
