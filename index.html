@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=37" />
+  <link rel="stylesheet" href="styles.css?v=38" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -80,10 +80,88 @@
 
   <main id="main">
     <!-- HERO -->
-    ... <!-- (unchanged hero section here) -->
+    <section class="hero enhanced">
+      <div class="background-shapes">
+        <img src="img/shape-grid.svg" alt="" class="shape grid" />
+      </div>
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Bookkeeping & Reporting Partner</p>
+          <h1>Your Books, Done Right — and <span class="accent">On Time</span></h1>
+          <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn primary lg">Free Consultation</a>
+            <a href="#services" class="btn primary lg">See How We Can Help</a>
+          </div>
+          <ul class="hero-points checks">
+            <li>Catch-Up & Cleanup</li>
+            <li>Structured Month-End Close</li>
+            <li>KPIs & Variance Insight</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <img src="img/hero-illustration.svg" alt="Abstract financial dashboard illustration" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="platforms" class="platforms-section">
+      <div class="container">
+        <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
+        <ul class="platform-logos" aria-label="Supported bookkeeping software">
+          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy"></li>
+          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy"></li>
+          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy"></li>
+          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy"></li>
+          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy"></li>
+          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy"></li>
+          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy"></li>
+          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
+        </ul>
+        <div class="platforms-cta">
+          <a href="#contact" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="value" class="section tight">
+      <div class="container">
+        <h2 class="center">Eliminate Operational Finance Friction</h2>
+        <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
+        <div class="value-grid">
+          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
+          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
+          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
+          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
+        </div>
+        <div class="cards services-grid">
+          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie-outs</li><li>Close checklist</li></ul></article>
+          <article class="card service"><h3>Catch-Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
+          <article class="card service"><h3>Management Reporting</h3><p>Decision-ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
+          <article class="card service"><h3>Workflow & Advisory</h3><p>Light advisory on process, tech stack, and data hygiene.</p><ul class="mini-list"><li>Tool alignment</li><li>Receipt capture</li><li>AR/AP structuring</li></ul></article>
+        </div>
+      </div>
+    </section>
 
     <section id="why" class="section">
-      ... <!-- (unchanged why section here) -->
+      <div class="container">
+        <h2 class="center">Why ELG Consulting</h2>
+        <div class="why-grid">
+          <div class="why-item"><h3>Reliable Turnaround</h3><p>Consistent delivery inside 5 business days after month end.</p></div>
+          <div class="why-item"><h3>Broad Tool Coverage</h3><p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p></div>
+          <div class="why-item"><h3>Accuracy Discipline</h3><p>Layered review approach lowers error propagation.</p></div>
+          <div class="why-item"><h3>Security Mindset</h3><p>Least-privilege access and structured data handling.</p></div>
+        </div>
+      </div>
     </section>
 
     <!-- PRICING SECTION -->
@@ -92,7 +170,6 @@
         <h2 class="center">Pricing</h2>
         <p class="section-intro center">Transparent, flexible, and scalable to your needs. Month-to-month engagements with no long-term lock-in.</p>
         <div class="pricing-grid">
-          <!-- Starter -->
           <div class="pricing-card">
             <h3>Starter</h3>
             <p class="price">$399<span>/mo</span></p>
@@ -104,7 +181,6 @@
             </ul>
             <a href="#contact" class="btn primary">Get Starter</a>
           </div>
-          <!-- Growth (Popular) -->
           <div class="pricing-card popular">
             <div class="badge-popular">Most Popular</div>
             <h3>Growth</h3>
@@ -117,7 +193,6 @@
             </ul>
             <a href="#contact" class="btn primary">Choose Growth</a>
           </div>
-          <!-- Scale -->
           <div class="pricing-card">
             <h3>Scale</h3>
             <p class="price">Custom</p>
@@ -135,7 +210,7 @@
     </section>
 
     <section id="process" class="section alt">
-      ... <!-- (unchanged process section here) -->
+      ... (rest of your sections unchanged except testimonials updated)
     </section>
 
     <!-- TESTIMONIALS -->
@@ -166,15 +241,7 @@
       </div>
     </section>
 
-    ... <!-- (rest of your sections: FAQ, contact, footer) -->
+    ... (FAQ, contact, footer remain unchanged)
   </main>
-
-  <footer class="site-footer">
-    ... <!-- (unchanged footer) -->
-  </footer>
-
-  <script>
-    ... <!-- (unchanged scripts) -->
-  </script>
 </body>
 </html>
