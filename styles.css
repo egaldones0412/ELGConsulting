@@ -674,7 +674,7 @@ figcaption {
   border-color:var(--color-accent-alt);
 }
 
-/* Optional subtle “success badge” utility (new) */
+/* Optional success badge utility */
 .badge-success {
   display:inline-block;
   background:var(--color-accent-alt-soft);
@@ -691,7 +691,7 @@ figcaption {
    FOOTER
    ========================================================================== */
 .site-footer {
-  background:#0f172a; /* keep a neutral dark navy for contrast */
+  background:#0f172a;
   color:#cfd6e3;
   padding:var(--space-12) 0;
   font-size:var(--font-tiny);
