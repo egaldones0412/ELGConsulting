@@ -140,7 +140,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:1;
 }
 .logo img {
-  height:56px; /* Adjust this value to change logo image size */
+  height:56px; /* Adjust this value to change image size */
   width:auto;
   display:block;
 }
