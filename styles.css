@@ -1,3 +1,5 @@
+/* styles.css (based on styles_Version23.css; ONLY change: .logo-text now uses Open Sans) */
+
 /* ==========================================================================
    DESIGN TOKENS
    ========================================================================== */
@@ -144,8 +146,12 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   width:auto;
   display:block;
 }
+/* CHANGED: Open Sans only for wordmark */
 .logo-text {
-  font:600 1.05rem/1 var(--font-display);
+  font-family:'Open Sans','Montserrat','Inter',system-ui,sans-serif;
+  font-weight:700;
+  font-size:1.05rem;
+  line-height:1;
   letter-spacing:.01em;
   color:var(--color-primary);
   white-space:nowrap;
@@ -504,7 +510,6 @@ figcaption {
   background:#cfd5dd;
   cursor:pointer;
   transition:background var(--transition), transform var(--transition);
-  padding:0;
 }
 .slider-dots button[aria-selected="true"] {
   background:var(--color-primary);
