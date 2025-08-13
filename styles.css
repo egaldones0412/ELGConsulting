@@ -140,7 +140,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:1;
 }
 .logo img {
-  height:56px; /* Adjust this value to change image size */
+  height:56px;
   width:auto;
   display:block;
 }
@@ -159,6 +159,11 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   padding:0;
   align-items:center;
 }
+.main-nav a {
+  font-weight:500;
+  font-size:.83rem;
+  letter-spacing:.02em;
+}
 .nav-toggle {
   display:none;
   background:#fff;
@@ -170,6 +175,15 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   transition:background var(--transition);
 }
 .nav-toggle:hover { background:var(--color-bg-alt); }
+
+/* Larger primary-styled Contact Us button */
+.nav-contact-us {
+  font-size:.82rem;
+  padding:.78rem 1.15rem;
+  border-radius:14px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
 
 /* ==========================================================================
    HERO
@@ -218,28 +232,15 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   font-weight:500;
   color:var(--color-muted);
 }
-.hero-points li { position:relative; padding-left:.9rem; }
+.hero-points li { position:relative; padding-left:1.2rem; }
 .hero-points li:before {
-  content:"";
+  content:"✔";
   position:absolute;
   left:0;
-  top:.55em;
-  width:.45rem;
-  height:.45rem;
-  border-radius:50%;
-  background:var(--color-accent);
-}
-.hero-points.checks li { padding-left:1.2rem; }
-.hero-points.checks li:before {
-  content:"✔";
-  background:none;
-  color:var(--color-accent);
-  width:auto;
-  height:auto;
   top:0;
-  left:0;
   font-size:.78rem;
   line-height:1;
+  color:var(--color-accent);
   transform:translateY(2px);
 }
 .hero-visual img {
@@ -257,49 +258,6 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 }
 
 /* ==========================================================================
-   PLATFORMS
-   ========================================================================== */
-.platforms-section {
-  background:#f5f5f5;
-  padding:4.5rem 0 3.5rem;
-}
-.platforms-heading {
-  font-family:var(--font-display);
-  font-weight:700;
-  text-align:center;
-  font-size:clamp(2.2rem,4.2vw,3.1rem);
-  line-height:1.15;
-  letter-spacing:-.015em;
-  margin:0 0 3.2rem;
-}
-.platform-logos {
-  list-style:none;
-  margin:0 auto 3.25rem;
-  padding:0;
-  max-width:1200px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:3.2rem 4.2rem;
-  align-items:center;
-  justify-items:center;
-}
-.platform-logos li {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.platform-logos img {
-  display:block;
-  max-height:80px;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  image-rendering:-webkit-optimize-contrast;
-  border:0;
-}
-.platforms-cta { text-align:center; }
-
-/* ==========================================================================
    GENERIC SECTIONS
    ========================================================================== */
 .section { padding:var(--space-16) 0 var(--space-14); }
@@ -310,30 +268,6 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   margin:0 auto var(--space-10);
   color:var(--color-muted);
 }
-
-/* ==========================================================================
-   VALUE GRID
-   ========================================================================== */
-.value-grid {
-  display:grid;
-  gap:var(--space-6);
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-}
-.value-item {
-  background:#fff;
-  border:1px solid var(--color-border);
-  border-radius:var(--radius);
-  padding:var(--space-6) var(--space-5);
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-3);
-  box-shadow:var(--shadow-xs);
-  transition:box-shadow var(--transition), transform var(--transition);
-}
-.value-item:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
-.value-item h3 { margin:0; font-size:1.02rem; font-family:var(--font-display); }
-.value-item p { margin:0; font-size:.9rem; line-height:1.42; color:var(--color-muted); }
-.value-item .vi { width:42px; height:42px; }
 
 /* ==========================================================================
    SERVICES
@@ -387,54 +321,6 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 .why-item:hover { box-shadow:var(--shadow); }
 .why-item h3 { margin:0 0 var(--space-3); font-size:1rem; font-family:var(--font-display); }
 .why-item p { margin:0; font-size:.83rem; color:var(--color-muted); line-height:1.4; }
-
-/* ==========================================================================
-   PROCESS
-   ========================================================================== */
-.process-timeline {
-  list-style:none;
-  margin:var(--space-12) 0 0;
-  padding:0;
-  display:grid;
-  gap:var(--space-5);
-}
-.process-timeline li {
-  display:flex;
-  gap:var(--space-4);
-  background:#fff;
-  border:1px solid var(--color-border);
-  padding:var(--space-5) var(--space-5);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-xs);
-  align-items:flex-start;
-  transition:box-shadow var(--transition);
-}
-.process-timeline li:hover { box-shadow:var(--shadow); }
-.step-num {
-  background:var(--color-primary);
-  color:#fff;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  font-size:.78rem;
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  letter-spacing:.05em;
-  font-family:var(--font-display);
-}
-.process-timeline h3 {
-  margin:0 0 var(--space-2);
-  font-size:1rem;
-  font-family:var(--font-display);
-  line-height:1.25;
-}
-.process-timeline p {
-  margin:0;
-  font-size:.85rem;
-  color:var(--color-muted);
-}
 
 /* ==========================================================================
    TESTIMONIALS
@@ -512,7 +398,7 @@ figcaption {
 }
 
 /* ==========================================================================
-   FAQ
+   FAQS
    ========================================================================== */
 .faq details {
   background:#fff;
@@ -704,6 +590,10 @@ figcaption {
   .main-nav ul.open { display:flex; }
   .nav-toggle { display:block; }
   .hero-layout { gap:var(--space-10); }
+  .nav-contact-us {
+    width:100%;
+    text-align:center;
+  }
 }
 
 @media (max-width:600px) {
