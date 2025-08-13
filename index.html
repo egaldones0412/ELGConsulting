@@ -17,22 +17,30 @@
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <!-- Favicons (make sure these files exist in the site root; replace with your actual logo assets) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2">
+  <link rel="shortcut icon" href="favicon.ico?v=2">
+  <link rel="mask-icon" href="safari-pinned-tab.svg?v=2" color="#1e3a8a">
+  <meta name="msapplication-TileColor" content="#1e3a8a">
+  <meta name="theme-color" content="#1e3a8a">
 
-  <!-- Fonts -->
+  <!-- Fonts (added Open Sans for logo wordmark only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=13" />
+  <link rel="stylesheet" href="styles.css?v=28" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container flex-between">
-      <!-- Change logo.svg to logo.png if your file is PNG -->
       <a class="logo" href="/">
+        <!-- Using PNG logo; change to img/logo.svg if you prefer the SVG -->
         <img src="img/logo.png" alt="ELG Consulting">
         <span class="logo-text">ELG Consulting</span>
       </a>
@@ -115,7 +123,7 @@
             <h3>Slow Close Cycle</h3>
             <p>Disciplined workflows deliver statements within 5 business days.</p>
           </div>
-            <div class="value-item">
+          <div class="value-item">
             <img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy">
             <h3>Weak Visibility</h3>
             <p>Custom KPIs and variance notes turn static reports into clarity.</p>
@@ -269,12 +277,12 @@
           </ul>
         </div>
         <form action="mailto:info@elgconsulting.works" method="post" enctype="text/plain" class="contact-form">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Business Name <input type="text" name="business"></label>
-          <label>Message <textarea name="message" rows="5" required></textarea></label>
-          <button type="submit" class="btn primary">Send</button>
-          <p class="small form-note">Opens your email client. (Later you can wire a form endpoint.)</p>
+            <label>Name <input type="text" name="name" required></label>
+            <label>Email <input type="email" name="email" required></label>
+            <label>Business Name <input type="text" name="business"></label>
+            <label>Message <textarea name="message" rows="5" required></textarea></label>
+            <button type="submit" class="btn primary">Send</button>
+            <p class="small form-note">Opens your email client. (Later you can wire a form endpoint.)</p>
         </form>
       </div>
     </section>
