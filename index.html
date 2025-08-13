@@ -6,8 +6,6 @@
   <meta name="description" content="Accurate, reliable, on-time bookkeeping. Cleanup, monthly close, and decision-ready reports delivered within 5 business days." />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="canonical" href="https://www.elgconsulting.works/" />
-
-  <!-- Social Meta -->
   <meta property="og:title" content="ELG Consulting Bookkeeping" />
   <meta property="og:description" content="Accurate, reliable monthly books and reporting within 5 business days." />
   <meta property="og:type" content="website" />
@@ -16,22 +14,16 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
-
-  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2CA01C">
   <meta name="msapplication-TileColor" content="#2CA01C">
   <meta name="theme-color" content="#2CA01C">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=39" />
+  <link rel="stylesheet" href="styles.css?v=40" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,13 +34,7 @@
         <img src="img/logo.png" alt="ELG Consulting">
         <span class="logo-text">ELG Consulting</span>
       </a>
-
-      <!-- EXACT REPLICA TOGGLE -->
-      <button id="themeToggle"
-              class="theme-toggle-replica"
-              aria-label="Activate dark mode"
-              aria-pressed="false"
-              type="button">
+      <button id="themeToggle" class="theme-toggle-replica" aria-label="Activate dark mode" aria-pressed="false" type="button">
         <span class="visually-hidden">Toggle dark mode</span>
         <span class="toggle-env">
           <span class="layer sky"></span>
@@ -58,7 +44,6 @@
           <span class="toggle-knob"></span>
         </span>
       </button>
-
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
@@ -86,7 +71,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Bookkeeping & Reporting Partner</p>
           <h1>Accurate. Reliable. <span class="accent">On Time</span></h1>
-            <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
+          <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
           <div class="hero-cta">
             <a href="#contact" class="btn primary lg">Free Consultation</a>
             <a href="#services" class="btn primary lg">See How We Can Help</a>
@@ -153,64 +138,123 @@
       </div>
     </section>
 
-    <!-- PRICING (NEW INLINE) -->
-    <section id="pricing" class="section pricing-inline">
+    <!-- PRICING (Dynamic) -->
+    <section id="pricing" class="section pricing-dynamic">
       <div class="container">
         <h2 class="center">Pricing</h2>
-        <p class="section-intro center small-max">Transparent, flexible, and scalable to your needs. Month‑to‑month—no long‑term lock‑in.</p>
+        <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in. Switch billing cycle below.</p>
 
-        <div class="pricing-plans">
-          <!-- Starter -->
-          <article class="pricing-plan">
-            <header>
-              <h3 class="plan-tier">Starter</h3>
-              <p class="plan-price"><span class="amount">$399</span><span class="per">/mo</span></p>
-            </header>
-            <ul class="plan-points">
-              <li>Up to 100 transactions</li>
-              <li>1 bank + 1 credit card</li>
-              <li>Monthly P&amp;L &amp; Balance Sheet</li>
-              <li>Email support</li>
-            </ul>
-            <a href="#contact" class="btn primary small full">Get Starter</a>
-          </article>
+        <!-- Billing Cycle Toggle -->
+        <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle">
+          <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
+          <button class="billing-toggle" data-cycle="annual" aria-pressed="false" role="radio" aria-checked="false">
+            Annual <span class="save-pill" aria-hidden="true">Save 2 Months</span>
+          </button>
+          <span class="bt-focus-ring" aria-hidden="true"></span>
+        </div>
+        <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
 
-          <!-- Growth -->
-          <article class="pricing-plan popular" aria-label="Growth plan - Most Popular">
-            <div class="popular-tag" aria-hidden="true">Most Popular</div>
-            <header>
-              <h3 class="plan-tier">Growth</h3>
-              <p class="plan-price"><span class="amount">$699</span><span class="per">/mo</span></p>
-            </header>
-            <ul class="plan-points">
-              <li>Up to 400 transactions</li>
-              <li>3 bank/credit accounts</li>
-              <li>KPI pack &amp; variance commentary</li>
-              <li>Priority support</li>
-            </ul>
-            <a href="#contact" class="btn primary small full">Choose Growth</a>
-          </article>
+        <!-- Plans container (populated by JS) -->
+        <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
+          <div class="loading-spinner" aria-hidden="true"></div>
+          <p class="tiny loading-text">Loading plans…</p>
+        </div>
 
-          <!-- Scale -->
-          <article class="pricing-plan">
-            <header>
-              <h3 class="plan-tier">Scale</h3>
-              <p class="plan-price custom">Custom</p>
-            </header>
-            <ul class="plan-points">
-              <li>Multi‑entity / class tracking</li>
-              <li>Inventory / project accounting</li>
-              <li>Board‑ready reporting</li>
-              <li>Dedicated advisory</li>
-            </ul>
-            <a href="#contact" class="btn ghost small full">Request Quote</a>
-          </article>
+        <!-- Add-Ons -->
+        <div id="addOnsSection" class="addons-section">
+          <h3 class="addons-heading center">Add‑Ons (Optional)</h3>
+          <div id="addOnsMount" class="addons-grid" aria-live="polite" aria-busy="true">
+            <div class="loading-spinner sm" aria-hidden="true"></div>
+          </div>
         </div>
 
         <p class="pricing-footnote tiny center">
-          * Cleanup / historical catch‑up is quoted separately as a one‑time project.
+          * Cleanup / historical catch‑up work is quoted separately as a one‑time project unless included as an Add‑On.
         </p>
       </div>
+
+      <!-- Embedded fallback config (used only if pricing-config.json not found) -->
+      <script id="pricing-config-fallback" type="application/json">
+      {
+        "currencySymbol":"$",
+        "annualMultiplier":10,
+        "annualLabelAddon":"(2 months free)",
+        "defaultCycle":"monthly",
+        "plans":[
+          {
+            "id":"starter",
+            "name":"Starter",
+            "popular":false,
+            "monthly":399,
+            "features":[
+              "Up to 100 transactions",
+              "1 bank + 1 credit card",
+              "Monthly P&L & Balance Sheet",
+              "Email support"
+            ],
+            "ctaLabel":"Get Starter",
+            "ctaHref":"#contact"
+          },
+          {
+            "id":"growth",
+            "name":"Growth",
+            "popular":true,
+            "badge":"Most Popular",
+            "monthly":699,
+            "features":[
+              "Up to 400 transactions",
+              "3 bank/credit accounts",
+              "KPI pack & variance commentary",
+              "Priority support"
+            ],
+            "ctaLabel":"Choose Growth",
+            "ctaHref":"#contact"
+          },
+            {
+            "id":"scale",
+            "name":"Scale",
+            "popular":false,
+            "custom":true,
+            "customLabel":"Custom",
+            "features":[
+              "Multi‑entity / class tracking",
+              "Inventory / project accounting",
+              "Board‑ready reporting",
+              "Dedicated advisory"
+            ],
+            "ctaLabel":"Request Quote",
+            "ctaHref":"#contact",
+            "ctaVariant":"ghost"
+          }
+        ],
+        "addOns":[
+          {
+            "id":"cleanup",
+            "name":"Historical Cleanup",
+            "pricing":"Quoted",
+            "description":"One-time project to correct legacy bookkeeping issues."
+          },
+          {
+            "id":"backmonths",
+            "name":"Catch-Up Back Months",
+            "pricing":"$ Scoped",
+            "description":"Bring prior months current ahead of monthly cadence."
+          },
+          {
+            "id":"payroll",
+            "name":"Payroll Support",
+            "pricing":"+ $ Monthly",
+            "description":"Light payroll journal guidance & reconciliation."
+          },
+          {
+            "id":"kpi-custom",
+            "name":"Custom KPI Build",
+            "pricing":"One-Time",
+            "description":"Design & integrate specialized performance metrics."
+          }
+        ]
+      }
+      </script>
     </section>
 
     <!-- WHY US -->
@@ -314,6 +358,6 @@
     </div>
   </footer>
 
-  <script src="scripts.js" defer></script>
+  <script src="scripts.js?v=40" defer></script>
 </body>
 </html>
