@@ -1,3 +1,5 @@
+/* (Same stylesheet as before; only version in index.html changed) */
+
 /* ==========================================================================
    DESIGN TOKENS
    ========================================================================== */
@@ -139,11 +141,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   color:var(--color-primary);
   line-height:1;
 }
-.logo img {
-  height:56px;
-  width:auto;
-  display:block;
-}
+.logo img { height:56px; width:auto; display:block; }
 .logo-text {
   font:600 1.05rem/1 var(--font-display);
   letter-spacing:.01em;
@@ -170,7 +168,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   border:1px solid var(--color-border);
   border-radius:var(--radius-sm);
   padding:.6rem .85rem;
-  font-size:1.5rem;
+  font-size:1rem;
   cursor:pointer;
   transition:background var(--transition);
 }
@@ -590,10 +588,7 @@ figcaption {
   .main-nav ul.open { display:flex; }
   .nav-toggle { display:block; }
   .hero-layout { gap:var(--space-10); }
-  .nav-contact-us {
-    width:100%;
-    text-align:center;
-  }
+  .nav-contact-us { width:100%; text-align:center; }
 }
 
 @media (max-width:600px) {
