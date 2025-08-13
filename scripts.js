@@ -1,7 +1,11 @@
 /**
  * scripts.js v40
- * (Base: navigation, theme toggle, testimonial slider)
- * Added: Dynamic pricing loader (annual vs monthly), add-ons rendering, popular plan animation control.
+ * Features:
+ *  - Dynamic year
+ *  - Mobile navigation
+ *  - Theme toggle (replica)
+ *  - Testimonial slider
+ *  - Dynamic pricing (monthly/annual toggle, popular plan animation, add-ons)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
   initThemeToggle();
   initTestimonialSlider();
-  initDynamicPricing(); // NEW
+  initDynamicPricing();
 });
 
 /* Year */
@@ -35,8 +39,10 @@ function initThemeToggle(){
   const btn = document.getElementById('themeToggle');
   if(!btn) return;
   const stored = localStorage.getItem('theme');
-  if(stored){ root.setAttribute('data-theme', stored); sync(stored); }
-  else {
+  if(stored){
+    root.setAttribute('data-theme', stored);
+    sync(stored);
+  } else {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const mode = prefersDark ? 'dark':'light';
     root.setAttribute('data-theme', mode);
@@ -44,7 +50,7 @@ function initThemeToggle(){
   }
   btn.addEventListener('click', () => {
     const current = root.getAttribute('data-theme') || 'light';
-    const next = current === 'dark' ? 'light':'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     sync(next);
@@ -65,17 +71,15 @@ function initTestimonialSlider(){
   const next = slider.querySelector('.next');
   const dotsWrap = slider.querySelector('.slider-dots');
   if(!slides.length || !dotsWrap) return;
-  let idx = 0;
-
+  let idx=0;
   slides.forEach((_,i)=>{
     const b=document.createElement('button');
     b.type='button';
     b.setAttribute('role','tab');
     b.setAttribute('aria-selected', i===0?'true':'false');
-    b.addEventListener('click', ()=>go(i));
+    b.addEventListener('click',()=>go(i));
     dotsWrap.appendChild(b);
   });
-
   function go(i){
     slides[idx].classList.remove('active');
     dotsWrap.children[idx].setAttribute('aria-selected','false');
@@ -83,14 +87,11 @@ function initTestimonialSlider(){
     slides[idx].classList.add('active');
     dotsWrap.children[idx].setAttribute('aria-selected','true');
   }
-  prev?.addEventListener('click', ()=>go((idx-1+slides.length)%slides.length));
-  next?.addEventListener('click', ()=>go((idx+1)%slides.length));
-  window.__testimonials={go,next:()=>go((idx+1)%slides.length),prev:()=>go((idx-1+slides.length)%slides.length)};
+  prev?.addEventListener('click',()=>go((idx-1+slides.length)%slides.length));
+  next?.addEventListener('click',()=>go((idx+1)%slides.length));
 }
 
-/* =========================
-   Dynamic Pricing
-   ========================= */
+/* Dynamic Pricing */
 function initDynamicPricing(){
   const plansMount = document.getElementById('plansMount');
   const addOnsMount = document.getElementById('addOnsMount');
@@ -99,25 +100,23 @@ function initDynamicPricing(){
   const noteEl = document.getElementById('billing-note');
   if(!plansMount || !toggleWrap) return;
 
-  let config = null;
-  let currentCycle = 'monthly';
+  let config=null;
+  let currentCycle='monthly';
 
-  // Attempt to fetch external JSON; fallback to embedded
-  fetch('pricing-config.json', { cache:'no-store' })
-    .then(r => {
-      if(!r.ok) throw new Error('Config fetch failed');
-      return r.json();
-    })
-    .then(json => {
-      config = json;
-      setup();
-    })
-    .catch(() => {
+  fetch('pricing-config.json',{cache:'no-store'})
+    .then(r=>{ if(!r.ok) throw new Error('fetch fail'); return r.json(); })
+    .then(json=>{ config=json; setup(); })
+    .catch(()=>{
       try {
-        const fallbackRaw = document.getElementById('pricing-config-fallback')?.textContent || '{}';
-        config = JSON.parse(fallbackRaw);
+        const raw = document.getElementById('pricing-config-fallback')?.textContent || '{}';
+        config = JSON.parse(raw);
       } catch {
-        config = buildEmergencyFallback();
+        config = {
+          currencySymbol:'$',
+            annualMultiplier:10,
+          plans:[{id:'fallback',name:'Fallback',monthly:500,features:['Feature A','Feature B'],ctaLabel:'Contact',ctaHref:'#contact'}],
+          addOns:[]
+        };
       }
       setup();
     });
@@ -132,67 +131,55 @@ function initDynamicPricing(){
 
   function bindToggle(){
     toggleButtons.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
+      btn.addEventListener('click',()=>{
         const cycle = btn.dataset.cycle;
-        if(cycle === currentCycle) return;
+        if(cycle===currentCycle) return;
         currentCycle = cycle;
         toggleWrap.dataset.cycle = cycle;
         updateToggleAria();
         announceCycle();
-        renderPlans(); // re-render amounts only
+        renderPlans();
       });
-      // Keyboard support (radio group semantics already via role)
-      btn.addEventListener('keydown', e=>{
+      btn.addEventListener('keydown',e=>{
         if(!['ArrowLeft','ArrowRight'].includes(e.key)) return;
         e.preventDefault();
         const arr = Array.from(toggleButtons);
-        let idx = arr.indexOf(btn);
-        if(e.key === 'ArrowRight') idx = (idx+1)%arr.length;
-        else idx = (idx-1+arr.length)%arr.length;
-        arr[idx].focus();
-        arr[idx].click();
+        let i = arr.indexOf(btn);
+        if(e.key==='ArrowRight') i=(i+1)%arr.length;
+        else i=(i-1+arr.length)%arr.length;
+        arr[i].focus();
+        arr[i].click();
       });
+    });
+  }
+
+  function updateToggleAria(){
+    toggleButtons.forEach(b=>{
+      const active = b.dataset.cycle===currentCycle;
+      b.setAttribute('aria-pressed',active?'true':'false');
+      b.setAttribute('aria-checked',active?'true':'false');
     });
   }
 
   function announceCycle(){
     if(!noteEl) return;
-    const annualInfo = currentCycle === 'annual'
+    noteEl.textContent = currentCycle==='annual'
       ? `Annual billing selected. Equivalent to ${(config.annualMultiplier||10)} months paid for 12 months of service.`
       : 'Monthly billing selected.';
-    noteEl.textContent = annualInfo;
-  }
-
-  function updateToggleAria(){
-    toggleButtons.forEach(b=>{
-      const active = b.dataset.cycle === currentCycle;
-      b.setAttribute('aria-pressed', active ? 'true':'false');
-      b.setAttribute('aria-checked', active ? 'true':'false');
-    });
   }
 
   function computePrice(plan){
-    if(plan.custom) return plan.customLabel || 'Custom';
-    if(currentCycle === 'monthly'){
-      return {
-        amount: plan.monthly,
-        per: '/mo',
-        savings:false
-      };
+    if(plan.custom) return { label:plan.customLabel||'Custom', custom:true };
+    if(currentCycle==='monthly') {
+      return { amount: plan.monthly, per:'/mo', savings:false };
     }
-    // annual
     const mult = config.annualMultiplier || 10;
-    const annualTotal = plan.monthly * mult;
-    return {
-      amount: annualTotal,
-      per: '/yr',
-      savings:true
-    };
+    return { amount: plan.monthly * mult, per:'/yr', savings:true };
   }
 
   function formatCurrency(n){
     const sym = config.currencySymbol || '$';
-    if(typeof n !== 'number') return n;
+    if(typeof n!=='number') return n;
     return sym + n.toLocaleString();
   }
 
@@ -202,33 +189,37 @@ function initDynamicPricing(){
       return;
     }
     plansMount.setAttribute('aria-busy','true');
-    const frag = document.createDocumentFragment();
+    const frag=document.createDocumentFragment();
     config.plans.forEach(plan=>{
-      const { amount, per, savings } = computePrice(plan);
-      const card = document.createElement('article');
-      card.className = 'plan-card' + (plan.popular ? ' popular' : '');
-      card.setAttribute('data-plan', plan.id);
-      card.innerHTML = `
-        ${ plan.badge && plan.popular ? `<div class="plan-badge">${escapeHTML(plan.badge)}</div>`:''}
+      const pr = computePrice(plan);
+      const card=document.createElement('article');
+      card.className='plan-card'+(plan.popular?' popular':'');
+      card.setAttribute('data-plan',plan.id);
+      card.innerHTML=`
+        ${plan.badge && plan.popular ? `<div class="plan-badge">${escapeHTML(plan.badge)}</div>`:''}
         <div class="plan-head">
           <h3>${escapeHTML(plan.name)}</h3>
           <p class="plan-price-line">
-            <span class="amt">${escapeHTML(formatCurrency(amount))}</span>
-            <span class="per">${escapeHTML(per)}</span>
-            ${ plan.custom ? '' : (currentCycle==='annual' && savings ? '<span class="savings">Save 2 Months</span>' : '')}
-            ${ plan.custom ? '' : (currentCycle==='annual' && config.annualLabelAddon ? `<span class="savings alt">${escapeHTML(config.annualLabelAddon)}</span>`:'')}
+            ${ pr.custom
+              ? `<span class="amt">${escapeHTML(pr.label)}</span>`
+              : `<span class="amt">${escapeHTML(formatCurrency(pr.amount))}</span><span class="per">${escapeHTML(pr.per)}</span>
+                 ${ currentCycle==='annual' && pr.savings ? '<span class="savings">Save 2 Months</span>' : '' }
+                 ${ currentCycle==='annual' && config.annualLabelAddon ? `<span class="savings alt">${escapeHTML(config.annualLabelAddon)}</span>`:'' }`
+            }
           </p>
         </div>
         <ul class="plan-features">
-          ${ (plan.features||[]).map(f=>`<li>${escapeHTML(f)}</li>`).join('') }
+          ${(plan.features||[]).map(f=>`<li>${escapeHTML(f)}</li>`).join('')}
         </ul>
         <div class="plan-cta">
-          <a href="${escapeAttr(plan.ctaHref||'#contact')}" class="btn ${plan.ctaVariant==='ghost'?'ghost':'primary'} small full">${escapeHTML(plan.ctaLabel||'Select')}</a>
+          <a href="${escapeAttr(plan.ctaHref||'#contact')}" class="btn ${plan.ctaVariant==='ghost'?'ghost':'primary'} small full">
+            ${escapeHTML(plan.ctaLabel||'Select')}
+          </a>
         </div>
       `;
       frag.appendChild(card);
     });
-    plansMount.innerHTML = '';
+    plansMount.innerHTML='';
     plansMount.appendChild(frag);
     plansMount.setAttribute('aria-busy','false');
   }
@@ -237,15 +228,15 @@ function initDynamicPricing(){
     if(!addOnsMount) return;
     addOnsMount.setAttribute('aria-busy','true');
     if(!config?.addOns?.length){
-      addOnsMount.innerHTML = '<p class="tiny center muted">No add‑ons listed.</p>';
+      addOnsMount.innerHTML='<p class="tiny center muted">No add‑ons listed.</p>';
       addOnsMount.setAttribute('aria-busy','false');
       return;
     }
-    const frag = document.createDocumentFragment();
+    const frag=document.createDocumentFragment();
     config.addOns.forEach(a=>{
-      const card = document.createElement('div');
+      const card=document.createElement('div');
       card.className='addon-card';
-      card.innerHTML = `
+      card.innerHTML=`
         <div class="addon-head">
           <h4 class="addon-name">${escapeHTML(a.name)}</h4>
           <span class="addon-price">${escapeHTML(a.pricing||'Quoted')}</span>
@@ -265,27 +256,15 @@ function initDynamicPricing(){
     announceCycle();
   }
 
-  function buildEmergencyFallback(){
-    return {
-      currencySymbol:'$',
-      annualMultiplier:10,
-      defaultCycle:'monthly',
-      plans:[{id:'fallback',name:'Fallback',monthly:500,features:['Feature A','Feature B'],ctaLabel:'Contact',ctaHref:'#contact'}],
-      addOns:[]
-    };
-  }
-
   function escapeHTML(str){
-    return (str||'').replace(/[&<>"']/g, c=>(
-      { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]
-    ));
+    return (str||'').replace(/[&<>"']/g,c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
   }
   function escapeAttr(str){ return escapeHTML(str); }
 
   // Expose for debugging
   window.__pricing = {
     getConfig:()=>config,
-    setCycle:(c)=>{ if(['monthly','annual'].includes(c)){ currentCycle=c; toggleWrap.dataset.cycle=c; updateToggleAria(); renderPlans(); announceCycle(); }},
+    setCycle:(c)=>{ if(['monthly','annual'].includes(c)){ currentCycle=c; toggleWrap.dataset.cycle=c; updateToggleAria(); renderPlans(); announceCycle(); } },
     rerender:renderAll
   };
 }
