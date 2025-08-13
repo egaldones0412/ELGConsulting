@@ -117,7 +117,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
    HEADER / NAV
    ========================================================================== */
 .site-header {
-  background:#fff;
+  background:#fbbf24;
   border-bottom:1px solid var(--color-border);
   position:sticky;
   top:0;
