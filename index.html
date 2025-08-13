@@ -30,7 +30,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=37" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=39" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -64,6 +65,7 @@
           <li><a href="#platforms">Platforms</a></li>
           <li><a href="#value">Value</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#why">Why Us</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
@@ -84,7 +86,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Bookkeeping & Reporting Partner</p>
           <h1>Accurate. Reliable. <span class="accent">On Time</span></h1>
-          <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
+            <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
           <div class="hero-cta">
             <a href="#contact" class="btn primary lg">Free Consultation</a>
             <a href="#services" class="btn primary lg">See How We Can Help</a>
@@ -101,7 +103,7 @@
       </div>
     </section>
 
-    <!-- (Remaining sections unchanged from previous version) -->
+    <!-- PLATFORMS -->
     <section class="platforms-section" id="platforms">
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
@@ -121,6 +123,7 @@
       </div>
     </section>
 
+    <!-- VALUE -->
     <section id="value" class="section tight">
       <div class="container">
         <h2 class="center">Eliminate Operational Finance Friction</h2>
@@ -134,6 +137,7 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services" class="section alt">
       <div class="container">
         <div class="section-head">
@@ -149,6 +153,67 @@
       </div>
     </section>
 
+    <!-- PRICING (NEW INLINE) -->
+    <section id="pricing" class="section pricing-inline">
+      <div class="container">
+        <h2 class="center">Pricing</h2>
+        <p class="section-intro center small-max">Transparent, flexible, and scalable to your needs. Month‑to‑month—no long‑term lock‑in.</p>
+
+        <div class="pricing-plans">
+          <!-- Starter -->
+          <article class="pricing-plan">
+            <header>
+              <h3 class="plan-tier">Starter</h3>
+              <p class="plan-price"><span class="amount">$399</span><span class="per">/mo</span></p>
+            </header>
+            <ul class="plan-points">
+              <li>Up to 100 transactions</li>
+              <li>1 bank + 1 credit card</li>
+              <li>Monthly P&amp;L &amp; Balance Sheet</li>
+              <li>Email support</li>
+            </ul>
+            <a href="#contact" class="btn primary small full">Get Starter</a>
+          </article>
+
+          <!-- Growth -->
+          <article class="pricing-plan popular" aria-label="Growth plan - Most Popular">
+            <div class="popular-tag" aria-hidden="true">Most Popular</div>
+            <header>
+              <h3 class="plan-tier">Growth</h3>
+              <p class="plan-price"><span class="amount">$699</span><span class="per">/mo</span></p>
+            </header>
+            <ul class="plan-points">
+              <li>Up to 400 transactions</li>
+              <li>3 bank/credit accounts</li>
+              <li>KPI pack &amp; variance commentary</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="#contact" class="btn primary small full">Choose Growth</a>
+          </article>
+
+          <!-- Scale -->
+          <article class="pricing-plan">
+            <header>
+              <h3 class="plan-tier">Scale</h3>
+              <p class="plan-price custom">Custom</p>
+            </header>
+            <ul class="plan-points">
+              <li>Multi‑entity / class tracking</li>
+              <li>Inventory / project accounting</li>
+              <li>Board‑ready reporting</li>
+              <li>Dedicated advisory</li>
+            </ul>
+            <a href="#contact" class="btn ghost small full">Request Quote</a>
+          </article>
+        </div>
+
+        <p class="pricing-footnote tiny center">
+          * Cleanup / historical catch‑up is quoted separately as a one‑time project.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHY US -->
     <section id="why" class="section">
       <div class="container">
         <h2 class="center">Why ELG Consulting</h2>
@@ -161,6 +226,7 @@
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section id="process" class="section alt">
       <div class="container">
         <h2>Our Process</h2>
@@ -174,6 +240,7 @@
       </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
       <div class="container">
         <h2 class="center">Client Feedback</h2>
@@ -201,6 +268,7 @@
       </div>
     </section>
 
+    <!-- FAQ -->
     <section id="faq" class="section alt">
       <div class="container">
         <h2>FAQ</h2>
@@ -213,6 +281,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section contact-band">
       <div class="container contact-layout">
         <div class="contact-copy">
@@ -245,72 +314,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile nav
-    const navToggle = document.querySelector('.nav-toggle');
-    const navList = document.getElementById('nav-list');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        const open = navList.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', open ? 'true':'false');
-      });
-    }
-
-    // Theme toggle logic (replica)
-    const root = document.documentElement;
-    const toggleBtn = document.getElementById('themeToggle');
-
-    const stored = localStorage.getItem('theme');
-    if (stored){
-      root.setAttribute('data-theme', stored);
-      syncToggle(stored);
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      root.setAttribute('data-theme', prefersDark ? 'dark':'light');
-      syncToggle(prefersDark ? 'dark':'light');
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      syncToggle(next);
-    });
-
-    function syncToggle(mode){
-      const dark = mode === 'dark';
-      toggleBtn.setAttribute('aria-pressed', dark ? 'true':'false');
-      toggleBtn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
-    }
-
-    // Simple testimonial slider (unchanged)
-    (function(){
-      const slides = document.querySelectorAll('.testimonial-slider .slide');
-      const prev = document.querySelector('.testimonial-slider .prev');
-      const next = document.querySelector('.testimonial-slider .next');
-      const dotsWrap = document.querySelector('.testimonial-slider .slider-dots');
-      if(!slides.length || !dotsWrap) return;
-      let idx = 0;
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.setAttribute('role','tab');
-        b.setAttribute('aria-selected', i === 0 ? 'true':'false');
-        b.addEventListener('click', () => go(i));
-        dotsWrap.appendChild(b);
-      });
-      function go(i){
-        slides[idx].classList.remove('active');
-        dotsWrap.children[idx].setAttribute('aria-selected','false');
-        idx = i;
-        slides[idx].classList.add('active');
-        dotsWrap.children[idx].setAttribute('aria-selected','true');
-      }
-      if (prev) prev.addEventListener('click', () => go((idx - 1 + slides.length) % slides.length));
-      if (next) next.addEventListener('click', () => go((idx + 1) % slides.length));
-    })();
-  </script>
+  <script src="scripts.js" defer></script>
 </body>
 </html>
