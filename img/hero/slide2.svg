@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F5E73"/>
+      <stop offset="70%" stop-color="#1B4965"/>
+      <stop offset="100%" stop-color="#092D3A"/>
+    </linearGradient>
+    <linearGradient id="goldBand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E3B32F" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#FFB500" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="greenBand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2CA01C" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#238315" stop-opacity=".55"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx=".5" cy=".5" r=".5">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".45"/>
+      <stop offset="65%" stop-color="#FFFFFF" stop-opacity=".05"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg2)"/>
+  <g opacity=".95">
+    <polygon points="-200,0 880,0 560,1080 -200,1080" fill="url(#greenBand)"/>
+    <polygon points="520,-120 1980,-120 1920,1180 360,1180" fill="url(#goldBand)" opacity=".92"/>
+  </g>
+
+  <g transform="translate(1320 300)">
+    <circle cx="0" cy="0" r="220" fill="#FFFFFF" fill-opacity=".08" stroke="#FFFFFF" stroke-opacity=".15" stroke-width="4"/>
+    <circle cx="0" cy="0" r="170" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".2" stroke-width="2"/>
+    <circle cx="0" cy="0" r="120" fill="#2CA01C" fill-opacity=".65"/>
+    <path d="M0 -90 L0 10" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+    <path d="M0 0 L70 60" stroke="#E3B32F" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="16" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4"/>
+    <rect x="-40" y="-260" width="80" height="40" rx="12" fill="#FFFFFF" fill-opacity=".12" stroke="#FFFFFF" stroke-opacity=".25"/>
+  </g>
+
+  <g transform="translate(310 680)" opacity=".65">
+    <rect x="0" y="-140" width="40" height="140" rx="8" fill="#2CA01C"/>
+    <rect x="70" y="-210" width="40" height="210" rx="8" fill="#E3B32F"/>
+    <rect x="140" y="-170" width="40" height="170" rx="8" fill="#2CA01C"/>
+    <rect x="210" y="-260" width="40" height="260" rx="8" fill="#E3B32F"/>
+    <rect x="280" y="-190" width="40" height="190" rx="8" fill="#2CA01C"/>
+    <polyline points="0,-140 70,-210 140,-170 210,-260 280,-190"
+              fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+  </g>
+
+  <g transform="translate(480 310)" opacity=".55">
+    <rect x="0" y="0" width="460" height="260" rx="26" fill="#FFFFFF" fill-opacity=".08" stroke="#FFFFFF" stroke-opacity=".1"/>
+    <rect x="40" y="48" width="140" height="22" rx="6" fill="#2CA01C" opacity=".75"/>
+    <rect x="40" y="82" width="260" height="14" rx="5" fill="#FFFFFF" opacity=".35"/>
+    <rect x="40" y="106" width="190" height="14" rx="5" fill="#FFFFFF" opacity=".25"/>
+    <rect x="40" y="140" width="80" height="60" rx="12" fill="#E3B32F" opacity=".75"/>
+    <rect x="132" y="140" width="80" height="60" rx="12" fill="#2CA01C" opacity=".75"/>
+    <rect x="224" y="140" width="80" height="60" rx="12" fill="#E3B32F" opacity=".75"/>
+    <rect x="316" y="140" width="80" height="60" rx="12" fill="#2CA01C" opacity=".75"/>
+  </g>
+
+  <g opacity=".35">
+    <circle cx="1320" cy="300" r="380" fill="url(#pulse)"/>
+  </g>
+
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity=".03"/>
+</svg>
