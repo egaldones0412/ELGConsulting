@@ -129,7 +129,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   font-family:var(--font-display);
   font-weight:600;
   font-size:1.05rem;
-  color:var(--color-primary);
+  color:#020203;
   letter-spacing:.01em;
   padding:var(--space-4) 0;
   text-decoration:none;
