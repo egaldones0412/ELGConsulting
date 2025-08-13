@@ -1,0 +1,79 @@
+{
+  "currencySymbol": "$",
+  "annualMultiplier": 10,
+  "annualLabelAddon": "(2 months free)",
+  "defaultCycle": "monthly",
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "popular": false,
+      "monthly": 399,
+      "features": [
+        "Up to 100 transactions",
+        "1 bank + 1 credit card",
+        "Monthly P&L & Balance Sheet",
+        "Email support"
+      ],
+      "ctaLabel": "Get Starter",
+      "ctaHref": "#contact"
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "popular": true,
+      "badge": "Most Popular",
+      "monthly": 699,
+      "features": [
+        "Up to 400 transactions",
+        "3 bank/credit accounts",
+        "KPI pack & variance commentary",
+        "Priority support"
+      ],
+      "ctaLabel": "Choose Growth",
+      "ctaHref": "#contact"
+    },
+    {
+      "id": "scale",
+      "name": "Scale",
+      "popular": false,
+      "custom": true,
+      "customLabel": "Custom",
+      "features": [
+        "Multi‑entity / class tracking",
+        "Inventory / project accounting",
+        "Board‑ready reporting",
+        "Dedicated advisory"
+      ],
+      "ctaLabel": "Request Quote",
+      "ctaHref": "#contact",
+      "ctaVariant": "ghost"
+    }
+  ],
+  "addOns": [
+    {
+      "id": "cleanup",
+      "name": "Historical Cleanup",
+      "pricing": "Quoted",
+      "description": "One-time project to correct legacy bookkeeping issues."
+    },
+    {
+      "id": "backmonths",
+      "name": "Catch-Up Back Months",
+      "pricing": "$ Scoped",
+      "description": "Bring prior months current ahead of monthly cadence."
+    },
+    {
+      "id": "payroll",
+      "name": "Payroll Support",
+      "pricing": "+ $ Monthly",
+      "description": "Light payroll journal guidance & reconciliation."
+    },
+    {
+      "id": "kpi-custom",
+      "name": "Custom KPI Build",
+      "pricing": "One-Time",
+      "description": "Design & integrate specialized performance metrics."
+    }
+  ]
+}
