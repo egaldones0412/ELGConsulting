@@ -1,11 +1,7 @@
 /**
- * scripts.js v40
- * Features:
- *  - Dynamic year
- *  - Mobile navigation
- *  - Theme toggle (replica)
- *  - Testimonial slider
- *  - Dynamic pricing (monthly/annual toggle, popular plan animation, add-ons)
+ * scripts.js v41
+ * Core: Year / Nav / Theme / Testimonials
+ * Pricing: Dynamic plans with annual toggle, popular highlight, mobile reorder, add-on icons.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Year */
 function initYear(){
-  const el = document.getElementById('year');
-  if(el) el.textContent = new Date().getFullYear();
+  document.getElementById('year')?.append(new Date().getFullYear());
 }
 
 /* Mobile nav */
@@ -39,18 +34,15 @@ function initThemeToggle(){
   const btn = document.getElementById('themeToggle');
   if(!btn) return;
   const stored = localStorage.getItem('theme');
-  if(stored){
-    root.setAttribute('data-theme', stored);
-    sync(stored);
-  } else {
+  if(stored){ root.setAttribute('data-theme', stored); sync(stored); }
+  else {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const mode = prefersDark ? 'dark':'light';
     root.setAttribute('data-theme', mode);
     sync(mode);
   }
   btn.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme') || 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light':'dark';
     root.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
     sync(next);
@@ -58,7 +50,7 @@ function initThemeToggle(){
   function sync(mode){
     const dark = mode === 'dark';
     btn.setAttribute('aria-pressed', dark ? 'true':'false');
-    btn.setAttribute('aria-label', dark ? 'Activate light mode':'Activate dark mode');
+    btn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
   }
 }
 
@@ -76,7 +68,7 @@ function initTestimonialSlider(){
     const b=document.createElement('button');
     b.type='button';
     b.setAttribute('role','tab');
-    b.setAttribute('aria-selected', i===0?'true':'false');
+    b.setAttribute('aria-selected',i===0?'true':'false');
     b.addEventListener('click',()=>go(i));
     dotsWrap.appendChild(b);
   });
@@ -108,15 +100,10 @@ function initDynamicPricing(){
     .then(json=>{ config=json; setup(); })
     .catch(()=>{
       try {
-        const raw = document.getElementById('pricing-config-fallback')?.textContent || '{}';
-        config = JSON.parse(raw);
+        const fallbackRaw = document.getElementById('pricing-config-fallback')?.textContent || '{}';
+        config = JSON.parse(fallbackRaw);
       } catch {
-        config = {
-          currencySymbol:'$',
-            annualMultiplier:10,
-          plans:[{id:'fallback',name:'Fallback',monthly:500,features:['Feature A','Feature B'],ctaLabel:'Contact',ctaHref:'#contact'}],
-          addOns:[]
-        };
+        config = emergencyFallback();
       }
       setup();
     });
@@ -127,6 +114,7 @@ function initDynamicPricing(){
     updateToggleAria();
     renderAll();
     bindToggle();
+    window.addEventListener('resize', debounce(()=>renderPlans(),150));
   }
 
   function bindToggle(){
@@ -140,13 +128,12 @@ function initDynamicPricing(){
         announceCycle();
         renderPlans();
       });
-      btn.addEventListener('keydown',e=>{
+      btn.addEventListener('keydown', e=>{
         if(!['ArrowLeft','ArrowRight'].includes(e.key)) return;
         e.preventDefault();
-        const arr = Array.from(toggleButtons);
-        let i = arr.indexOf(btn);
-        if(e.key==='ArrowRight') i=(i+1)%arr.length;
-        else i=(i-1+arr.length)%arr.length;
+        const arr=[...toggleButtons];
+        let i=arr.indexOf(btn);
+        i = e.key==='ArrowRight' ? (i+1)%arr.length : (i-1+arr.length)%arr.length;
         arr[i].focus();
         arr[i].click();
       });
@@ -164,23 +151,37 @@ function initDynamicPricing(){
   function announceCycle(){
     if(!noteEl) return;
     noteEl.textContent = currentCycle==='annual'
-      ? `Annual billing selected. Equivalent to ${(config.annualMultiplier||10)} months paid for 12 months of service.`
+      ? `Annual billing selected – ${(config.annualMultiplier||10)} months paid for 12 months of service.`
       : 'Monthly billing selected.';
   }
 
   function computePrice(plan){
-    if(plan.custom) return { label:plan.customLabel||'Custom', custom:true };
-    if(currentCycle==='monthly') {
-      return { amount: plan.monthly, per:'/mo', savings:false };
-    }
+    if(plan.custom) return { custom:true, label:plan.customLabel||'Custom' };
+    if(currentCycle==='monthly') return { amount:plan.monthly, per:'/mo', savings:false };
     const mult = config.annualMultiplier || 10;
-    return { amount: plan.monthly * mult, per:'/yr', savings:true };
+    return { amount:plan.monthly * mult, per:'/yr', savings:true };
   }
 
   function formatCurrency(n){
-    const sym = config.currencySymbol || '$';
-    if(typeof n!=='number') return n;
+    const sym=config.currencySymbol||'$';
+    if(typeof n !== 'number') return n;
     return sym + n.toLocaleString();
+  }
+
+  function isMobile(){ return window.innerWidth < 760; }
+
+  function orderedPlans(){
+    if(!config?.plans) return [];
+    // Keep explicit order desktop; on mobile put popular first
+    const plans = [...config.plans];
+    if(isMobile()){
+      const popIndex = plans.findIndex(p=>p.popular);
+      if(popIndex>0){
+        const [pop] = plans.splice(popIndex,1);
+        plans.unshift(pop);
+      }
+    }
+    return plans;
   }
 
   function renderPlans(){
@@ -189,22 +190,26 @@ function initDynamicPricing(){
       return;
     }
     plansMount.setAttribute('aria-busy','true');
-    const frag=document.createDocumentFragment();
-    config.plans.forEach(plan=>{
+
+    const frag = document.createDocumentFragment();
+    orderedPlans().forEach(plan=>{
       const pr = computePrice(plan);
-      const card=document.createElement('article');
+      const card = document.createElement('article');
       card.className='plan-card'+(plan.popular?' popular':'');
-      card.setAttribute('data-plan',plan.id);
-      card.innerHTML=`
+      card.dataset.plan = plan.id;
+      card.innerHTML = `
         ${plan.badge && plan.popular ? `<div class="plan-badge">${escapeHTML(plan.badge)}</div>`:''}
         <div class="plan-head">
           <h3>${escapeHTML(plan.name)}</h3>
+          ${plan.popular && plan.popularNote ? `<p class="plan-subnote">${escapeHTML(plan.popularNote)}</p>`:''}
           <p class="plan-price-line">
-            ${ pr.custom
-              ? `<span class="amt">${escapeHTML(pr.label)}</span>`
-              : `<span class="amt">${escapeHTML(formatCurrency(pr.amount))}</span><span class="per">${escapeHTML(pr.per)}</span>
-                 ${ currentCycle==='annual' && pr.savings ? '<span class="savings">Save 2 Months</span>' : '' }
-                 ${ currentCycle==='annual' && config.annualLabelAddon ? `<span class="savings alt">${escapeHTML(config.annualLabelAddon)}</span>`:'' }`
+            ${
+              pr.custom
+                ? `<span class="amt">${escapeHTML(pr.label)}</span>`
+                : `<span class="amt">${escapeHTML(formatCurrency(pr.amount))}</span>
+                   <span class="per">${escapeHTML(pr.per)}</span>
+                   ${currentCycle==='annual' && pr.savings ? '<span class="savings">Save 2 Months</span>':''}
+                   ${currentCycle==='annual' && config.annualLabelAddon ? `<span class="savings alt">${escapeHTML(config.annualLabelAddon)}</span>`:''}`
             }
           </p>
         </div>
@@ -224,6 +229,13 @@ function initDynamicPricing(){
     plansMount.setAttribute('aria-busy','false');
   }
 
+  const addOnIcons = {
+    cleanup:'🧹',
+    backmonths:'⏱️',
+    payroll:'👥',
+    'kpi-custom':'📊'
+  };
+
   function renderAddOns(){
     if(!addOnsMount) return;
     addOnsMount.setAttribute('aria-busy','true');
@@ -236,8 +248,10 @@ function initDynamicPricing(){
     config.addOns.forEach(a=>{
       const card=document.createElement('div');
       card.className='addon-card';
+      const icon = addOnIcons[a.id] || '➕';
       card.innerHTML=`
         <div class="addon-head">
+          <div class="addon-icon" aria-hidden="true">${icon}</div>
           <h4 class="addon-name">${escapeHTML(a.name)}</h4>
           <span class="addon-price">${escapeHTML(a.pricing||'Quoted')}</span>
         </div>
@@ -256,10 +270,24 @@ function initDynamicPricing(){
     announceCycle();
   }
 
+  function emergencyFallback(){
+    return {
+      currencySymbol:'$',
+      annualMultiplier:10,
+      defaultCycle:'monthly',
+      plans:[{id:'fallback',name:'Fallback',monthly:500,features:['Feature A','Feature B'],ctaLabel:'Contact',ctaHref:'#contact'}],
+      addOns:[]
+    };
+  }
+
   function escapeHTML(str){
-    return (str||'').replace(/[&<>"']/g,c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+    return (str||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   }
   function escapeAttr(str){ return escapeHTML(str); }
+
+  function debounce(fn,ms){
+    let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),ms); };
+  }
 
   // Expose for debugging
   window.__pricing = {
@@ -269,4 +297,4 @@ function initDynamicPricing(){
   };
 }
 
-/* End scripts.js v40 */
+/* End scripts.js v41 */
