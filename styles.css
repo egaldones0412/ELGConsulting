@@ -56,10 +56,10 @@
   --focus-ring:0 0 0 3px rgba(227,179,47,.55);
   --focus-ring-inset:0 0 0 2px #fff,0 0 0 5px rgba(227,179,47,.6);
 
-  --toggle-w:132px;
-  --toggle-h:56px;
-  --toggle-pad:5px;
-  --toggle-knob:46px;
+  --toggle-w:50px;
+  --toggle-h:48px;
+  --toggle-pad:3px;
+  --toggle-knob:38px;
   --toggle-shift:calc(var(--toggle-w) - var(--toggle-knob) - var(--toggle-pad)*2);
 }
 html[data-theme="dark"] {
