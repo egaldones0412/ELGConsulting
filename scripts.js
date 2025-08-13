@@ -1,34 +1,50 @@
 /**
- * scripts.js v41
- * Core: Year / Nav / Theme / Testimonials
- * Pricing: Dynamic plans with annual toggle, popular highlight, mobile reorder, add-on icons.
+ * scripts.js v42
+ * Features:
+ *  - Dynamic year
+ *  - Responsive mobile navigation
+ *  - Theme toggle replica
+ *  - Testimonial slider
+ *  - Dynamic pricing (annual toggle, popular highlight, add-ons, mobile ordering)
+ *  - Scroll spy for nav active state
+ *  - Header scroll shadow
  */
-
 document.addEventListener('DOMContentLoaded', () => {
   initYear();
   initNavToggle();
   initThemeToggle();
   initTestimonialSlider();
   initDynamicPricing();
+  initScrollSpy();
+  initHeaderScrollState();
 });
 
 /* Year */
 function initYear(){
-  document.getElementById('year')?.append(new Date().getFullYear());
+  const el = document.getElementById('year');
+  if(el) el.textContent = new Date().getFullYear();
 }
 
-/* Mobile nav */
+/* Mobile Nav */
 function initNavToggle(){
-  const navToggle = document.querySelector('.nav-toggle');
-  const navList = document.getElementById('nav-list');
-  if(!navToggle || !navList) return;
-  navToggle.addEventListener('click', () => {
-    const open = navList.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open ? 'true':'false');
+  const toggle = document.querySelector('.nav-toggle');
+  const list = document.getElementById('nav-list');
+  if(!toggle || !list) return;
+  toggle.addEventListener('click', ()=>{
+    const open = list.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true':'false');
+  });
+  list.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      if(list.classList.contains('open')){
+        list.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
   });
 }
 
-/* Theme toggle */
+/* Theme Toggle */
 function initThemeToggle(){
   const root = document.documentElement;
   const btn = document.getElementById('themeToggle');
@@ -50,11 +66,11 @@ function initThemeToggle(){
   function sync(mode){
     const dark = mode === 'dark';
     btn.setAttribute('aria-pressed', dark ? 'true':'false');
-    btn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
+    btn.setAttribute('aria-label', dark ? 'Activate light mode':'Activate dark mode');
   }
 }
 
-/* Testimonial slider */
+/* Testimonial Slider */
 function initTestimonialSlider(){
   const slider = document.querySelector('.testimonial-slider');
   if(!slider) return;
@@ -83,15 +99,67 @@ function initTestimonialSlider(){
   next?.addEventListener('click',()=>go((idx+1)%slides.length));
 }
 
+/* Scroll Spy */
+function initScrollSpy(){
+  const navLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+  if(!navLinks.length) return;
+  const sections = navLinks.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+  const map = new Map();
+  sections.forEach(sec=>map.set(sec.id, navLinks.find(l=>l.getAttribute('href')==='#'+sec.id)));
+
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        map.forEach(l=>{
+          l.removeAttribute('aria-current');
+          l.classList.remove('is-active');
+        });
+        const link = map.get(entry.target.id);
+        if(link){
+          link.setAttribute('aria-current','true');
+          link.classList.add('is-active');
+        }
+      }
+    });
+  },{ rootMargin:'-55% 0px -40% 0px', threshold:[0,0.25,0.5,0.75,1] });
+
+  sections.forEach(sec=>observer.observe(sec));
+
+  // Optional smooth scroll
+  navLinks.forEach(link=>{
+    link.addEventListener('click', e=>{
+      const id=link.getAttribute('href');
+      if(id && id.startsWith('#')){
+        const target=document.querySelector(id);
+        if(target){
+          e.preventDefault();
+            target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      }
+    });
+  });
+}
+
+/* Header scroll shadow */
+function initHeaderScrollState(){
+  const header=document.querySelector('.site-header');
+  if(!header) return;
+  const set=()=>{
+    if(window.scrollY>8) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  set();
+  window.addEventListener('scroll', set, {passive:true});
+}
+
 /* Dynamic Pricing */
 function initDynamicPricing(){
-  const plansMount = document.getElementById('plansMount');
-  const addOnsMount = document.getElementById('addOnsMount');
-  const toggleWrap = document.querySelector('.billing-toggle-wrap');
-  const toggleButtons = document.querySelectorAll('.billing-toggle');
-  const noteEl = document.getElementById('billing-note');
-  if(!plansMount || !toggleWrap) return;
-
+  const plansMount=document.getElementById('plansMount');
+  if(!plansMount) return;
+  const addOnsMount=document.getElementById('addOnsMount');
+  const toggleWrap=document.querySelector('.billing-toggle-wrap');
+  const toggleButtons=document.querySelectorAll('.billing-toggle');
+  const noteEl=document.getElementById('billing-note');
   let config=null;
   let currentCycle='monthly';
 
@@ -100,54 +168,52 @@ function initDynamicPricing(){
     .then(json=>{ config=json; setup(); })
     .catch(()=>{
       try {
-        const fallbackRaw = document.getElementById('pricing-config-fallback')?.textContent || '{}';
-        config = JSON.parse(fallbackRaw);
+        const fallbackRaw=document.getElementById('pricing-config-fallback')?.textContent||'{}';
+        config=JSON.parse(fallbackRaw);
       } catch {
-        config = emergencyFallback();
+        config=emergencyFallback();
       }
       setup();
     });
 
   function setup(){
-    currentCycle = config.defaultCycle || 'monthly';
-    toggleWrap.dataset.cycle = currentCycle;
+    currentCycle=config.defaultCycle||'monthly';
+    toggleWrap.dataset.cycle=currentCycle;
     updateToggleAria();
     renderAll();
     bindToggle();
-    window.addEventListener('resize', debounce(()=>renderPlans(),150));
+    window.addEventListener('resize', debounce(()=>renderPlans(),140));
   }
 
   function bindToggle(){
     toggleButtons.forEach(btn=>{
       btn.addEventListener('click',()=>{
-        const cycle = btn.dataset.cycle;
+        const cycle=btn.dataset.cycle;
         if(cycle===currentCycle) return;
-        currentCycle = cycle;
-        toggleWrap.dataset.cycle = cycle;
+        currentCycle=cycle;
+        toggleWrap.dataset.cycle=cycle;
         updateToggleAria();
         announceCycle();
         renderPlans();
       });
-      btn.addEventListener('keydown', e=>{
+      btn.addEventListener('keydown',e=>{
         if(!['ArrowLeft','ArrowRight'].includes(e.key)) return;
         e.preventDefault();
         const arr=[...toggleButtons];
         let i=arr.indexOf(btn);
         i = e.key==='ArrowRight' ? (i+1)%arr.length : (i-1+arr.length)%arr.length;
-        arr[i].focus();
-        arr[i].click();
+        arr[i].focus(); arr[i].click();
       });
     });
   }
 
   function updateToggleAria(){
     toggleButtons.forEach(b=>{
-      const active = b.dataset.cycle===currentCycle;
+      const active=b.dataset.cycle===currentCycle;
       b.setAttribute('aria-pressed',active?'true':'false');
       b.setAttribute('aria-checked',active?'true':'false');
     });
   }
-
   function announceCycle(){
     if(!noteEl) return;
     noteEl.textContent = currentCycle==='annual'
@@ -156,48 +222,42 @@ function initDynamicPricing(){
   }
 
   function computePrice(plan){
-    if(plan.custom) return { custom:true, label:plan.customLabel||'Custom' };
-    if(currentCycle==='monthly') return { amount:plan.monthly, per:'/mo', savings:false };
-    const mult = config.annualMultiplier || 10;
-    return { amount:plan.monthly * mult, per:'/yr', savings:true };
+    if(plan.custom) return {custom:true,label:plan.customLabel||'Custom'};
+    if(currentCycle==='monthly') return {amount:plan.monthly, per:'/mo', savings:false};
+    const mult=config.annualMultiplier||10;
+    return {amount:plan.monthly*mult, per:'/yr', savings:true};
   }
-
   function formatCurrency(n){
     const sym=config.currencySymbol||'$';
-    if(typeof n !== 'number') return n;
+    if(typeof n!=='number') return n;
     return sym + n.toLocaleString();
   }
-
-  function isMobile(){ return window.innerWidth < 760; }
-
+  function isMobile(){ return window.innerWidth<760; }
   function orderedPlans(){
     if(!config?.plans) return [];
-    // Keep explicit order desktop; on mobile put popular first
-    const plans = [...config.plans];
+    const plans=[...config.plans];
     if(isMobile()){
-      const popIndex = plans.findIndex(p=>p.popular);
-      if(popIndex>0){
-        const [pop] = plans.splice(popIndex,1);
+      const idx=plans.findIndex(p=>p.popular);
+      if(idx>0){
+        const [pop]=plans.splice(idx,1);
         plans.unshift(pop);
       }
     }
     return plans;
   }
-
   function renderPlans(){
     if(!config?.plans?.length){
-      plansMount.innerHTML = '<p class="tiny">No plans configured.</p>';
+      plansMount.innerHTML='<p class="tiny">No plans configured.</p>';
       return;
     }
     plansMount.setAttribute('aria-busy','true');
-
-    const frag = document.createDocumentFragment();
+    const frag=document.createDocumentFragment();
     orderedPlans().forEach(plan=>{
-      const pr = computePrice(plan);
-      const card = document.createElement('article');
+      const pr=computePrice(plan);
+      const card=document.createElement('article');
       card.className='plan-card'+(plan.popular?' popular':'');
-      card.dataset.plan = plan.id;
-      card.innerHTML = `
+      card.dataset.plan=plan.id;
+      card.innerHTML=`
         ${plan.badge && plan.popular ? `<div class="plan-badge">${escapeHTML(plan.badge)}</div>`:''}
         <div class="plan-head">
           <h3>${escapeHTML(plan.name)}</h3>
@@ -220,8 +280,7 @@ function initDynamicPricing(){
           <a href="${escapeAttr(plan.ctaHref||'#contact')}" class="btn ${plan.ctaVariant==='ghost'?'ghost':'primary'} small full">
             ${escapeHTML(plan.ctaLabel||'Select')}
           </a>
-        </div>
-      `;
+        </div>`;
       frag.appendChild(card);
     });
     plansMount.innerHTML='';
@@ -229,13 +288,12 @@ function initDynamicPricing(){
     plansMount.setAttribute('aria-busy','false');
   }
 
-  const addOnIcons = {
+  const addOnIcons={
     cleanup:'🧹',
     backmonths:'⏱️',
     payroll:'👥',
     'kpi-custom':'📊'
   };
-
   function renderAddOns(){
     if(!addOnsMount) return;
     addOnsMount.setAttribute('aria-busy','true');
@@ -248,27 +306,21 @@ function initDynamicPricing(){
     config.addOns.forEach(a=>{
       const card=document.createElement('div');
       card.className='addon-card';
-      const icon = addOnIcons[a.id] || '➕';
+      const icon=addOnIcons[a.id]||'➕';
       card.innerHTML=`
         <div class="addon-head">
           <div class="addon-icon" aria-hidden="true">${icon}</div>
           <h4 class="addon-name">${escapeHTML(a.name)}</h4>
           <span class="addon-price">${escapeHTML(a.pricing||'Quoted')}</span>
         </div>
-        <p class="addon-desc">${escapeHTML(a.description||'')}</p>
-      `;
+        <p class="addon-desc">${escapeHTML(a.description||'')}</p>`;
       frag.appendChild(card);
     });
     addOnsMount.innerHTML='';
     addOnsMount.appendChild(frag);
     addOnsMount.setAttribute('aria-busy','false');
   }
-
-  function renderAll(){
-    renderPlans();
-    renderAddOns();
-    announceCycle();
-  }
+  function renderAll(){ renderPlans(); renderAddOns(); announceCycle(); }
 
   function emergencyFallback(){
     return {
@@ -279,17 +331,10 @@ function initDynamicPricing(){
       addOns:[]
     };
   }
-
-  function escapeHTML(str){
-    return (str||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  }
+  function escapeHTML(str){ return (str||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function escapeAttr(str){ return escapeHTML(str); }
+  function debounce(fn,ms){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),ms); }; }
 
-  function debounce(fn,ms){
-    let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),ms); };
-  }
-
-  // Expose for debugging
   window.__pricing = {
     getConfig:()=>config,
     setCycle:(c)=>{ if(['monthly','annual'].includes(c)){ currentCycle=c; toggleWrap.dataset.cycle=c; updateToggleAria(); renderPlans(); announceCycle(); } },
@@ -297,4 +342,4 @@ function initDynamicPricing(){
   };
 }
 
-/* End scripts.js v41 */
+/* End scripts.js v42 */
