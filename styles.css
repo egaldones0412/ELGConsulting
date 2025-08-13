@@ -57,10 +57,10 @@
   --focus-ring-inset:0 0 0 2px #fff,0 0 0 5px rgba(227,179,47,.6);
 
   /* Replica toggle sizing */
-  --toggle-w:88px;
-  --toggle-h:36px;
-  --toggle-pad:4px;
-  --toggle-knob:30px;
+  --toggle-w:74px;
+  --toggle-h:30px;
+  --toggle-pad:3px;
+  --toggle-knob:24px;
   --toggle-shift:calc(var(--toggle-w) - var(--toggle-knob) - var(--toggle-pad)*2);
 }
 
