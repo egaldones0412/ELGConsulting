@@ -34,7 +34,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=38" />
+  <link rel="stylesheet" href="styles.css?v=39" />
+  <link rel="preload" as="image" href="img/hero/slide1.svg">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -46,7 +47,7 @@
         <span class="logo-text">ELG Consulting</span>
       </a>
 
-      <!-- Theme Toggle (replica sun/moon switch, adjustable via CSS vars) -->
+      <!-- Theme Toggle -->
       <button id="themeToggle"
               class="theme-toggle-replica toggle-sm"
               aria-label="Activate dark mode"
@@ -55,9 +56,9 @@
         <span class="visually-hidden">Toggle dark mode</span>
         <span class="toggle-env">
           <span class="layer sky"></span>
-            <span class="layer clouds clouds-a"></span>
-            <span class="layer clouds clouds-b"></span>
-            <span class="layer stars"></span>
+          <span class="layer clouds clouds-a"></span>
+          <span class="layer clouds clouds-b"></span>
+          <span class="layer stars"></span>
           <span class="toggle-knob"></span>
         </span>
       </button>
@@ -79,7 +80,8 @@
   </header>
 
   <main id="main">
-    <!-- HERO CAROUSEL (replaces previous hero section) -->
+
+    <!-- HERO CAROUSEL -->
     <section id="hero" class="hero-carousel" aria-roledescription="carousel" aria-label="Featured highlights">
       <div class="hc-inner">
         <div class="hc-viewport" tabindex="0">
@@ -89,7 +91,7 @@
                 role="group"
                 aria-roledescription="slide"
                 aria-label="1 of 3">
-              <div class="hc-media" style="--slide-bg:url('img/hero/slide1.jpg');"></div>
+              <div class="hc-media" style="--slide-bg:url('img/hero/slide1.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals">
                   <span class="diag diag-main"></span>
@@ -104,12 +106,13 @@
                 </div>
               </div>
             </li>
+
             <!-- Slide 2 -->
             <li class="hc-slide"
                 role="group"
                 aria-roledescription="slide"
                 aria-label="2 of 3">
-              <div class="hc-media" style="--slide-bg:url('img/hero/slide2.jpg');"></div>
+              <div class="hc-media" style="--slide-bg:url('img/hero/slide2.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals">
                   <span class="diag diag-main"></span>
@@ -124,12 +127,13 @@
                 </div>
               </div>
             </li>
+
             <!-- Slide 3 -->
             <li class="hc-slide"
                 role="group"
                 aria-roledescription="slide"
                 aria-label="3 of 3">
-              <div class="hc-media" style="--slide-bg:url('img/hero/slide3.jpg');"></div>
+              <div class="hc-media" style="--slide-bg:url('img/hero/slide3.svg');"></div>
               <div class="hc-overlay">
                 <div class="hc-diagonals">
                   <span class="diag diag-main"></span>
@@ -395,6 +399,7 @@
         </form>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -420,7 +425,7 @@
       });
     }
 
-    /* Theme toggle logic */
+    /* Theme toggle */
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
     const storedTheme = localStorage.getItem('theme');
