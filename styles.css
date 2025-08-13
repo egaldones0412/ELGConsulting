@@ -138,7 +138,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   color:var(--color-primary);
 }
 .logo img {
-  height:40px; /* Adjust 34–48px as desired */
+  height:56px; /* Adjust 34–48px as desired */
   width:auto;
   display:block;
 }
