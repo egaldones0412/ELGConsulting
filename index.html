@@ -17,25 +17,21 @@
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=4">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=4">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=4">
-  <meta name="theme-color" content="#1e3a8a">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts (added Open Sans only for logo wordmark) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=24" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container flex-between">
+      <!-- Change logo.svg to logo.png if your file is PNG -->
       <a class="logo" href="/">
         <img src="img/logo.svg" alt="ELG Consulting">
         <span class="logo-text">ELG Consulting</span>
@@ -43,9 +39,11 @@
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
-          <!-- Quick links for Platforms / Value / Process intentionally removed -->
+          <li><a href="#platforms">Platforms</a></li>
+          <li><a href="#value">Value</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#why">Why Us</a></li>
+          <li><a href="#process">Process</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact" class="btn small">Contact</a></li>
@@ -81,7 +79,7 @@
       </div>
     </section>
 
-    <!-- PLATFORMS (kept; no header quick link) -->
+    <!-- PLATFORMS -->
     <section class="platforms-section" id="platforms">
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
@@ -101,7 +99,7 @@
       </div>
     </section>
 
-    <!-- VALUE (kept) -->
+    <!-- VALUE -->
     <section id="value" class="section tight">
       <div class="container">
         <h2 class="center">Eliminate Operational Finance Friction</h2>
@@ -117,7 +115,7 @@
             <h3>Slow Close Cycle</h3>
             <p>Disciplined workflows deliver statements within 5 business days.</p>
           </div>
-          <div class="value-item">
+            <div class="value-item">
             <img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy">
             <h3>Weak Visibility</h3>
             <p>Custom KPIs and variance notes turn static reports into clarity.</p>
@@ -204,7 +202,7 @@
       </div>
     </section>
 
-    <!-- PROCESS (kept; nav link removed) -->
+    <!-- PROCESS -->
     <section id="process" class="section alt">
       <div class="container">
         <h2>Our Process</h2>
