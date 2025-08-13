@@ -18,6 +18,7 @@
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
 
   <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -32,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=36" />
+  <link rel="stylesheet" href="styles.css?v=37" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -44,14 +45,18 @@
         <span class="logo-text">ELG Consulting</span>
       </a>
 
-      <!-- New Theme Toggle Switch -->
+      <!-- EXACT REPLICA TOGGLE -->
       <button id="themeToggle"
-              class="theme-toggle-switch"
+              class="theme-toggle-replica"
               aria-label="Activate dark mode"
               aria-pressed="false"
               type="button">
         <span class="visually-hidden">Toggle dark mode</span>
-        <span class="toggle-track">
+        <span class="toggle-env">
+          <span class="layer sky"></span>
+          <span class="layer clouds clouds-a"></span>
+          <span class="layer clouds clouds-b"></span>
+          <span class="layer stars"></span>
           <span class="toggle-knob"></span>
         </span>
       </button>
@@ -99,7 +104,7 @@
       </div>
     </section>
 
-    <!-- PLATFORMS -->
+    <!-- (Remaining sections unchanged from previous version) -->
     <section class="platforms-section" id="platforms">
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
@@ -119,37 +124,19 @@
       </div>
     </section>
 
-    <!-- VALUE -->
     <section id="value" class="section tight">
       <div class="container">
         <h2 class="center">Eliminate Operational Finance Friction</h2>
         <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
         <div class="value-grid">
-          <div class="value-item">
-            <img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy">
-            <h3>Backlog / Messy Books</h3>
-            <p>Historical cleanup & error correction restore a solid financial baseline.</p>
-          </div>
-          <div class="value-item">
-            <img src="img/icon-speed.svg" alt="" class="vi" loading="lazy">
-            <h3>Slow Close Cycle</h3>
-            <p>Disciplined workflows deliver statements within 5 business days.</p>
-          </div>
-          <div class="value-item">
-            <img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy">
-            <h3>Weak Visibility</h3>
-            <p>Custom KPIs and variance notes turn static reports into clarity.</p>
-          </div>
-          <div class="value-item">
-            <img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy">
-            <h3>Manual Inefficiency</h3>
-            <p>Tools and process refinement reduce rework and risk.</p>
-          </div>
+          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
+          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi" loading="lazy"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
+          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
+          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="section alt">
       <div class="container">
         <div class="section-head">
@@ -157,72 +144,26 @@
           <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
         </div>
         <div class="cards services-grid">
-          <article class="card service">
-            <h3>Monthly Bookkeeping</h3>
-            <p>Categorization, reconciliations, adjusting entries, financial statements.</p>
-            <ul class="mini-list">
-              <li>Cash or accrual</li>
-              <li>Bank & card tie‑outs</li>
-              <li>Close checklist</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <h3>Catch‑Up & Cleanup</h3>
-            <p>Backlog completion & historical correction to reestablish accuracy.</p>
-            <ul class="mini-list">
-              <li>Error tracing</li>
-              <li>Balance validation</li>
-              <li>Documentation set</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <h3>Management Reporting</h3>
-            <p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p>
-            <ul class="mini-list">
-              <li>Custom KPI set</li>
-              <li>Variance insight</li>
-              <li>Review session</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <h3>Workflow & Advisory</h3>
-            <p>Light advisory on process, tech stack, and data hygiene.</p>
-            <ul class="mini-list">
-              <li>Tool alignment</li>
-              <li>Receipt capture</li>
-              <li>AR/AP structuring</li>
-            </ul>
-          </article>
+          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
+          <article class="card service"><h3>Catch‑Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
+          <article class="card service"><h3>Management Reporting</h3><p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
+          <article class="card service"><h3>Workflow & Advisory</h3><p>Light advisory on process, tech stack, and data hygiene.</p><ul class="mini-list"><li>Tool alignment</li><li>Receipt capture</li><li>AR/AP structuring</li></ul></article>
         </div>
       </div>
     </section>
 
-    <!-- WHY US -->
     <section id="why" class="section">
       <div class="container">
         <h2 class="center">Why ELG Consulting</h2>
         <div class="why-grid">
-          <div class="why-item">
-            <h3>Reliable Turnaround</h3>
-            <p>Consistent delivery inside 5 business days after month end.</p>
-          </div>
-          <div class="why-item">
-            <h3>Broad Tool Coverage</h3>
-            <p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p>
-          </div>
-          <div class="why-item">
-            <h3>Accuracy Discipline</h3>
-            <p>Layered review approach lowers error propagation.</p>
-          </div>
-          <div class="why-item">
-            <h3>Security Mindset</h3>
-            <p>Least‑privilege access and structured data handling.</p>
-          </div>
+          <div class="why-item"><h3>Reliable Turnaround</h3><p>Consistent delivery inside 5 business days after month end.</p></div>
+          <div class="why-item"><h3>Broad Tool Coverage</h3><p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p></div>
+          <div class="why-item"><h3>Accuracy Discipline</h3><p>Layered review approach lowers error propagation.</p></div>
+          <div class="why-item"><h3>Security Mindset</h3><p>Least‑privilege access and structured data handling.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section id="process" class="section alt">
       <div class="container">
         <h2>Our Process</h2>
@@ -236,7 +177,6 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section id="testimonials" class="section">
       <div class="container">
         <h2 class="center">Client Feedback</h2>
@@ -264,7 +204,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="section alt">
       <div class="container">
         <h2>FAQ</h2>
@@ -277,7 +216,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section contact-band">
       <div class="container contact-layout">
         <div class="contact-copy">
@@ -313,21 +251,51 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile nav
     const navToggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
     if (navToggle) {
       navToggle.addEventListener('click', () => {
         const open = navList.classList.toggle('open');
-        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-expanded', open ? 'true':'false');
       });
     }
 
-    // Testimonial slider
-    const slides = document.querySelectorAll('.testimonial-slider .slide');
-    const prev = document.querySelector('.testimonial-slider .prev');
-    const next = document.querySelector('.testimonial-slider .next');
-    const dotsWrap = document.querySelector('.testimonial-slider .slider-dots');
-    if (slides.length && dotsWrap) {
+    // Theme toggle logic (replica)
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('themeToggle');
+
+    const stored = localStorage.getItem('theme');
+    if (stored){
+      root.setAttribute('data-theme', stored);
+      syncToggle(stored);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', prefersDark ? 'dark':'light');
+      syncToggle(prefersDark ? 'dark':'light');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      syncToggle(next);
+    });
+
+    function syncToggle(mode){
+      const dark = mode === 'dark';
+      toggleBtn.setAttribute('aria-pressed', dark ? 'true':'false');
+      toggleBtn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
+    }
+
+    // Simple testimonial slider (unchanged)
+    (function(){
+      const slides = document.querySelectorAll('.testimonial-slider .slide');
+      const prev = document.querySelector('.testimonial-slider .prev');
+      const next = document.querySelector('.testimonial-slider .next');
+      const dotsWrap = document.querySelector('.testimonial-slider .slider-dots');
+      if(!slides.length || !dotsWrap) return;
       let idx = 0;
       slides.forEach((_, i) => {
         const b = document.createElement('button');
@@ -343,37 +311,9 @@
         slides[idx].classList.add('active');
         dotsWrap.children[idx].setAttribute('aria-selected','true');
       }
-      if (prev) prev.addEventListener('click', () => go( (idx - 1 + slides.length) % slides.length ));
-      if (next) next.addEventListener('click', () => go( (idx + 1) % slides.length ));
-    }
-
-    // Theme toggle logic (Sun/Moon slider)
-    const root = document.documentElement;
-    const toggleBtn = document.getElementById('themeToggle');
-
-    const userPref = localStorage.getItem('theme');
-    if (userPref) {
-      root.setAttribute('data-theme', userPref);
-      updateToggle(userPref);
-    } else {
-      const osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      root.setAttribute('data-theme', osDark ? 'dark' : 'light');
-      updateToggle(osDark ? 'dark' : 'light');
-    }
-
-    toggleBtn.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateToggle(next);
-    });
-
-    function updateToggle(mode){
-      const dark = mode === 'dark';
-      toggleBtn.setAttribute('aria-pressed', dark ? 'true':'false');
-      toggleBtn.setAttribute('aria-label', dark ? 'Activate light mode' : 'Activate dark mode');
-    }
+      if (prev) prev.addEventListener('click', () => go((idx - 1 + slides.length) % slides.length));
+      if (next) next.addEventListener('click', () => go((idx + 1) % slides.length));
+    })();
   </script>
 </body>
 </html>
