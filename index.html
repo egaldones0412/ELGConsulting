@@ -6,6 +6,8 @@
   <meta name="description" content="Accurate, reliable, on-time bookkeeping. Cleanup, monthly close, and decision-ready reports delivered within 5 business days." />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="canonical" href="https://www.elgconsulting.works/" />
+
+  <!-- Social Meta -->
   <meta property="og:title" content="ELG Consulting Bookkeeping" />
   <meta property="og:description" content="Accurate, reliable monthly books and reporting within 5 business days." />
   <meta property="og:type" content="website" />
@@ -14,18 +16,26 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5" />
+
+  <link rel="stylesheet" href="styles.css?v=12" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="container flex-between">
-      <a class="logo" href="/"><img src="img/logo.png" alt="ELG Consulting"></a>
+      <!-- If your file is PNG change logo.svg to logo.png -->
+      <a class="logo" href="/">
+        <img src="img/logo.svg" alt="ELG Consulting">
+        <span class="logo-text">ELG Consulting</span>
+      </a>
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
@@ -43,7 +53,7 @@
   </header>
 
   <main id="main">
-    <!-- HERO (updated) -->
+    <!-- HERO -->
     <section class="hero enhanced">
       <div class="background-shapes">
         <img src="img/shape-grid.svg" alt="" class="shape grid" />
@@ -51,7 +61,7 @@
       <div class="container hero-layout">
         <div class="hero-copy">
           <p class="eyebrow">Bookkeeping & Reporting Partner</p>
-          <h1>Your Books, Done Right — and <span class="accent">On Time</span></h1>
+            <h1>Your Books, Done Right — and <span class="accent">On Time</span></h1>
           <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
           <div class="hero-cta">
             <a href="#contact" class="btn primary lg">Free Consultation</a>
@@ -69,7 +79,7 @@
       </div>
     </section>
 
-    <!-- PLATFORMS -->
+    <!-- PLATFORMS / LOGO GRID -->
     <section class="platforms-section" id="platforms">
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
@@ -229,7 +239,7 @@
             <button class="prev" aria-label="Previous testimonial">&larr;</button>
             <button class="next" aria-label="Next testimonial">&rarr;</button>
           </div>
-          <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
+            <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
         </div>
       </div>
     </section>
@@ -282,6 +292,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     const navToggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
     if (navToggle) {
@@ -290,6 +301,8 @@
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     }
+
+    // Simple testimonial slider
     const slides = document.querySelectorAll('.testimonial-slider .slide');
     const prev = document.querySelector('.testimonial-slider .prev');
     const next = document.querySelector('.testimonial-slider .next');
