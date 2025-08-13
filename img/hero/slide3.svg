@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B4965"/>
+      <stop offset="60%" stop-color="#0F5E73"/>
+      <stop offset="100%" stop-color="#082631"/>
+    </linearGradient>
+    <linearGradient id="diagGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E3B32F" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#FFB500" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="diagGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2CA01C" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#238315" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="panelLite" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="gradLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2CA01C"/>
+      <stop offset="100%" stop-color="#E3B32F"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg3)"/>
+  <polygon points="-220,0 900,0 640,1080 -220,1080" fill="url(#diagGreen)" opacity=".9"/>
+  <polygon points="520,-100 1940,-100 1920,1180 360,1180" fill="url(#diagGold)" opacity=".9"/>
+
+  <g transform="translate(1170 290)" opacity=".7">
+    <rect x="0" y="0" width="500" height="340" rx="32" fill="url(#panelLite)" stroke="#FFFFFF" stroke-opacity=".14"/>
+    <rect x="40" y="50" width="150" height="26" rx="6" fill="#E3B32F" opacity=".75"/>
+    <rect x="210" y="50" width="180" height="26" rx="6" fill="#2CA01C" opacity=".75"/>
+    <polyline points="40,140 100,120 160,132 220,108 280,124 340,86 400,102 460,78"
+              fill="none" stroke="url(#gradLine)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+    <polyline points="40,200 100,212 160,190 220,205 280,180 340,196 400,176 460,188"
+              fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+    <g transform="translate(40 240)">
+      <rect width="120" height="70" rx="14" fill="#2CA01C" opacity=".8"/>
+      <rect x="140" width="120" height="70" rx="14" fill="#E3B32F" opacity=".85"/>
+      <rect x="280" width="120" height="70" rx="14" fill="#2CA01C" opacity=".75"/>
+      <rect x="420" width="40" height="70" rx="14" fill="#FFFFFF" opacity=".15"/>
+    </g>
+  </g>
+
+  <g transform="translate(380 360)" opacity=".55">
+    <path d="M0 160 L120 40 L170 90 L260 0" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M260 0 L250 40 L300 30 Z" fill="#FFFFFF"/>
+    <path d="M0 220 L90 140 L150 180 L230 120 L300 150" fill="none" stroke="#E3B32F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="120" cy="40" r="14" fill="#2CA01C" stroke="#FFFFFF" stroke-width="4"/>
+    <circle cx="230" cy="120" r="14" fill="#E3B32F" stroke="#FFFFFF" stroke-width="4"/>
+  </g>
+
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity=".035"/>
+</svg>
