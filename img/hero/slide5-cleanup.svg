@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bgC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B4965"/>
+      <stop offset="65%" stop-color="#0F5E73"/>
+      <stop offset="100%" stop-color="#082C39"/>
+    </linearGradient>
+    <linearGradient id="diagGoldC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E3B32F" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#FFB500" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="diagGreenC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2CA01C" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#238315" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="panelC" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bgC)"/>
+  <polygon points="-240,0 920,0 640,1080 -240,1080" fill="url(#diagGreenC)" opacity=".92"/>
+  <polygon points="520,-120 1940,-120 1920,1180 360,1180" fill="url(#diagGoldC)" opacity=".9"/>
+  <!-- Split before/after panel -->
+  <g transform="translate(340 300)" opacity=".78">
+    <rect x="0" y="0" width="560" height="360" rx="36" fill="url(#panelC)" stroke="#FFFFFF" stroke-opacity=".15"/>
+    <line x1="280" y1="0" x2="280" y2="360" stroke="#FFFFFF" stroke-opacity=".25" stroke-width="4" stroke-dasharray="10 12"/>
+    <text x="140" y="50" font-size="34" font-family="Montserrat,Arial" fill="#FFFFFF" fill-opacity=".75" text-anchor="middle">Before</text>
+    <text x="420" y="50" font-size="34" font-family="Montserrat,Arial" fill="#FFFFFF" fill-opacity=".85" text-anchor="middle">After</text>
+    <!-- Before side messy blocks -->
+    <g fill="#FFFFFF" fill-opacity=".25">
+      <rect x="50" y="95" width="90" height="26" rx="6"/>
+      <rect x="160" y="95" width="60" height="26" rx="6"/>
+      <rect x="70" y="135" width="110" height="18" rx="5"/>
+      <rect x="50" y="165" width="160" height="14" rx="5"/>
+      <rect x="80" y="190" width="100" height="14" rx="5"/>
+      <rect x="60" y="218" width="140" height="18" rx="6"/>
+      <rect x="50" y="252" width="130" height="16" rx="6"/>
+      <rect x="170" y="252" width="50" height="16" rx="6"/>
+      <rect x="50" y="280" width="170" height="18" rx="6"/>
+    </g>
+    <!-- After side clean bars -->
+    <g>
+      <rect x="310" y="95" width="180" height="32" rx="10" fill="#2CA01C" opacity=".8"/>
+      <rect x="310" y="145" width="220" height="20" rx="8" fill="#FFFFFF" opacity=".35"/>
+      <rect x="310" y="175" width="160" height="20" rx="8" fill="#FFFFFF" opacity=".28"/>
+      <rect x="310" y="205" width="240" height="22" rx="10" fill="#E3B32F" opacity=".85"/>
+      <rect x="310" y="245" width="200" height="18" rx="8" fill="#FFFFFF" opacity=".32"/>
+      <rect x="310" y="275" width="150" height="18" rx="8" fill="#2CA01C" opacity=".7"/>
+    </g>
+    <!-- Arrow transition -->
+    <path d="M230 180 L250 180 L250 165 L275 195 L250 225 L250 210 L230 210 Z" fill="#E3B32F" opacity=".9"/>
+  </g>
+  <!-- Trend overlay line -->
+  <polyline points="1080,700 1160,640 1240,660 1320,600 1400,620 1480,560 1560,580" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+  <rect width="1920" height="1080" fill="#FFFFFF" opacity=".035"/>
+</svg>
