@@ -140,16 +140,12 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:1;
 }
 .logo img {
-  height:56px;
+  height:56px; /* Adjust this value to change image size */
   width:auto;
   display:block;
 }
-/* UPDATED: apply Open Sans only to the wordmark */
 .logo-text {
-  font-family:'Open Sans','Montserrat','Inter',system-ui,sans-serif;
-  font-weight:700;
-  font-size:1.05rem;
-  line-height:1;
+  font:600 1.05rem/1 var(--font-display);
   letter-spacing:.01em;
   color:var(--color-primary);
   white-space:nowrap;
@@ -287,7 +283,11 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   align-items:center;
   justify-items:center;
 }
-.platform-logos li { display:flex; align-items:center; justify-content:center; }
+.platform-logos li {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 .platform-logos img {
   display:block;
   max-height:80px;
@@ -648,7 +648,10 @@ figcaption {
   font-size:.7rem;
   padding:1rem 2.2rem;
 }
-.btn.cta-secondary:hover { background:#ff5149; border-color:#ff5149; }
+.btn.cta-secondary:hover {
+  background:#ff5149;
+  border-color:#ff5149;
+}
 
 /* ==========================================================================
    FOOTER
@@ -683,6 +686,7 @@ figcaption {
   .hero.enhanced { padding:var(--space-16) 0 var(--space-14); }
   .background-shapes .shape.grid { width:320px; top:-30px; right:-30px; }
 }
+
 @media (max-width:760px) {
   .main-nav ul {
     position:absolute;
@@ -701,10 +705,12 @@ figcaption {
   .nav-toggle { display:block; }
   .hero-layout { gap:var(--space-10); }
 }
+
 @media (max-width:600px) {
   .logo img { height:48px; }
   .logo-text { font-size:.95rem; }
 }
+
 @media (max-width:460px) {
   .container { padding:0 var(--space-4); }
   .hero.enhanced { padding:var(--space-14) 0 var(--space-12); }
