@@ -27,16 +27,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="img/hero/slide1.svg">
-  <link rel="stylesheet" href="styles.css?v=40" />
+  <link rel="stylesheet" href="styles.css?v=41" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container flex-between">
       <a class="logo" href="/">
         <img src="img/logo.png" alt="ELG Consulting">
         <span class="logo-text">ELG Consulting</span>
       </a>
+
       <button id="themeToggle"
               class="theme-toggle-replica toggle-sm"
               aria-label="Activate dark mode"
@@ -51,12 +53,13 @@
           <span class="toggle-knob"></span>
         </span>
       </button>
+
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
           <li><a href="#platforms">Platforms</a></li>
           <li><a href="#value">Value</a></li>
-            <li><a href="#services">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#why">Why Us</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
@@ -66,6 +69,7 @@
       </nav>
     </div>
   </header>
+
   <main id="main">
     <!-- HERO CAROUSEL -->
     <section id="hero" class="hero-carousel" aria-roledescription="carousel" aria-label="Featured highlights">
@@ -108,7 +112,7 @@
                 </div>
               </div>
             </li>
-            <!-- Slide 4: Automation & Workflow -->
+            <!-- Slide 4 -->
             <li class="hc-slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
               <div class="hc-media" style="--slide-bg:url('img/hero/slide4-automation.svg');"></div>
               <div class="hc-overlay">
@@ -120,7 +124,7 @@
                 </div>
               </div>
             </li>
-            <!-- Slide 5: Data Cleanup Before / After -->
+            <!-- Slide 5 -->
             <li class="hc-slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
               <div class="hc-media" style="--slide-bg:url('img/hero/slide5-cleanup.svg');"></div>
               <div class="hc-overlay">
@@ -132,7 +136,7 @@
                 </div>
               </div>
             </li>
-            <!-- Slide 6: KPI Spotlight -->
+            <!-- Slide 6 -->
             <li class="hc-slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
               <div class="hc-media" style="--slide-bg:url('img/hero/slide6-kpi.svg');"></div>
               <div class="hc-overlay">
@@ -146,11 +150,15 @@
             </li>
           </ul>
         </div>
+
+        <!-- Arrows (both present) -->
         <button class="hc-arrow prev" aria-label="Previous slide" type="button">‹</button>
         <button class="hc-arrow next" aria-label="Next slide" type="button">›</button>
+
         <div class="hc-dots" role="tablist" aria-label="Select slide"></div>
         <div class="hc-status visually-hidden" aria-live="polite" aria-atomic="true"></div>
       </div>
+
       <div class="hero-feature-cards">
         <div class="hfc-track">
           <a href="#value" class="hfc-card"><div class="hfc-icon">⏱️</div><div class="hfc-text"><h3>On‑Time Close</h3><p>Statements in 5 days.</p></div></a>
@@ -162,7 +170,6 @@
       </div>
     </section>
 
-    <!-- Remaining sections unchanged (Platforms, Value, Services, Why, Process, Testimonials, FAQ, Contact) -->
     <!-- PLATFORMS -->
     <section class="platforms-section" id="platforms">
       <div class="container">
@@ -254,7 +261,7 @@
             <button class="prev" aria-label="Previous testimonial">&larr;</button>
             <button class="next" aria-label="Next testimonial">&rarr;</button>
           </div>
-            <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
+          <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
         </div>
       </div>
     </section>
@@ -294,6 +301,7 @@
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>&copy; <span id="year"></span> ELG Consulting. All rights reserved.</div>
@@ -306,6 +314,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     /* Mobile nav */
     const navToggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -315,6 +324,7 @@
         navToggle.setAttribute('aria-expanded', open ? 'true':'false');
       });
     }
+
     /* Theme toggle */
     const root = document.documentElement;
     const toggleBtn = document.getElementById('themeToggle');
@@ -366,7 +376,7 @@
       if (next) next.addEventListener('click', () => go( (idx + 1) % slides.length ));
     })();
 
-    /* Hero carousel (auto-detects 6 slides now) */
+    /* Hero carousel with animations + KPI pops */
     (function(){
       const carousel = document.querySelector('.hero-carousel');
       if(!carousel) return;
@@ -377,12 +387,15 @@
       const dotsWrap = carousel.querySelector('.hc-dots');
       const status = carousel.querySelector('.hc-status');
       const viewport = carousel.querySelector('.hc-viewport');
+
       let index = 0;
       let timer = null;
+      let popTimer = null;
       const interval = 6000;
       const autoplay = true;
       const loop = true;
       const pauseOnHover = true;
+
       slides.forEach((_,i)=>{
         const b = document.createElement('button');
         b.type='button';
@@ -392,15 +405,24 @@
         b.addEventListener('click', ()=>goTo(i,true));
         dotsWrap.appendChild(b);
       });
+
       function updateStatus(){
         if(status) status.textContent = 'Slide ' + (index+1) + ' of ' + slides.length;
         slides.forEach((s,i)=> s.setAttribute('aria-label',(i+1)+' of '+slides.length));
       }
       function setActive(){
-        slides.forEach(s=>s.classList.remove('is-active'));
-        slides[index].classList.add('is-active');
-        Array.from(dotsWrap.children).forEach((d,i)=> d.setAttribute('aria-selected', i===index?'true':'false'));
+        slides.forEach(s=>{
+          s.classList.remove('is-active');
+          s.querySelector('.hc-diagonals')?.classList.remove('animating');
+        });
+        const active = slides[index];
+        active.classList.add('is-active');
+        active.querySelector('.hc-diagonals')?.classList.add('animating');
+        Array.from(dotsWrap.children).forEach((d,i)=>{
+          d.setAttribute('aria-selected', i===index?'true':'false');
+        });
         updateStatus();
+        resetPopups();
       }
       function goTo(i,user){
         if(i<0) i = loop ? slides.length-1 : 0;
@@ -412,12 +434,15 @@
       }
       function next(){ goTo(index+1); }
       function prev(){ goTo(index-1); }
+
       if(nextBtn) nextBtn.addEventListener('click', ()=> next());
       if(prevBtn) prevBtn.addEventListener('click', ()=> prev());
+
       viewport.addEventListener('keydown', e=>{
         if(e.key === 'ArrowRight'){ e.preventDefault(); next(); }
         else if(e.key === 'ArrowLeft'){ e.preventDefault(); prev(); }
       });
+
       /* Swipe / drag */
       let startX=0, dragging=false;
       viewport.addEventListener('pointerdown', e=>{
@@ -441,6 +466,7 @@
       viewport.addEventListener('pointerup', endDrag);
       viewport.addEventListener('pointercancel', endDrag);
       viewport.addEventListener('pointerleave', endDrag);
+
       function startAutoplay(){
         if(!autoplay) return;
         if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -449,14 +475,63 @@
       }
       function stopAutoplay(){ if(timer){ clearInterval(timer); timer=null; } }
       function resetAutoplay(){ stopAutoplay(); startAutoplay(); }
+
       if(pauseOnHover){
-        carousel.addEventListener('mouseenter', stopAutoplay);
-        carousel.addEventListener('mouseleave', startAutoplay);
-        carousel.addEventListener('focusin', stopAutoplay);
-        carousel.addEventListener('focusout', startAutoplay);
+        carousel.addEventListener('mouseenter', ()=>{ stopAutoplay(); stopPopups(); });
+        carousel.addEventListener('mouseleave', ()=>{ startAutoplay(); schedulePopups(); });
+        carousel.addEventListener('focusin', ()=>{ stopAutoplay(); stopPopups(); });
+        carousel.addEventListener('focusout', ()=>{ startAutoplay(); schedulePopups(); });
       }
+
+      /* KPI POP-UP CONFIG */
+      const popMessages = [
+        'Gross Margin +3.2%',
+        'AR Days ↓ 4',
+        'Close Complete ✔',
+        'Variance Cleared',
+        'New KPI +12%',
+        'Cash Flow ↑',
+        'Run Rate +8%',
+        'Expense Ratio ↓'
+      ];
+      function spawnPopup(){
+        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const active = slides[index];
+        const layer = active.querySelector('.hc-overlay');
+        if(!layer) return;
+        const pop = document.createElement('div');
+        pop.className='kpi-pop';
+        pop.setAttribute('aria-hidden','true');
+        pop.textContent = popMessages[Math.floor(Math.random()*popMessages.length)];
+        const left = 40 + Math.random()*35; // %
+        const top = 30 + Math.random()*35;  // %
+        pop.style.left = left + '%';
+        pop.style.top = top + '%';
+        layer.appendChild(pop);
+        setTimeout(()=> {
+          pop.classList.add('out');
+          setTimeout(()=> pop.remove(), 1500);
+        }, 2500);
+      }
+      function schedulePopups(){
+        stopPopups();
+        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        popTimer = setInterval(spawnPopup, 3200);
+      }
+      function stopPopups(){
+        if(popTimer){ clearInterval(popTimer); popTimer=null; }
+      }
+      function resetPopups(){
+        stopPopups();
+        // Remove existing
+        slides.forEach(s=> s.querySelectorAll('.kpi-pop').forEach(el=>el.remove()));
+        schedulePopups();
+      }
+
+      /* Init */
       setActive();
       startAutoplay();
+      schedulePopups();
     })();
   </script>
 </body>
