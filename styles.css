@@ -27,7 +27,7 @@
   --font-display:'Montserrat','Inter',system-ui,sans-serif;
 
   --font-base:16px;
-  --font-display-1:clamp(2rem,4.2vw,2.1875rem); /* global default */
+  --font-display-1:clamp(2rem,4.2vw,2.1875rem);
   --font-title:clamp(1.75rem,3vw,2.1rem);
   --font-subtitle:clamp(1.15rem,2vw,1.4rem);
   --font-body:1rem;
@@ -129,18 +129,26 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 .logo {
   display:inline-flex;
   align-items:center;
-  padding:var(--space-4) 0;
+  gap:.6rem;
+  padding:.55rem 0;
   text-decoration:none;
   font-family:var(--font-display);
   font-weight:600;
   font-size:1.05rem;
   letter-spacing:.01em;
   color:var(--color-primary);
+  line-height:1;
 }
 .logo img {
-  height:80px; /* Adjust 34–48px as desired */
+  height:56px; /* Adjust this value to change logo image size */
   width:auto;
   display:block;
+}
+.logo-text {
+  font:600 1.05rem/1 var(--font-display);
+  letter-spacing:.01em;
+  color:var(--color-primary);
+  white-space:nowrap;
 }
 
 .main-nav ul {
@@ -190,7 +198,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   line-height:var(--lh-hero);
   margin-bottom:var(--space-4);
   font-weight:700;
-  font-size:clamp(2.5rem,6vw,3.5rem); /* Larger hero heading */
+  font-size:clamp(2.5rem,6vw,3.5rem);
   letter-spacing:-.015em;
 }
 .hero-cta {
@@ -221,7 +229,6 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
   border-radius:50%;
   background:var(--color-accent);
 }
-/* Checkmark variant */
 .hero-points.checks li { padding-left:1.2rem; }
 .hero-points.checks li:before {
   content:"✔";
@@ -250,7 +257,7 @@ h3 { font-size:var(--font-subtitle); line-height:var(--lh-snug); }
 }
 
 /* ==========================================================================
-   PLATFORMS (Logo Grid)
+   PLATFORMS
    ========================================================================== */
 .platforms-section {
   background:#f5f5f5;
@@ -699,18 +706,14 @@ figcaption {
   .hero-layout { gap:var(--space-10); }
 }
 
-@media (max-width:900px) {
-  .platform-logos { gap:2.5rem 3rem; }
-  .platform-logos img { max-height:70px; }
-}
-
 @media (max-width:600px) {
-  .platforms-section { padding:3.5rem 0 3rem; }
-  .platform-logos { gap:2.1rem 2.4rem; }
-  .platform-logos img { max-height:60px; }
+  .logo img { height:48px; }
+  .logo-text { font-size:.95rem; }
 }
 
 @media (max-width:460px) {
   .container { padding:0 var(--space-4); }
   .hero.enhanced { padding:var(--space-14) 0 var(--space-12); }
+  .logo { gap:.45rem; }
+  .logo img { height:44px; }
 }
