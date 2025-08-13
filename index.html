@@ -6,8 +6,6 @@
   <meta name="description" content="Accurate, reliable, on-time bookkeeping. Cleanup, monthly close, and decision-ready reports delivered within 5 business days." />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="canonical" href="https://www.elgconsulting.works/" />
-
-  <!-- Open Graph / Social -->
   <meta property="og:title" content="ELG Consulting Bookkeeping" />
   <meta property="og:description" content="Accurate, reliable monthly books and reporting within 5 business days." />
   <meta property="og:type" content="website" />
@@ -16,18 +14,13 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
-
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <!-- Fonts -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
-
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -36,6 +29,7 @@
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
+          <li><a href="#platforms">Platforms</a></li>
           <li><a href="#value">Value</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#why">Why Us</a></li>
@@ -80,14 +74,14 @@
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
         <ul class="platform-logos" aria-label="Supported bookkeeping software">
-          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online"></li>
-          <li><img src="img/logos/xero.png" alt="Xero"></li>
-          <li><img src="img/logos/wave.png" alt="Wave"></li>
-          <li><img src="img/logos/myob.png" alt="MYOB"></li>
-          <li><img src="img/logos/zoho.png" alt="Zoho Books"></li>
-          <li><img src="img/logos/freshbooks.png" alt="FreshBooks"></li>
-          <li><img src="img/logos/sage.png" alt="Sage"></li>
-          <li><img src="img/logos/odoo.png" alt="Odoo"></li>
+          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy"></li>
+          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy"></li>
+          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy"></li>
+          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy"></li>
+          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy"></li>
+          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy"></li>
+          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy"></li>
+          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
         </ul>
         <div class="platforms-cta">
           <a href="#contact" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
@@ -102,22 +96,22 @@
         <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
         <div class="value-grid">
           <div class="value-item">
-            <img src="img/icon-cleanup.svg" alt="" class="vi">
+            <img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy">
             <h3>Backlog / Messy Books</h3>
             <p>Historical cleanup & error correction restore a solid financial baseline.</p>
           </div>
           <div class="value-item">
-            <img src="img/icon-speed.svg" alt="" class="vi">
+            <img src="img/icon-speed.svg" alt="" class="vi" loading="lazy">
             <h3>Slow Close Cycle</h3>
             <p>Disciplined workflows deliver statements within 5 business days.</p>
           </div>
           <div class="value-item">
-            <img src="img/icon-kpi.svg" alt="" class="vi">
+            <img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy">
             <h3>Weak Visibility</h3>
             <p>Custom KPIs and variance notes turn static reports into clarity.</p>
           </div>
           <div class="value-item">
-            <img src="img/icon-workflow.svg" alt="" class="vi">
+            <img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy">
             <h3>Manual Inefficiency</h3>
             <p>Tools and process refinement reduce rework and risk.</p>
           </div>
@@ -190,7 +184,7 @@
             <h3>Accuracy Discipline</h3>
             <p>Layered review approach lowers error propagation.</p>
           </div>
-          <div class="why-item">
+            <div class="why-item">
             <h3>Security Mindset</h3>
             <p>Least‑privilege access and structured data handling.</p>
           </div>
@@ -270,7 +264,7 @@
           <label>Business Name <input type="text" name="business"></label>
           <label>Message <textarea name="message" rows="5" required></textarea></label>
           <button type="submit" class="btn primary">Send</button>
-          <p class="small form-note">Opens your email client. Later: integrate a form endpoint for seamless submission.</p>
+          <p class="small form-note">Opens your email client. (Later you can wire a form endpoint.)</p>
         </form>
       </div>
     </section>
@@ -286,6 +280,40 @@
     </div>
   </footer>
 
-  <script src="scripts.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('nav-list');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const open = navList.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    // Simple testimonial slider
+    const slides = document.querySelectorAll('.testimonial-slider .slide');
+    const prev = document.querySelector('.testimonial-slider .prev');
+    const next = document.querySelector('.testimonial-slider .next');
+    const dotsWrap = document.querySelector('.testimonial-slider .slider-dots');
+    if (slides.length && dotsWrap) {
+      let idx = 0;
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.setAttribute('role','tab');
+        b.setAttribute('aria-selected', i === 0 ? 'true':'false');
+        b.addEventListener('click', () => go(i));
+        dotsWrap.appendChild(b);
+      });
+      function go(i){
+        slides[idx].classList.remove('active');
+        dotsWrap.children[idx].setAttribute('aria-selected','false');
+        idx = i;
+        slides[idx].classList.add('active');
+        dotsWrap.children[idx].setAttribute('aria-selected','true');
+      }
+      if (prev) prev.addEventListener('click', () => go( (idx - 1 + slides.length) % slides.length ));
+      if (next) next.addEventListener('click', () => go( (idx + 1) % slides.length ));
+    }
+  </script>
 </body>
 </html>
