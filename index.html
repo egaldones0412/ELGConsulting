@@ -23,45 +23,65 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=41" />
+  <link rel="stylesheet" href="styles.css?v=42" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="container flex-between">
-      <a class="logo" href="/">
-        <img src="img/logo.png" alt="ELG Consulting">
-        <span class="logo-text">ELG Consulting</span>
-      </a>
-      <button id="themeToggle" class="theme-toggle-replica" aria-label="Activate dark mode" aria-pressed="false" type="button">
-        <span class="visually-hidden">Toggle dark mode</span>
-        <span class="toggle-env">
-          <span class="layer sky"></span>
-          <span class="layer clouds clouds-a"></span>
-          <span class="layer clouds clouds-b"></span>
-          <span class="layer stars"></span>
-          <span class="toggle-knob"></span>
+    <div class="container site-header-inner">
+      <!-- Brand -->
+      <a class="brand" href="/" aria-label="ELG Consulting Home">
+        <img src="img/logo.png" alt="" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-core">ELG</span><span class="brand-tail">Consulting</span>
         </span>
-      </button>
+      </a>
+
+      <!-- Navigation -->
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
-          <li><a href="#platforms">Platforms</a></li>
-          <li><a href="#value">Value</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact" class="btn primary lg">Contact Us</a></li>
+          <li><a class="nav-link" href="#platforms">Platforms</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#value">Value</a></li>
+          <li><a class="nav-link" href="#why">Why Us</a></li>
+          <li><a class="nav-link" href="#process">Process</a></li>
+          <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li><a class="nav-link" href="#faq">FAQ</a></li>
         </ul>
       </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <div class="toggle-wrap">
+          <button id="themeToggle"
+                  class="theme-toggle-replica"
+                  aria-label="Activate dark mode"
+                  aria-pressed="false"
+                  type="button"
+                  title="Toggle dark mode"
+                  aria-describedby="themeToggleHelp">
+            <span class="visually-hidden">Toggle dark mode</span>
+            <span class="toggle-env">
+              <span class="layer sky"></span>
+              <span class="layer clouds clouds-a"></span>
+              <span class="layer clouds clouds-b"></span>
+              <span class="layer stars"></span>
+              <span class="toggle-knob"></span>
+            </span>
+          </button>
+          <span id="themeToggleHelp" class="visually-hidden">Switch color theme</span>
+        </div>
+        <a href="#contact" class="btn primary contact-btn">Contact Us</a>
+      </div>
     </div>
   </header>
 
   <main id="main">
+    <!-- (UNCHANGED CONTENT BELOW FROM v41) -->
     <!-- HERO -->
     <section class="hero enhanced">
       <div class="background-shapes">
@@ -138,13 +158,11 @@
       </div>
     </section>
 
-    <!-- PRICING (Dynamic Enhanced) -->
+    <!-- PRICING (unchanged dynamic section from v41) -->
     <section id="pricing" class="section pricing-dynamic">
       <div class="container">
         <h2 class="center">Pricing</h2>
         <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in.</p>
-
-        <!-- Billing Toggle -->
         <div class="billing-toggle-zone">
           <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle" data-cycle="monthly">
             <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
@@ -156,18 +174,13 @@
           <p class="billing-static tiny">Save 2 months with annual billing</p>
           <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
         </div>
-
-        <!-- Plans -->
         <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
           <div class="loading-spinner" aria-hidden="true"></div>
           <p class="tiny loading-text">Loading plans…</p>
         </div>
-
         <p class="pricing-footnote tiny center">
           * Cleanup or historical catch‑up work is quoted separately as a one‑time project.
         </p>
-
-        <!-- Add-Ons -->
         <div id="addOnsSection" class="addons-section">
           <h3 class="addons-heading center">Add‑Ons</h3>
           <p class="addons-sub center small">Optional services you can add anytime — billed separately.</p>
@@ -176,8 +189,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Fallback JSON -->
       <script id="pricing-config-fallback" type="application/json">
       {
         "currencySymbol":"$",
@@ -185,58 +196,21 @@
         "annualLabelAddon":"(2 months free)",
         "defaultCycle":"monthly",
         "plans":[
-          {
-            "id":"starter",
-            "name":"Starter",
-            "popular":false,
-            "monthly":399,
-            "features":[
-              "Up to 100 transactions",
-              "1 bank + 1 credit card",
-              "Monthly P&L & Balance Sheet",
-              "Email support"
-            ],
-            "ctaLabel":"Get Starter",
-            "ctaHref":"#contact"
-          },
-          {
-            "id":"growth",
-            "name":"Growth",
-            "popular":true,
-            "badge":"Most Popular",
-            "popularNote":"Our best value for growing businesses.",
-            "monthly":699,
-            "features":[
-              "Up to 400 transactions",
-              "3 bank/credit accounts",
-              "KPI pack & variance commentary",
-              "Priority support"
-            ],
-            "ctaLabel":"Choose Growth",
-            "ctaHref":"#contact"
-          },
-          {
-            "id":"scale",
-            "name":"Scale",
-            "popular":false,
-            "custom":true,
-            "customLabel":"Custom",
-            "features":[
-              "Multi‑entity / class tracking",
-              "Inventory / project accounting",
-              "Board‑ready reporting",
-              "Dedicated advisory"
-            ],
-            "ctaLabel":"Request Quote",
-            "ctaHref":"#contact",
-            "ctaVariant":"ghost"
-          }
+          {"id":"starter","name":"Starter","popular":false,"monthly":399,
+           "features":["Up to 100 transactions","1 bank + 1 credit card","Monthly P&L & Balance Sheet","Email support"],
+           "ctaLabel":"Get Starter","ctaHref":"#contact"},
+          {"id":"growth","name":"Growth","popular":true,"badge":"Most Popular","popularNote":"Our best value for growing businesses.","monthly":699,
+           "features":["Up to 400 transactions","3 bank/credit accounts","KPI pack & variance commentary","Priority support"],
+           "ctaLabel":"Choose Growth","ctaHref":"#contact"},
+          {"id":"scale","name":"Scale","popular":false,"custom":true,"customLabel":"Custom",
+           "features":["Multi‑entity / class tracking","Inventory / project accounting","Board‑ready reporting","Dedicated advisory"],
+           "ctaLabel":"Request Quote","ctaHref":"#contact","ctaVariant":"ghost"}
         ],
         "addOns":[
-          { "id":"cleanup", "name":"Historical Cleanup", "pricing":"Quoted", "description":"One-time project to correct legacy bookkeeping issues." },
-          { "id":"backmonths", "name":"Catch-Up Back Months", "pricing":"$ Scoped", "description":"Bring prior months current ahead of monthly cadence." },
-          { "id":"payroll", "name":"Payroll Support", "pricing":"+ $ Monthly", "description":"Light payroll journal guidance & reconciliation." },
-          { "id":"kpi-custom", "name":"Custom KPI Build", "pricing":"One-Time", "description":"Design & integrate specialized performance metrics." }
+          {"id":"cleanup","name":"Historical Cleanup","pricing":"Quoted","description":"One-time project to correct legacy bookkeeping issues."},
+          {"id":"backmonths","name":"Catch-Up Back Months","pricing":"$ Scoped","description":"Bring prior months current ahead of monthly cadence."},
+          {"id":"payroll","name":"Payroll Support","pricing":"+ $ Monthly","description":"Light payroll journal guidance & reconciliation."},
+          {"id":"kpi-custom","name":"Custom KPI Build","pricing":"One-Time","description":"Design & integrate specialized performance metrics."}
         ]
       }
       </script>
@@ -343,6 +317,6 @@
     </div>
   </footer>
 
-  <script src="scripts.js?v=41" defer></script>
+  <script src="scripts.js?v=42" defer></script>
 </body>
 </html>
