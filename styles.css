@@ -560,3 +560,69 @@ html[data-theme="dark"] .addon-price { background:#332600; color:#FFC247; }
   background: #E8F5EE;             /* slightly darker tint on hover */
   border-color: #4CAF50;           /* keep border the same */
 }
+/* APPEND these rules at the end of your existing styles.css (do not replace the file) */
+
+/* Utilities for new pages */
+.page-hero h1 { margin-bottom: 8px; }
+.page-hero .section-intro { color: var(--muted); max-width: 70ch; }
+.mt-12 { margin-top: 12px; }
+.center { text-align: center; }
+.tiny { font-size: 0.85rem; }
+
+/* Grids (mirror your existing patterns) */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+/* About: team cards */
+.card-img { width: 100%; height: auto; border-radius: 12px; display: block; }
+
+/* About: timeline */
+.timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); }
+.timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding: 12px 0 12px 12px; }
+.timeline .time { font-weight: 700; color: var(--muted); }
+.timeline .event h3 { margin: 0 0 4px; }
+@media (max-width: 700px) { .timeline li { grid-template-columns: 1fr; padding-left: 10px; } }
+
+/* Services detailed: icon sizing */
+.service-detail-grid .service-icon { width: 48px; height: 48px; margin-bottom: 8px; }
+
+/* Blog (Resources) */
+.blog-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.blog-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.blog-cover { width: 100%; height: 150px; object-fit: cover; }
+.blog-body { padding: 12px; }
+@media (max-width: 900px) { .blog-list { grid-template-columns: 1fr; } }
+
+/* Careers: job list */
+.job-list { display: grid; gap: 14px; }
+.job { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.job header { display: flex; align-items: baseline; gap: 10px; justify-content: space-between; }
+.job details summary { cursor: pointer; margin-top: 6px; }
+
+/* Contact layout */
+.contact-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
+.contact-aside .card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 12px; }
+.map-embed iframe { width: 100%; min-height: 320px; border: 0; border-radius: 12px; }
+@media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
+
+/* Testimonials grid */
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.testimonial-grid .mini-kpis { display: flex; gap: 12px; list-style: none; padding: 0; margin: 8px 0 0; }
+@media (max-width: 900px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+/* Legal pages spacing */
+.legal-copy .card + .card { margin-top: 12px; }
+
+/* Requested: Services feature boxes green tint (scoped) */
+#services .card.service,
+.service-detail-grid .card.service {
+  background: #F3FBF7;           /* very light brand green */
+  border: 1px solid #4CAF50;      /* brand green border */
+  transition: background-color .2s ease, background .2s ease;
+}
+#services .card.service:hover,
+.service-detail-grid .card.service:hover {
+  background: #E8F5EE;            /* slightly darker tint on hover */
+  border-color: #4CAF50;          /* keep border the same */
+}
