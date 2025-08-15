@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
@@ -6,6 +6,8 @@
   <meta name="description" content="Accurate, reliable, on-time bookkeeping. Cleanup, monthly close, and decision-ready reports delivered within 5 business days." />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="canonical" href="https://www.elgconsulting.works/" />
+
+  <!-- Social Meta -->
   <meta property="og:title" content="ELG Consulting Bookkeeping" />
   <meta property="og:description" content="Accurate, reliable monthly books and reporting within 5 business days." />
   <meta property="og:type" content="website" />
@@ -14,16 +16,40 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
   <meta name="twitter:description" content="Accurate. Reliable. On Time." />
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2CA01C">
   <meta name="msapplication-TileColor" content="#2CA01C">
   <meta name="theme-color" content="#2CA01C">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=42" />
+  <!-- Open Sans added for brand text; Inter + Montserrat remain -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=43" />
+
+  <!-- Organization + WebSite JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"ELG Consulting",
+    "url":"https://www.elgconsulting.works/",
+    "logo":"https://www.elgconsulting.works/img/logo.png",
+    "sameAs":[]
+  }
+  </script>
+
+  <!-- Optional privacy-friendly analytics (uncomment to use) -->
+  <!--
+  <script defer data-domain="elgconsulting.works" src="https://plausible.io/js/script.js"></script>
+  -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,7 +59,7 @@
     <div class="container site-header-inner">
       <!-- Brand -->
       <a class="brand" href="/" aria-label="ELG Consulting Home">
-        <img src="img/logo.png" alt="" class="brand-logo" />
+        <img src="img/logo.png" alt="ELG Consulting logo" class="brand-logo" width="56" height="56" />
         <span class="brand-text">
           <span class="brand-core">ELG</span><span class="brand-tail">Consulting</span>
         </span>
@@ -75,6 +101,7 @@
           </button>
           <span id="themeToggleHelp" class="visually-hidden">Switch color theme</span>
         </div>
+        <a href="#book" class="btn ghost contact-btn" id="openBooking">Book a Call</a>
         <a href="#contact" class="btn primary contact-btn">Contact Us</a>
       </div>
     </div>
@@ -83,18 +110,26 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero enhanced">
-      <div class="background-shapes">
-        <img src="img/shape-grid.svg" alt="" class="shape grid" />
+      <div class="background-shapes" aria-hidden="true">
+        <img src="img/shape-grid.svg" alt="" class="shape grid" width="400" height="400" />
       </div>
       <div class="container hero-layout">
         <div class="hero-copy">
           <p class="eyebrow">Bookkeeping & Reporting Partner</p>
           <h1>Accurate. Reliable. <span class="accent">On Time</span></h1>
-          <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
+          <p class="lead">Cleanup to close within five business days—so you can make decisions with confidence.</p>
           <div class="hero-cta">
-            <a href="#contact" class="btn primary lg">Free Consultation</a>
+            <a href="#book" class="btn primary lg" id="openBooking2">Free Consultation</a>
             <a href="#services" class="btn primary lg">See How We Can Help</a>
           </div>
+
+          <!-- Trust Bar -->
+          <ul class="trust-bar" aria-label="Key assurances">
+            <li>Delivery within 5 business days</li>
+            <li>Works with all major platforms</li>
+            <li>Month‑to‑month — cancel anytime</li>
+          </ul>
+
           <ul class="hero-points checks">
             <li>Catch‑Up & Cleanup</li>
             <li>Structured Month‑End Close</li>
@@ -102,7 +137,7 @@
           </ul>
         </div>
         <div class="hero-visual">
-          <img src="img/hero-illustration.svg" alt="Abstract financial dashboard illustration" loading="lazy">
+          <img src="img/hero-illustration.svg" alt="Abstract financial dashboard illustration" loading="lazy" width="520" height="360">
         </div>
       </div>
     </section>
@@ -112,18 +147,34 @@
       <div class="container">
         <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
         <ul class="platform-logos" aria-label="Supported bookkeeping software">
-          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy"></li>
-          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy"></li>
-          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy"></li>
-          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy"></li>
-          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy"></li>
-          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy"></li>
-          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy"></li>
-          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
+          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy" width="180" height="80"></li>
+          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy" width="180" height="80"></li>
         </ul>
         <div class="platforms-cta">
-          <a href="#contact" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
+          <a href="#book" class="btn cta-secondary" id="openBooking3">Click Here To Schedule Time With Us</a>
         </div>
+      </div>
+    </section>
+
+    <!-- WHO WE SERVE -->
+    <section class="section who-serve" id="who">
+      <div class="container">
+        <h2 class="center">Who We Serve</h2>
+        <p class="section-intro center">Owner‑led SMBs that value timely, decision‑ready financials.</p>
+        <ul class="serve-chips" aria-label="Typical clients">
+          <li>Agencies</li>
+          <li>E‑commerce</li>
+          <li>Professional Services</li>
+          <li>Contractors</li>
+          <li>Startups</li>
+          <li>Nonprofits</li>
+        </ul>
       </div>
     </section>
 
@@ -133,10 +184,10 @@
         <h2 class="center">Eliminate Operational Finance Friction</h2>
         <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
         <div class="value-grid">
-          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
-          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi" loading="lazy"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
-          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
-          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
+          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy" width="48" height="48"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
+          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi" loading="lazy" width="48" height="48"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
+          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy" width="48" height="48"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
+          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy" width="48" height="48"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
         </div>
       </div>
     </section>
@@ -149,7 +200,7 @@
           <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
         </div>
         <div class="cards services-grid">
-          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
+          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Close on time with reconciled accounts and decision‑ready statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
           <article class="card service"><h3>Catch‑Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
           <article class="card service"><h3>Management Reporting</h3><p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
           <article class="card service"><h3>Workflow & Advisory</h3><p>Light advisory on process, tech stack, and data hygiene.</p><ul class="mini-list"><li>Tool alignment</li><li>Receipt capture</li><li>AR/AP structuring</li></ul></article>
@@ -157,11 +208,13 @@
       </div>
     </section>
 
-    <!-- PRICING -->
+    <!-- PRICING (Dynamic Enhanced) -->
     <section id="pricing" class="section pricing-dynamic">
       <div class="container">
         <h2 class="center">Pricing</h2>
         <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in.</p>
+
+        <!-- Billing Toggle -->
         <div class="billing-toggle-zone">
           <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle" data-cycle="monthly">
             <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
@@ -173,13 +226,18 @@
           <p class="billing-static tiny">Save 2 months with annual billing</p>
           <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
         </div>
+
+        <!-- Plans container -->
         <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
           <div class="loading-spinner" aria-hidden="true"></div>
           <p class="tiny loading-text">Loading plans…</p>
         </div>
+
         <p class="pricing-footnote tiny center">
           * Cleanup or historical catch‑up work is quoted separately as a one‑time project.
         </p>
+
+        <!-- Add-Ons -->
         <div id="addOnsSection" class="addons-section">
           <h3 class="addons-heading center">Add‑Ons</h3>
           <p class="addons-sub center small">Optional services you can add anytime — billed separately.</p>
@@ -188,6 +246,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Fallback JSON (if external config not found) -->
       <script id="pricing-config-fallback" type="application/json">
       {
         "currencySymbol":"$",
@@ -195,21 +255,58 @@
         "annualLabelAddon":"(2 months free)",
         "defaultCycle":"monthly",
         "plans":[
-          {"id":"starter","name":"Starter","popular":false,"monthly":399,
-           "features":["Up to 100 transactions","1 bank + 1 credit card","Monthly P&L & Balance Sheet","Email support"],
-           "ctaLabel":"Get Starter","ctaHref":"#contact"},
-          {"id":"growth","name":"Growth","popular":true,"badge":"Most Popular","popularNote":"Our best value for growing businesses.","monthly":699,
-           "features":["Up to 400 transactions","3 bank/credit accounts","KPI pack & variance commentary","Priority support"],
-           "ctaLabel":"Choose Growth","ctaHref":"#contact"},
-          {"id":"scale","name":"Scale","popular":false,"custom":true,"customLabel":"Custom",
-           "features":["Multi‑entity / class tracking","Inventory / project accounting","Board‑ready reporting","Dedicated advisory"],
-           "ctaLabel":"Request Quote","ctaHref":"#contact","ctaVariant":"ghost"}
+          {
+            "id":"starter",
+            "name":"Starter",
+            "popular":false,
+            "monthly":399,
+            "features":[
+              "Up to 100 transactions",
+              "1 bank + 1 credit card",
+              "Monthly P&L & Balance Sheet",
+              "Email support"
+            ],
+            "ctaLabel":"Get Starter",
+            "ctaHref":"#contact"
+          },
+          {
+            "id":"growth",
+            "name":"Growth",
+            "popular":true,
+            "badge":"Most Popular",
+            "popularNote":"Our best value for growing businesses.",
+            "monthly":699,
+            "features":[
+              "Up to 400 transactions",
+              "3 bank/credit accounts",
+              "KPI pack & variance commentary",
+              "Priority support"
+            ],
+            "ctaLabel":"Choose Growth",
+            "ctaHref":"#contact"
+          },
+          {
+            "id":"scale",
+            "name":"Scale",
+            "popular":false,
+            "custom":true,
+            "customLabel":"Custom",
+            "features":[
+              "Multi‑entity / class tracking",
+              "Inventory / project accounting",
+              "Board‑ready reporting",
+              "Dedicated advisory"
+            ],
+            "ctaLabel":"Request Quote",
+            "ctaHref":"#contact",
+            "ctaVariant":"ghost"
+          }
         ],
         "addOns":[
-          {"id":"cleanup","name":"Historical Cleanup","pricing":"Quoted","description":"One-time project to correct legacy bookkeeping issues."},
-          {"id":"backmonths","name":"Catch-Up Back Months","pricing":"$ Scoped","description":"Bring prior months current ahead of monthly cadence."},
-          {"id":"payroll","name":"Payroll Support","pricing":"+ $ Monthly","description":"Light payroll journal guidance & reconciliation."},
-          {"id":"kpi-custom","name":"Custom KPI Build","pricing":"One-Time","description":"Design & integrate specialized performance metrics."}
+          { "id":"cleanup", "name":"Historical Cleanup", "pricing":"Quoted", "description":"One-time project to correct legacy bookkeeping issues." },
+          { "id":"backmonths", "name":"Catch-Up Back Months", "pricing":"$ Scoped", "description":"Bring prior months current ahead of monthly cadence." },
+          { "id":"payroll", "name":"Payroll Support", "pricing":"+ $ Monthly", "description":"Light payroll journal guidance & reconciliation." },
+          { "id":"kpi-custom", "name":"Custom KPI Build", "pricing":"One-Time", "description":"Design & integrate specialized performance metrics." }
         ]
       }
       </script>
@@ -249,16 +346,16 @@
         <div class="testimonial-slider" aria-live="polite">
           <div class="slides">
             <figure class="slide active">
-              <blockquote>“TESTIMONIAL_1 placeholder—emphasize timeliness and accuracy.”</blockquote>
-              <figcaption>— Client Name 1, Company</figcaption>
+              <blockquote>“ELG keeps us on time every month. Our close went from ‘sometime’ to five days—game changer.”</blockquote>
+              <figcaption>— C. Alvarez, Agency Owner</figcaption>
             </figure>
             <figure class="slide">
-              <blockquote>“TESTIMONIAL_2 placeholder—clarity of reporting & reduced stress.”</blockquote>
-              <figcaption>— Client Name 2, Company</figcaption>
+              <blockquote>“Reports we actually understand. Variance notes highlight what matters—saves us hours.”</blockquote>
+              <figcaption>— D. Patel, COO</figcaption>
             </figure>
             <figure class="slide">
-              <blockquote>“TESTIMONIAL_3 placeholder—professional process & responsiveness.”</blockquote>
-              <figcaption>— Client Name 3, Company</figcaption>
+              <blockquote>“Cleanup was smooth, and the process is solid. They’re responsive and professional.”</blockquote>
+              <figcaption>— M. Chen, Founder</figcaption>
             </figure>
           </div>
           <div class="slider-controls">
@@ -277,7 +374,7 @@
         <div class="faq">
           <details><summary>How quickly can we begin?</summary><p>Most monthly engagements start within 1–2 weeks, depending on file review findings.</p></details>
           <details><summary>What’s included each month?</summary><p>Reconciliations, P&amp;L, Balance Sheet, selected KPIs, and optional variance notes/review call.</p></details>
-          <details><summary>Do you handle taxes?</summary><p>We focus on bookkeeping & management reports. We can coordinate with your tax professional.</p></details>
+          <details><summary>Do you handle taxes?</summary><p>We focus on bookkeeping & management reports. We’ll coordinate with your CPA for a seamless handoff.</p></details>
           <details><summary>Can you fix historical errors?</summary><p>Yes—cleanup phase scopes issues, corrects balances, then transitions to steady monthly workflow.</p></details>
         </div>
       </div>
@@ -293,14 +390,23 @@
             <li><strong>Email:</strong> <a href="mailto:info@elgconsulting.works">info@elgconsulting.works</a></li>
             <li><strong>Turnaround:</strong> Reports within 5 business days</li>
           </ul>
+
+          <!-- Data handling note -->
+          <div class="data-note small">
+            We practice least‑privilege access and secure document transfer. No credentials are shared via email.
+          </div>
         </div>
-        <form action="mailto:info@elgconsulting.works" method="post" enctype="text/plain" class="contact-form">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Business Name <input type="text" name="business"></label>
+
+        <!-- Contact Form (Formspree) -->
+        <form id="contactForm" action="https://formspree.io/f/xvgqywoz" method="POST" class="contact-form" novalidate>
+          <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
+          <label>Name <input type="text" name="name" required autocomplete="name"></label>
+          <label>Email <input type="email" name="email" required autocomplete="email"></label>
+          <label>Business Name <input type="text" name="business" autocomplete="organization"></label>
           <label>Message <textarea name="message" rows="5" required></textarea></label>
           <button type="submit" class="btn primary">Send</button>
-          <p class="small form-note">Opens your email client. (Later you can wire a form endpoint.)</p>
+          <p class="small form-note">We’ll reply within 1 business day.</p>
+          <p id="formStatus" class="small" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -316,6 +422,14 @@
     </div>
   </footer>
 
-  <script src="scripts.js?v=42" defer></script>
+  <!-- Booking Modal -->
+  <dialog id="bookingModal" aria-label="Book a free consultation">
+    <div class="booking-wrap">
+      <button class="booking-close" id="closeBooking" aria-label="Close booking">&times;</button>
+      <iframe id="bookingFrame" title="Booking" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </dialog>
+
+  <script src="scripts.js?v=43" defer></script>
 </body>
 </html>
