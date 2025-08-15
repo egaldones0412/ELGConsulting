@@ -546,3 +546,17 @@ html[data-theme="dark"] .addon-price { background:#332600; color:#FFC247; }
   .plan-card.popular::after,
   .billing-toggle-wrap::before { animation:none!important; }
 }
+/* Append these rules at the end of styles.css to style ONLY the Services feature cards */
+
+/* Default state: very light brand green tint with subtle brand border */
+#services .card.service {
+  background: #F3FBF7;            /* very light green tint */
+  border: 1px solid #4CAF50;       /* brand green border */
+  transition: background-color 0.2s ease, background 0.2s ease;
+}
+
+/* Hover state: slightly darker tint, same border color */
+#services .card.service:hover {
+  background: #E8F5EE;             /* slightly darker tint on hover */
+  border-color: #4CAF50;           /* keep border the same */
+}
