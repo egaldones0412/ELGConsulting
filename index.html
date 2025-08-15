@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Open Sans added for brand text -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=42.2" />
+  <link rel="stylesheet" href="styles.css?v=42.1" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -51,7 +51,7 @@
           <li><a class="nav-link" href="#why">Why Us</a></li>
           <li><a class="nav-link" href="#process">Process</a></li>
           <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li><a class="nav-link" href="#faqs">FAQs</a></li>
+          <li><a class="nav-link" href="#faq">FAQ</a></li>
         </ul>
       </nav>
 
@@ -164,6 +164,7 @@
         <h2 class="center">Pricing</h2>
         <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in.</p>
 
+        <!-- Billing Toggle -->
         <div class="billing-toggle-zone">
           <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle" data-cycle="monthly">
             <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
@@ -176,6 +177,7 @@
           <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
         </div>
 
+        <!-- Plans -->
         <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
           <div class="loading-spinner" aria-hidden="true"></div>
           <p class="tiny loading-text">Loading plans…</p>
@@ -185,6 +187,7 @@
           * Cleanup or historical catch‑up work is quoted separately as a one‑time project.
         </p>
 
+        <!-- Add-Ons -->
         <div id="addOnsSection" class="addons-section">
           <h3 class="addons-heading center">Add‑Ons</h3>
           <p class="addons-sub center small">Optional services you can add anytime — billed separately.</p>
@@ -314,45 +317,39 @@
       </div>
     </section>
 
-    <!-- FAQs (Two-column split, sleek accordion) -->
-    <section id="faqs" class="section alt faq-split">
+    <!-- FAQ (Updated content only, style/layout unchanged) -->
+    <section id="faq" class="section alt">
       <div class="container">
-        <div class="faq-split-grid">
-          <aside class="faq-aside">
-            <h2 class="faq-title">Frequently Asked<br>Questions</h2>
-          </aside>
-          <div class="faq-main">
-            <div class="faq">
-              <details>
-                <summary>What does 100% virtual service mean?</summary>
-                <p>Our services are delivered entirely online. We use secure, cloud-based software to exchange documents and information. No matter where you are in the world, as long as you have internet access, you can work with us—no in‑person meetings required.</p>
-              </details>
-              <details>
-                <summary>Can you handle bookkeeping needs for any industry?</summary>
-                <p>Yes. Our team has extensive experience across a wide range of industries. We have the tools, skills, and expertise to meet the unique bookkeeping needs of any business, regardless of its size or sector.</p>
-              </details>
-              <details>
-                <summary>What’s included each month?</summary>
-                <p>Reconciliations, P&amp;L, Balance Sheet, selected KPIs, and optional variance notes/review call.</p>
-              </details>
-              <details>
-                <summary>Do you handle taxes?</summary>
-                <p>We focus on bookkeeping &amp; management reports. We can coordinate with your tax professional.</p>
-              </details>
-              <details>
-                <summary>Do you offer customized solutions?</summary>
-                <p>Yes. Every business is different, so we tailor our services to fit your specific goals, challenges, and budget.</p>
-              </details>
-              <details>
-                <summary>How can I get started with your services?</summary>
-                <p>Getting started is easy. Schedule a free consultation with us, and we’ll assess your needs, answer your questions, and recommend the best course of action for your business. Simply click the button below to book your session.</p>
-              </details>
-              <details>
-                <summary>Is my data secure with you?</summary>
-                <p>Yes. Protecting your information is our top priority. We use industry‑standard encryption, secure servers, and strict privacy protocols to ensure your data is always safe.</p>
-              </details>
-            </div>
-          </div>
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>What does 100% virtual service mean?</summary>
+            <p>Our services are delivered entirely online. We use secure, cloud-based software to exchange documents and information. No matter where you are in the world, as long as you have internet access, you can work with us—no in‑person meetings required.</p>
+          </details>
+          <details>
+            <summary>Can you handle bookkeeping needs for any industry?</summary>
+            <p>Yes. Our team has extensive experience across a wide range of industries. We have the tools, skills, and expertise to meet the unique bookkeeping needs of any business, regardless of its size or sector.</p>
+          </details>
+          <details>
+            <summary>What’s included each month?</summary>
+            <p>Reconciliations, P&amp;L, Balance Sheet, selected KPIs, and optional variance notes/review call.</p>
+          </details>
+          <details>
+            <summary>Do you handle taxes?</summary>
+            <p>We focus on bookkeeping &amp; management reports. We can coordinate with your tax professional.</p>
+          </details>
+          <details>
+            <summary>Do you offer customized solutions?</summary>
+            <p>Yes. Every business is different, so we tailor our services to fit your specific goals, challenges, and budget.</p>
+          </details>
+          <details>
+            <summary>How can I get started with your services?</summary>
+            <p>Getting started is easy. Schedule a free consultation with us, and we’ll assess your needs, answer your questions, and recommend the best course of action for your business. Simply click the button below to book your session.</p>
+          </details>
+          <details>
+            <summary>Is my data secure with you?</summary>
+            <p>Yes. Protecting your information is our top priority. We use industry‑standard encryption, secure servers, and strict privacy protocols to ensure your data is always safe.</p>
+          </details>
         </div>
       </div>
     </section>
