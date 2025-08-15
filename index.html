@@ -44,39 +44,19 @@
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
-          <li><a class="nav-link" href="#platforms">Platforms</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#pricing">Pricing</a></li>
-          <li><a class="nav-link" href="#value">Value</a></li>
-          <li><a class="nav-link" href="#why">Why Us</a></li>
-          <li><a class="nav-link" href="#process">Process</a></li>
-          <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li><a class="nav-link" href="#faq">FAQ</a></li>
+          <li><a class="nav-link" href="/services.html">Services</a></li>
+          <li><a class="nav-link" href="/#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="/about.html">About</a></li>
+          <li><a class="nav-link" href="/resources.html">Resources</a></li>
+          <li><a class="nav-link" href="/careers.html">Careers</a></li>
+          <li><a class="nav-link" href="/testimonials.html">Testimonials</a></li>
+          <li><a class="nav-link" href="/#faq">FAQ</a></li>
         </ul>
       </nav>
 
       <!-- Actions -->
       <div class="header-actions">
-        <div class="toggle-wrap">
-          <button id="themeToggle"
-                  class="theme-toggle-replica"
-                  aria-label="Activate dark mode"
-                  aria-pressed="false"
-                  type="button"
-                  title="Toggle dark mode"
-                  aria-describedby="themeToggleHelp">
-            <span class="visually-hidden">Toggle dark mode</span>
-            <span class="toggle-env">
-              <span class="layer sky"></span>
-              <span class="layer clouds clouds-a"></span>
-              <span class="layer clouds clouds-b"></span>
-              <span class="layer stars"></span>
-              <span class="toggle-knob"></span>
-            </span>
-          </button>
-          <span id="themeToggleHelp" class="visually-hidden">Switch color theme</span>
-        </div>
-        <a href="#contact" class="btn primary contact-btn">Contact Us</a>
+        <a href="/contact.html" class="btn primary contact-btn">Contact Us</a>
       </div>
     </div>
   </header>
@@ -93,8 +73,8 @@
           <h1>Accurate. Reliable. <span class="accent">On Time</span></h1>
           <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
           <div class="hero-cta">
-            <a href="#contact" class="btn primary lg">Free Consultation</a>
-            <a href="#services" class="btn primary lg">See How We Can Help</a>
+            <a href="/contact.html" class="btn primary lg">Free Consultation</a>
+            <a href="/services.html" class="btn primary lg">See How We Can Help</a>
           </div>
           <ul class="hero-points checks">
             <li>Catch‑Up & Cleanup</li>
@@ -123,7 +103,7 @@
           <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
         </ul>
         <div class="platforms-cta">
-          <a href="#contact" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
+          <a href="/contact.html" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
         </div>
       </div>
     </section>
@@ -149,7 +129,7 @@
           <h2>Services</h2>
           <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
         </div>
-        <div class="cards services-grid">
+        <div class="cards services-grid grid-3">
           <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
           <article class="card service"><h3>Catch‑Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
           <article class="card service"><h3>Management Reporting</h3><p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
@@ -158,13 +138,12 @@
       </div>
     </section>
 
-    <!-- PRICING (Dynamic Enhanced) -->
+    <!-- PRICING -->
     <section id="pricing" class="section pricing-dynamic">
       <div class="container">
         <h2 class="center">Pricing</h2>
         <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in.</p>
 
-        <!-- Billing Toggle -->
         <div class="billing-toggle-zone">
           <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle" data-cycle="monthly">
             <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
@@ -177,7 +156,6 @@
           <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
         </div>
 
-        <!-- Plans -->
         <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
           <div class="loading-spinner" aria-hidden="true"></div>
           <p class="tiny loading-text">Loading plans…</p>
@@ -187,7 +165,6 @@
           * Cleanup or historical catch‑up work is quoted separately as a one‑time project.
         </p>
 
-        <!-- Add-Ons -->
         <div id="addOnsSection" class="addons-section">
           <h3 class="addons-heading center">Add‑Ons</h3>
           <p class="addons-sub center small">Optional services you can add anytime — billed separately.</p>
@@ -197,7 +174,7 @@
         </div>
       </div>
 
-      <!-- Fallback JSON -->
+      <!-- Pricing fallback config (kept as-is) -->
       <script id="pricing-config-fallback" type="application/json">
       {
         "currencySymbol":"$",
@@ -262,34 +239,7 @@
       </script>
     </section>
 
-    <!-- WHY US -->
-    <section id="why" class="section">
-      <div class="container">
-        <h2 class="center">Why ELG Consulting</h2>
-        <div class="why-grid">
-          <div class="why-item"><h3>Reliable Turnaround</h3><p>Consistent delivery inside 5 business days after month end.</p></div>
-          <div class="why-item"><h3>Broad Tool Coverage</h3><p>QuickBooks Online, Xero, Zoho Books, Excel, Google Sheets, MYOB, Wave, FreshBooks, Sage.</p></div>
-          <div class="why-item"><h3>Accuracy Discipline</h3><p>Layered review approach lowers error propagation.</p></div>
-          <div class="why-item"><h3>Security Mindset</h3><p>Least‑privilege access and structured data handling.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section alt">
-      <div class="container">
-        <h2>Our Process</h2>
-        <ol class="process-timeline">
-          <li><span class="step-num">1</span><div><h3>Intro Call</h3><p>Clarify scope, systems, and objectives.</p></div></li>
-          <li><span class="step-num">2</span><div><h3>File Review</h3><p>Assess state & cleanup needs.</p></div></li>
-          <li><span class="step-num">3</span><div><h3>Onboarding</h3><p>Secure access, checklist & KPI set.</p></div></li>
-          <li><span class="step-num">4</span><div><h3>Monthly Close</h3><p>Reconcile, adjust, validate.</p></div></li>
-          <li><span class="step-num">5</span><div><h3>Delivery & Review</h3><p>Statements + variance & KPI insight.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS (section on home retained, dedicated page added separately) -->
     <section id="testimonials" class="section">
       <div class="container">
         <h2 class="center">Client Feedback</h2>
@@ -317,7 +267,7 @@
       </div>
     </section>
 
-    <!-- FAQ (Updated content only, style/layout unchanged) -->
+    <!-- FAQ -->
     <section id="faq" class="section alt">
       <div class="container">
         <h2>FAQ</h2>
@@ -344,7 +294,7 @@
           </details>
           <details>
             <summary>How can I get started with your services?</summary>
-            <p>Getting started is easy. Schedule a free consultation with us, and we’ll assess your needs, answer your questions, and recommend the best course of action for your business. Simply click the button below to book your session.</p>
+            <p>Getting started is easy. Schedule a free consultation with us, and we’ll assess your needs, answer your questions, and recommend the best course of action for your business.</p>
           </details>
           <details>
             <summary>Is my data secure with you?</summary>
@@ -354,7 +304,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT BAND -->
     <section id="contact" class="section contact-band">
       <div class="container contact-layout">
         <div class="contact-copy">
@@ -366,7 +316,6 @@
           </ul>
         </div>
 
-        <!-- Formspree contact form (kept) -->
         <form id="contactForm" action="https://formspree.io/f/xvgqywoz" method="POST" class="contact-form">
           <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
           <label>Name <input type="text" name="name" required></label>
@@ -384,6 +333,12 @@
     <div class="container footer-inner">
       <div>&copy; <span id="year"></span> ELG Consulting. All rights reserved.</div>
       <nav aria-label="Footer">
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/careers.html">Careers</a>
+        <a href="/testimonials.html">Testimonials</a>
+        <a href="/contact.html">Contact</a>
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
       </nav>
