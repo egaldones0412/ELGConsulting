@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us — ELG Consulting</title>
+  <meta name="description" content="Contact ELG Consulting for bookkeeping services, cleanup projects, or reporting solutions." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="canonical" href="https://www.elgconsulting.works/contact.html" />
+  <link rel="stylesheet" href="styles.css?v=42.1" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a class="brand" href="/" aria-label="ELG Consulting Home">
+        <img src="img/logo.png" alt="" class="brand-logo" />
+        <span class="brand-text"><span class="brand-core">ELG</span><span class="brand-tail">Consulting</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <ul id="nav-list">
+          <li><a class="nav-link" href="/services.html">Services</a></li>
+          <li><a class="nav-link" href="/#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="/about.html">About</a></li>
+          <li><a class="nav-link" href="/resources.html">Resources</a></li>
+          <li><a class="nav-link" href="/careers.html">Careers</a></li>
+          <li><a class="nav-link" href="/testimonials.html">Testimonials</a></li>
+          <li><a class="nav-link" href="/#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="/contact.html" class="btn primary contact-btn" aria-current="page">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p class="section-intro">Tell us about your needs—cleanup, monthly close, or reporting—and we’ll respond within one business day.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <form id="enhancedContactForm" action="https://formspree.io/f/xvgqywoz" method="POST" class="contact-form">
+          <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
+          <div class="grid-2">
+            <label>Full Name
+              <input type="text" name="name" required>
+            </label>
+            <label>Email
+              <input type="email" name="email" required>
+            </label>
+          </div>
+          <div class="grid-2">
+            <label>Phone
+              <input type="tel" name="phone" inputmode="tel" placeholder="(555) 555-5555">
+            </label>
+            <label>Company
+              <input type="text" name="company">
+            </label>
+          </div>
+          <label>Reason for reaching out
+            <select name="reason" required>
+              <option value="" selected disabled>Select one</option>
+              <option value="monthly">Monthly bookkeeping</option>
+              <option value="cleanup">Catch‑up / Cleanup</option>
+              <option value="reporting">Management reporting</option>
+              <option value="advisory">Workflow / Advisory</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea name="message" rows="6" required placeholder="Share a few details about your current setup and goals."></textarea>
+          </label>
+          <div class="grid-2">
+            <label>Preferred start date
+              <input type="date" name="start_date">
+            </label>
+            <label>How did you hear about us?
+              <input type="text" name="referral" placeholder="Referral, search, social, etc.">
+            </label>
+          </div>
+          <button type="submit" class="btn primary">Send message</button>
+          <p class="small form-note">We’ll reply within 1 business day.</p>
+        </form>
+
+        <aside class="contact-aside">
+          <div class="card">
+            <h2>Our details</h2>
+            <p><strong>Email:</strong> <a href="mailto:info@elgconsulting.works">info@elgconsulting.works</a></p>
+            <p><strong>Hours:</strong> Mon–Fri, 9am–5pm</p>
+            <p><strong>Address:</strong> 123 Business St, City, State</p>
+          </div>
+          <div class="map-embed mt-12">
+            <iframe
+              title="ELG Consulting location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.943203474267!2d-74.006015!3d40.712728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ2LjgiTiA3NMKwMDAnMjEuNiJX!5e0!3m2!1sen!2sus!4v1680000000000"
+              width="600" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>&copy; <span id="year"></span> ELG Consulting. All rights reserved.</div>
+      <nav aria-label="Footer">
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/careers.html">Careers</a>
+        <a href="/testimonials.html">Testimonials</a>
+        <a aria-current="page" href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scripts.js?v=42" defer></script>
+</body>
+</html>
