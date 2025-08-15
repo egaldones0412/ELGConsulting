@@ -2,35 +2,53 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>Services — Detailed Breakdown — ELG Consulting</title>
-  <meta name="description" content="Explore ELG Consulting's bookkeeping services in detail, including monthly close, cleanup, reporting, and advisory." />
+  <title>Services — ELG Consulting</title>
+  <meta name="description" content="Bookkeeping, Planning & Analytics, Payroll, and Fractional CFO services to deliver accurate, reliable, on-time financials." />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="canonical" href="https://www.elgconsulting.works/services.html" />
-  <link rel="stylesheet" href="styles.css?v=42.1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#2CA01C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=42.2" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Header (matches your new dropdown pattern) -->
   <header class="site-header">
     <div class="container site-header-inner">
       <a class="brand" href="/" aria-label="ELG Consulting Home">
         <img src="img/logo.png" alt="" class="brand-logo" />
         <span class="brand-text"><span class="brand-core">ELG</span><span class="brand-tail">Consulting</span></span>
       </a>
+
       <nav class="main-nav" aria-label="Primary">
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <ul id="nav-list">
-          <li><a aria-current="page" class="nav-link" href="/services.html">Services</a></li>
-          <li><a class="nav-link" href="/#pricing">Pricing</a></li>
-          <li><a class="nav-link" href="/about.html">About</a></li>
-          <li><a class="nav-link" href="/resources.html">Resources</a></li>
-          <li><a class="nav-link" href="/careers.html">Careers</a></li>
-          <li><a class="nav-link" href="/testimonials.html">Testimonials</a></li>
+          <li class="has-dropdown">
+            <details open>
+              <summary class="nav-link" role="button" aria-haspopup="menu">
+                Services <span class="caret" aria-hidden="true">▾</span>
+              </summary>
+              <ul class="dropdown-menu" role="menu">
+                <li role="none"><a role="menuitem" class="dropdown-link" href="/services.html#bookkeeping">Bookkeeping</a></li>
+                <li role="none"><a role="menuitem" class="dropdown-link" href="/services.html#planning-analytics">Planning &amp; Analytics</a></li>
+                <li role="none"><a role="menuitem" class="dropdown-link" href="/services.html#payroll">Payroll</a></li>
+                <li role="none"><a role="menuitem" class="dropdown-link" href="/services.html#fractional-cfo">Fractional CFO</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a class="nav-link" href="/about.html">About Us</a></li>
           <li><a class="nav-link" href="/#faq">FAQ</a></li>
         </ul>
       </nav>
+
       <div class="header-actions">
-        <a href="/contact.html" class="btn primary contact-btn">Contact Us</a>
+        <a href="/contact.html" class="btn primary cta">Schedule a Call</a>
       </div>
     </div>
   </header>
@@ -38,81 +56,156 @@
   <main id="main">
     <section class="section page-hero">
       <div class="container">
-        <h1>Services — Detailed Breakdown</h1>
-        <p class="section-intro">Clear scope, consistent delivery, and decision-ready outputs.</p>
+        <h1>Services</h1>
+        <p class="section-intro">Accurate, reliable, on‑time financials—without the drama. Choose the support you need, from core bookkeeping to decision‑ready analytics and fractional finance leadership.</p>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Bookkeeping -->
+    <section id="bookkeeping" class="section">
+      <div class="container service-detail-grid">
+        <article class="card service">
+          <h2>Bookkeeping</h2>
+          <p>We keep your books clean and current, so statements land on time and you always know where the business stands.</p>
+          <div class="grid-2">
+            <div>
+              <h3>What’s included</h3>
+              <ul class="checklist">
+                <li>Monthly close with review checklist</li>
+                <li>Bank/credit card/loan reconciliations</li>
+                <li>AR/AP posting and tie‑outs</li>
+                <li>Fixed assets and accruals management</li>
+                <li>Monthly financial statements (P&L, Balance Sheet, Cash Flow)</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Outcomes</h3>
+              <ul class="checklist">
+                <li>On‑time statements within 5 business days</li>
+                <li>Clean audit trail and documentation</li>
+                <li>Decision‑ready numbers, not just reports</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <aside class="card">
+          <h3>Ideal for</h3>
+          <p>Teams who want reliable monthly reporting and a disciplined close without hiring internally.</p>
+          <a class="btn primary" href="/contact.html">Schedule a Call</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Planning & Analytics -->
+    <section id="planning-analytics" class="section alt">
+      <div class="container service-detail-grid">
+        <article class="card service">
+          <h2>Planning &amp; Analytics</h2>
+          <p>Turn reporting into action. We design KPIs, variance notes, and budget/forecast processes that drive better decisions.</p>
+          <div class="grid-2">
+            <div>
+              <h3>What’s included</h3>
+              <ul class="checklist">
+                <li>KPI framework and dashboard design</li>
+                <li>Budgeting and rolling forecasts</li>
+                <li>Variance analysis with commentary</li>
+                <li>Revenue, margin, and unit economics visibility</li>
+                <li>Stakeholder reporting cadences</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Outcomes</h3>
+              <ul class="checklist">
+                <li>Clear targets and early‑warning indicators</li>
+                <li>Leaders aligned on drivers that matter</li>
+                <li>Faster, more confident decisions</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <aside class="card">
+          <h3>Ideal for</h3>
+          <p>Growing teams who need KPIs and a simple planning rhythm to connect goals to execution.</p>
+          <a class="btn primary" href="/contact.html">Schedule a Call</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Payroll -->
+    <section id="payroll" class="section">
+      <div class="container service-detail-grid">
+        <article class="card service">
+          <h2>Payroll</h2>
+          <p>Accurate, on‑time payroll with clean integrations into your books and clear responsibilities.</p>
+          <div class="grid-2">
+            <div>
+              <h3>What’s included</h3>
+              <ul class="checklist">
+                <li>Payroll system setup or cleanup</li>
+                <li>Recurring runs and exception handling</li>
+                <li>Benefits, taxes, and filings coordination</li>
+                <li>Journal entries and account reconciliations</li>
+                <li>Employee changes and access controls</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Outcomes</h3>
+              <ul class="checklist">
+                <li>Employees paid accurately and on time</li>
+                <li>Books reflect payroll activity correctly</li>
+                <li>Reduced risk and fewer surprises</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <aside class="card">
+          <h3>Ideal for</h3>
+          <p>Teams who want payroll handled correctly and reflected cleanly in monthly reporting.</p>
+          <a class="btn primary" href="/contact.html">Schedule a Call</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Fractional CFO -->
+    <section id="fractional-cfo" class="section alt">
+      <div class="container service-detail-grid">
+        <article class="card service">
+          <h2>Fractional CFO</h2>
+          <p>Part‑time executive finance support for planning, cash, board reporting, and leadership alignment.</p>
+          <div class="grid-2">
+            <div>
+              <h3>What’s included</h3>
+              <ul class="checklist">
+                <li>Cash planning and scenario analysis</li>
+                <li>Board/leadership reporting and meeting prep</li>
+                <li>Pricing, packaging, and margin initiatives</li>
+                <li>Systems/process improvements across finance</li>
+                <li>Talent planning and vendor oversight</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Outcomes</h3>
+              <ul class="checklist">
+                <li>Visibility into runway and trade‑offs</li>
+                <li>Clear priorities and finance roadmap</li>
+                <li>More leverage from your existing team</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <aside class="card">
+          <h3>Ideal for</h3>
+          <p>Leaders who need strategic finance help without hiring a full‑time CFO.</p>
+          <a class="btn primary" href="/contact.html">Schedule a Call</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section center">
       <div class="container">
-        <div class="cards grid-3 service-detail-grid">
-          <article class="card service">
-            <img src="img/placeholder-icon.svg" alt="" class="service-icon" />
-            <h2>Monthly Bookkeeping</h2>
-            <p>Categorization, reconciliations, adjusting entries, and monthly statements.</p>
-            <ul class="checklist">
-              <li>Cash or Accrual</li>
-              <li>Bank and credit card tie-outs</li>
-              <li>Close checklist and review</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <img src="img/placeholder-icon.svg" alt="" class="service-icon" />
-            <h2>Catch‑Up & Cleanup</h2>
-            <p>Backlog completion and historical correction to restore accuracy and trust.</p>
-            <ul class="checklist">
-              <li>Error tracing</li>
-              <li>Balance validation</li>
-              <li>Documentation set</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <img src="img/placeholder-icon.svg" alt="" class="service-icon" />
-            <h2>Management Reporting</h2>
-            <p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and guidance.</p>
-            <ul class="checklist">
-              <li>Custom KPI set</li>
-              <li>Variance commentary</li>
-              <li>Review session</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <img src="img/placeholder-icon.svg" alt="" class="service-icon" />
-            <h2>Workflow & Advisory</h2>
-            <p>Light advisory on process, tools, and data hygiene to reduce friction.</p>
-            <ul class="checklist">
-              <li>Tool alignment</li>
-              <li>Receipt capture</li>
-              <li>AR/AP structuring</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <img src="img/placeholder-icon.svg" alt="" class="service-icon" />
-            <h2>Add‑ons</h2>
-            <p>Optional services to tailor your engagement.</p>
-            <ul class="checklist">
-              <li>Payroll journal guidance</li>
-              <li>Custom KPI build-outs</li>
-              <li>Multi-entity consolidation</li>
-            </ul>
-          </article>
-          <article class="card service">
-            <img src="img/placeholder-icon.svg" alt="" class="service-icon" />
-            <h2>Industries</h2>
-            <p>Experience across SaaS, e‑commerce, services, and more.</p>
-            <ul class="checklist">
-              <li>Tailored reporting packs</li>
-              <li>Flexible chart of accounts</li>
-              <li>Stakeholder enablement</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container center">
-        <a class="btn primary" href="/contact.html">Request a consultation</a>
+        <h2>Not sure where to start?</h2>
+        <p class="section-intro">Begin with a short call. We’ll ask a few questions and recommend the simplest path to reliable, decision‑ready financials.</p>
+        <a class="btn primary" href="/contact.html">Schedule a Call</a>
       </div>
     </section>
   </main>
@@ -122,7 +215,7 @@
       <div>&copy; <span id="year"></span> ELG Consulting. All rights reserved.</div>
       <nav aria-label="Footer">
         <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
+        <a href="/services.html" aria-current="page">Services</a>
         <a href="/resources.html">Resources</a>
         <a href="/careers.html">Careers</a>
         <a href="/testimonials.html">Testimonials</a>
