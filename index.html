@@ -1,350 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ELG Consulting Bookkeeping | Accurate. Reliable. On Time.</title>
-  <meta name="description" content="Accurate, reliable, on-time bookkeeping. Cleanup, monthly close, and decision-ready reports delivered within 5 business days." />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="canonical" href="https://www.elgconsulting.works/" />
-  <meta property="og:title" content="ELG Consulting Bookkeeping" />
-  <meta property="og:description" content="Accurate, reliable monthly books and reporting within 5 business days." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.elgconsulting.works/" />
-  <meta property="og:image" content="https://www.elgconsulting.works/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ELG Consulting Bookkeeping" />
-  <meta name="twitter:description" content="Accurate. Reliable. On Time." />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2CA01C">
-  <meta name="msapplication-TileColor" content="#2CA01C">
-  <meta name="theme-color" content="#2CA01C">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Open Sans added for brand text -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@100;300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=42.1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Edz Galdones | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container site-header-inner">
-      <!-- Brand -->
-      <a class="brand" href="/" aria-label="ELG Consulting Home">
-        <img src="img/logo.png" alt="" class="brand-logo" />
-        <span class="brand-text">
-          <span class="brand-core">ELG</span><span class="brand-tail">Consulting</span>
-        </span>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Homepage">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">Edz Galdones</span>
       </a>
-
-      <!-- Navigation -->
-      <nav class="main-nav" aria-label="Primary">
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <ul id="nav-list">
-          <li><a class="nav-link" href="/services.html">Services</a></li>
-          <li><a class="nav-link" href="/#pricing">Pricing</a></li>
-          <li><a class="nav-link" href="/about.html">About</a></li>
-          <li><a class="nav-link" href="/resources.html">Resources</a></li>
-          <li><a class="nav-link" href="/careers.html">Careers</a></li>
-          <li><a class="nav-link" href="/testimonials.html">Testimonials</a></li>
-          <li><a class="nav-link" href="/#faq">FAQ</a></li>
-        </ul>
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Case Studies</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-small" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
       </nav>
-
-      <!-- Actions -->
-      <div class="header-actions">
-        <a href="/contact.html" class="btn primary contact-btn">Contact Us</a>
+      <button id="menuBtn" class="icon-btn nav-mobile-btn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <svg width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <div class="mobile-menu-head">
+          <span class="brand-text">Menu</span>
+          <button id="menuClose" class="icon-btn" aria-label="Close menu">
+            <svg width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+          </button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="#services" data-nav-close>Services</a>
+          <a href="#process" data-nav-close>Process</a>
+          <a href="#work" data-nav-close>Case Studies</a>
+          <a href="#testimonials" data-nav-close>Testimonials</a>
+          <a href="#contact" data-nav-close>Contact</a>
+          <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
+        </nav>
       </div>
     </div>
   </header>
-
   <main id="main">
-    <!-- HERO -->
-    <section class="hero enhanced">
-      <div class="background-shapes">
-        <img src="img/shape-grid.svg" alt="" class="shape grid" />
-      </div>
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow">Bookkeeping & Reporting Partner</p>
-          <h1>Accurate. Reliable. <span class="accent">On Time</span></h1>
-          <p class="lead">Say goodbye to late reports and messy numbers. We’ll handle the cleanup, keep your monthly books in order, and deliver easy-to-read management reports. You’ll always know where your business stands, without the stress.</p>
-          <div class="hero-cta">
-            <a href="/contact.html" class="btn primary lg">Free Consultation</a>
-            <a href="/services.html" class="btn primary lg">See How We Can Help</a>
-          </div>
-          <ul class="hero-points checks">
-            <li>Catch‑Up & Cleanup</li>
-            <li>Structured Month‑End Close</li>
-            <li>KPIs & Variance Insight</li>
-          </ul>
-        </div>
-        <div class="hero-visual">
-          <img src="img/hero-illustration.svg" alt="Abstract financial dashboard illustration" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <!-- PLATFORMS -->
-    <section class="platforms-section" id="platforms">
-      <div class="container">
-        <h2 class="platforms-heading">We Work With All Major Bookkeeping Softwares</h2>
-        <ul class="platform-logos" aria-label="Supported bookkeeping software">
-          <li><img src="img/logos/quickbooks.png" alt="QuickBooks Online" loading="lazy"></li>
-          <li><img src="img/logos/xero.png" alt="Xero" loading="lazy"></li>
-          <li><img src="img/logos/wave.png" alt="Wave" loading="lazy"></li>
-          <li><img src="img/logos/myob.png" alt="MYOB" loading="lazy"></li>
-          <li><img src="img/logos/zoho.png" alt="Zoho Books" loading="lazy"></li>
-          <li><img src="img/logos/freshbooks.png" alt="FreshBooks" loading="lazy"></li>
-          <li><img src="img/logos/sage.png" alt="Sage" loading="lazy"></li>
-          <li><img src="img/logos/odoo.png" alt="Odoo" loading="lazy"></li>
-        </ul>
-        <div class="platforms-cta">
-          <a href="/contact.html" class="btn cta-secondary">Click Here To Schedule Time With Us</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- VALUE -->
-    <section id="value" class="section tight">
-      <div class="container">
-        <h2 class="center">Eliminate Operational Finance Friction</h2>
-        <p class="section-intro center">We bring your books current, keep them accurate, and surface meaningful metrics—so you spend <em>less time fixing numbers</em> and more time acting on them.</p>
-        <div class="value-grid">
-          <div class="value-item"><img src="img/icon-cleanup.svg" alt="" class="vi" loading="lazy"><h3>Backlog / Messy Books</h3><p>Historical cleanup & error correction restore a solid financial baseline.</p></div>
-          <div class="value-item"><img src="img/icon-speed.svg" alt="" class="vi" loading="lazy"><h3>Slow Close Cycle</h3><p>Disciplined workflows deliver statements within 5 business days.</p></div>
-          <div class="value-item"><img src="img/icon-kpi.svg" alt="" class="vi" loading="lazy"><h3>Weak Visibility</h3><p>Custom KPIs and variance notes turn static reports into clarity.</p></div>
-          <div class="value-item"><img src="img/icon-workflow.svg" alt="" class="vi" loading="lazy"><h3>Manual Inefficiency</h3><p>Tools and process refinement reduce rework and risk.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <h2>Services</h2>
-          <p class="muted">Core engagement types—tailored to your stage & complexity.</p>
-        </div>
-        <div class="cards services-grid grid-3">
-          <article class="card service"><h3>Monthly Bookkeeping</h3><p>Categorization, reconciliations, adjusting entries, financial statements.</p><ul class="mini-list"><li>Cash or accrual</li><li>Bank & card tie‑outs</li><li>Close checklist</li></ul></article>
-          <article class="card service"><h3>Catch‑Up & Cleanup</h3><p>Backlog completion & historical correction to reestablish accuracy.</p><ul class="mini-list"><li>Error tracing</li><li>Balance validation</li><li>Documentation set</li></ul></article>
-          <article class="card service"><h3>Management Reporting</h3><p>Decision‑ready P&amp;L, Balance Sheet, KPIs, trends, and commentary.</p><ul class="mini-list"><li>Custom KPI set</li><li>Variance insight</li><li>Review session</li></ul></article>
-          <article class="card service"><h3>Workflow & Advisory</h3><p>Light advisory on process, tech stack, and data hygiene.</p><ul class="mini-list"><li>Tool alignment</li><li>Receipt capture</li><li>AR/AP structuring</li></ul></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="section pricing-dynamic">
-      <div class="container">
-        <h2 class="center">Pricing</h2>
-        <p class="section-intro center small-max">Transparent, flexible, scalable. Month‑to‑month—no long‑term lock‑in.</p>
-
-        <div class="billing-toggle-zone">
-          <div class="billing-toggle-wrap" role="radiogroup" aria-label="Billing cycle" data-cycle="monthly">
-            <button class="billing-toggle" data-cycle="monthly" aria-pressed="true" role="radio" aria-checked="true">Monthly</button>
-            <button class="billing-toggle" data-cycle="annual" aria-pressed="false" role="radio" aria-checked="false">
-              Annual <span class="save-pill" aria-hidden="true">Save 2 Months</span>
-            </button>
-            <span class="bt-focus-ring" aria-hidden="true"></span>
-          </div>
-          <p class="billing-static tiny">Save 2 months with annual billing</p>
-          <div class="billing-note tiny center" id="billing-note" aria-live="polite"></div>
-        </div>
-
-        <div id="plansMount" class="pricing-plans" aria-live="polite" aria-busy="true">
-          <div class="loading-spinner" aria-hidden="true"></div>
-          <p class="tiny loading-text">Loading plans…</p>
-        </div>
-
-        <p class="pricing-footnote tiny center">
-          * Cleanup or historical catch‑up work is quoted separately as a one‑time project.
-        </p>
-
-        <div id="addOnsSection" class="addons-section">
-          <h3 class="addons-heading center">Add‑Ons</h3>
-          <p class="addons-sub center small">Optional services you can add anytime — billed separately.</p>
-          <div id="addOnsMount" class="addons-grid" aria-live="polite" aria-busy="true">
-            <div class="loading-spinner sm" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pricing fallback config (kept as-is) -->
-      <script id="pricing-config-fallback" type="application/json">
-      {
-        "currencySymbol":"$",
-        "annualMultiplier":10,
-        "annualLabelAddon":"(2 months free)",
-        "defaultCycle":"monthly",
-        "plans":[
-          {
-            "id":"starter",
-            "name":"Starter",
-            "popular":false,
-            "monthly":399,
-            "features":[
-              "Up to 100 transactions",
-              "1 bank + 1 credit card",
-              "Monthly P&L & Balance Sheet",
-              "Email support"
-            ],
-            "ctaLabel":"Get Starter",
-            "ctaHref":"#contact"
-          },
-          {
-            "id":"growth",
-            "name":"Growth",
-            "popular":true,
-            "badge":"Most Popular",
-            "popularNote":"Our best value for growing businesses.",
-            "monthly":699,
-            "features":[
-              "Up to 400 transactions",
-              "3 bank/credit accounts",
-              "KPI pack & variance commentary",
-              "Priority support"
-            ],
-            "ctaLabel":"Choose Growth",
-            "ctaHref":"#contact"
-          },
-          {
-            "id":"scale",
-            "name":"Scale",
-            "popular":false,
-            "custom":true,
-            "customLabel":"Custom",
-            "features":[
-              "Multi‑entity / class tracking",
-              "Inventory / project accounting",
-              "Board‑ready reporting",
-              "Dedicated advisory"
-            ],
-            "ctaLabel":"Request Quote",
-            "ctaHref":"#contact",
-            "ctaVariant":"ghost"
-          }
-        ],
-        "addOns":[
-          { "id":"cleanup", "name":"Historical Cleanup", "pricing":"Quoted", "description":"One-time project to correct legacy bookkeeping issues." },
-          { "id":"backmonths", "name":"Catch-Up Back Months", "pricing":"$ Scoped", "description":"Bring prior months current ahead of monthly cadence." },
-          { "id":"payroll", "name":"Payroll Support", "pricing":"+ $ Monthly", "description":"Light payroll journal guidance & reconciliation." },
-          { "id":"kpi-custom", "name":"Custom KPI Build", "pricing":"One-Time", "description":"Design & integrate specialized performance metrics." }
-        ]
-      }
-      </script>
-    </section>
-
-    <!-- TESTIMONIALS (section on home retained, dedicated page added separately) -->
-    <section id="testimonials" class="section">
-      <div class="container">
-        <h2 class="center">Client Feedback</h2>
-        <div class="testimonial-slider" aria-live="polite">
-          <div class="slides">
-            <figure class="slide active">
-              <blockquote>“TESTIMONIAL_1 placeholder—emphasize timeliness and accuracy.”</blockquote>
-              <figcaption>— Client Name 1, Company</figcaption>
-            </figure>
-            <figure class="slide">
-              <blockquote>“TESTIMONIAL_2 placeholder—clarity of reporting & reduced stress.”</blockquote>
-              <figcaption>— Client Name 2, Company</figcaption>
-            </figure>
-            <figure class="slide">
-              <blockquote>“TESTIMONIAL_3 placeholder—professional process & responsiveness.”</blockquote>
-              <figcaption>— Client Name 3, Company</figcaption>
-            </figure>
-          </div>
-          <div class="slider-controls">
-            <button class="prev" aria-label="Previous testimonial">&larr;</button>
-            <button class="next" aria-label="Next testimonial">&rarr;</button>
-          </div>
-          <div class="slider-dots" role="tablist" aria-label="Testimonials"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="section alt">
-      <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <details>
-            <summary>What does 100% virtual service mean?</summary>
-            <p>Our services are delivered entirely online. We use secure, cloud-based software to exchange documents and information. No matter where you are in the world, as long as you have internet access, you can work with us—no in‑person meetings required.</p>
-          </details>
-          <details>
-            <summary>Can you handle bookkeeping needs for any industry?</summary>
-            <p>Yes. Our team has extensive experience across a wide range of industries. We have the tools, skills, and expertise to meet the unique bookkeeping needs of any business, regardless of its size or sector.</p>
-          </details>
-          <details>
-            <summary>What’s included each month?</summary>
-            <p>Reconciliations, P&amp;L, Balance Sheet, selected KPIs, and optional variance notes/review call.</p>
-          </details>
-          <details>
-            <summary>Do you handle taxes?</summary>
-            <p>We focus on bookkeeping &amp; management reports. We can coordinate with your tax professional.</p>
-          </details>
-          <details>
-            <summary>Do you offer customized solutions?</summary>
-            <p>Yes. Every business is different, so we tailor our services to fit your specific goals, challenges, and budget.</p>
-          </details>
-          <details>
-            <summary>How can I get started with your services?</summary>
-            <p>Getting started is easy. Schedule a free consultation with us, and we’ll assess your needs, answer your questions, and recommend the best course of action for your business.</p>
-          </details>
-          <details>
-            <summary>Is my data secure with you?</summary>
-            <p>Yes. Protecting your information is our top priority. We use industry‑standard encryption, secure servers, and strict privacy protocols to ensure your data is always safe.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT BAND -->
-    <section id="contact" class="section contact-band">
-      <div class="container contact-layout">
-        <div class="contact-copy">
-          <h2>Ready for Accurate, On‑Time Books?</h2>
-          <p>Request a free consultation—let’s review your current setup and map a path to clarity.</p>
-          <ul class="contact-points">
-            <li><strong>Email:</strong> <a href="mailto:info@elgconsulting.works">info@elgconsulting.works</a></li>
-            <li><strong>Turnaround:</strong> Reports within 5 business days</li>
-          </ul>
-        </div>
-
-        <form id="contactForm" action="https://formspree.io/f/xvgqywoz" method="POST" class="contact-form">
-          <input type="text" name="_gotcha" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Business Name <input type="text" name="business"></label>
-          <label>Message <textarea name="message" rows="5" required></textarea></label>
-          <button type="submit" class="btn primary">Send</button>
-          <p class="small form-note">We’ll reply within 1 business day.</p>
-        </form>
-      </div>
-    </section>
+    <!-- ... rest of your sections (hero, services, process, etc.) ... -->
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; <span id="year"></span> ELG Consulting. All rights reserved.</div>
-      <nav aria-label="Footer">
-        <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/careers.html">Careers</a>
-        <a href="/testimonials.html">Testimonials</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
+      <p>&copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/robots.txt">Robots</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="#top">Back to top</a>
       </nav>
     </div>
   </footer>
-
-  <script src="scripts.js?v=42" defer></script>
 </body>
 </html>
